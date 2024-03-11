@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width , initial-scale=1.0 , viewport-fit=cover">
+<link rel="stylesheet" href="../../css/potvr.1.css">
+<link rel="shortcut icon" href="../../svg/logo.svg">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Potvrzení, že došlo k odeslání konaktního formuláře.">
+<meta name="keywords" content="potvrzení,odesláno">
+<meta name="author" content="Boar-cz">
+<meta name="application-name" content="Boar-cz">
+<meta name="author" content="Boar-cz">
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicon//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon//favicon-16x16.png">
+<link rel="manifest" href="../../favicon//site.webmanifest">
+<link rel="mask-icon" href="../../favicon//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="theme-color" content="#ffffff">
+<title>Potvrzení o odeslání</title>
+</head>
+<body>
+<div class="potvrzeni">
+
+<div class="dia_hlavicka">
+<img class="px50" src="../../svg/logo.svg" width="200" height="200"  alt="informace"  loading="lazy">
+<p class="hla_p">Boar-cz</p>
+</div>
+
+<div class="dia_obsah">
+
+<h1>Vše bylo odesláno!</h1>
+<div class="anim_o">
+<svg class="w80" width="200" height="200" viewBox="0 0 200 200" stroke="transparent" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<circle cx="100" cy="100" r="90" stroke="rgb(87,168,110)" />
+<path d="M 50,130 50,130 50,130" stroke-width="15">
+<animate id="ok_b1" begin="1s" attributeName="stroke" from="transparent" to="rgb(0,158,107)" dur="25ms" fill="freeze" calcMode="paced" />
+<animate id="ok_b2" begin="ok_b1.begin" attributeName="d" from="M 50,130 50,130 50,130" to="M 50,130 85,160 85,160" dur="250ms" fill="freeze" calcMode="paced" />
+<animate begin="ok_b2.end" attributeName="d" from="M 50,130 85,160 85,160" to="M 50,130 85,160 145,60" dur="500ms" fill="freeze" calcMode="paced" />
+</path>
+</svg>
+</div>
+<p>Děkujeme za Váše sdělení.</p>
+<button class="but" type="button" onClick="window.location.replace('../');" title="Vrátit se zpět">Vrátit se zpět</button>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTP_USER_AGENT} !(BlackBerry)
+RewriteCond %{HTTP_USER_AGENT} !(Windows\sNT\s5\.[12])
+RewriteCond %{HTTP_HOST} ^(www\.)?boar-cz.info
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L]
+ExpiresActive on
+ExpiresByType application/x-javascript A31536000
+ExpiresByType application/javascript A31536000
+ExpiresByType application/font-ttf A31536000
+ExpiresByType application/x-font-ttf A31536000
+ExpiresByType font/ttf A31536000
+ExpiresByType font/opentype A31536000
+ExpiresByType font/* A31536000
+ExpiresByType text/css A31536000
+ExpiresByType image/gif A31536000
+ExpiresByType image/jpeg A31536000
+ExpiresByType image/jpg A31536000
+ExpiresByType image/p-jpeg A31536000
+ExpiresByType image/png A31536000
+ExpiresByType image/svg+xml A31536000
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/font-sfnt
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/vnd.microsoft.icon
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/html
+</IfModule>

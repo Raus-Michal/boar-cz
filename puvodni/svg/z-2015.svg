@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10075" height="85" viewBox="0 0 10075 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" stroke-width="2" stroke="black" fill="rgb(168,110,87)">
+<defs>
+<filter id="fil" style="color-interpolation-filters:sRGB;" x="-0.024" y="-0.24" width="1.04" height="1.4">
+<feGaussianBlur result="result1" in="SourceAlpha" stdDeviation="2.8" />
+<feSpecularLighting result="result0" specularExponent="200" specularConstant="0.5" surfaceScale="1.5">
+<feDistantLight azimuth="225" elevation="24" />
+</feSpecularLighting>
+<feComposite result="result6" operator="in" in2="SourceAlpha" />
+<feMorphology radius="5" operator="dilate" />
+<feGaussianBlur result="result11" stdDeviation="6" />
+<feDiffuseLighting surfaceScale="2" result="result3" diffuseConstant="2" in="result1">
+<feDistantLight elevation="25" azimuth="225" />
+</feDiffuseLighting>
+<feBlend result="result7" mode="multiply" in="result3" in2="SourceGraphic" />
+<feComposite in="result7" operator="in" in2="SourceAlpha" result="result91" />
+<feBlend result="result9" mode="lighten" in="result6" in2="result91" />
+<feComposite in="result11" in2="result9" />
+</filter>
+</defs>
+<g transform="translate(5,0)" style="filter:url(#fil)">
+<rect width="50" height="20" x="2.5" y="2.5" />
+<rect width="100" height="20" x="52.5" y="2.5" />
+<rect width="100" height="20" x="152.5" y="2.5" />
+<rect width="100" height="20" x="252.5" y="2.5" />
+<rect width="100" height="20" x="352.5" y="2.5" />
+<rect width="100" height="20" x="452.5" y="2.5" />
+<rect width="100" height="20" x="552.5" y="2.5" />
+<rect width="100" height="20" x="1352.5" y="2.5" />
+<rect width="100" height="20" x="1452.5" y="2.5" />
+<rect width="100" height="20" x="1552.5" y="2.5" />
+<rect width="100" height="20" x="1652.5" y="2.5" />
+<rect width="100" height="20" x="1752.5" y="2.5" />
+<rect width="100" height="20" x="1852.5" y="2.5" />
+<rect width="50" height="20" x="1952.5" y="2.5" />
+
+<rect width="100" height="20" x="2.5" y="22.5" />
+<rect width="100" height="20" x="102.5" y="22.5" />
+<rect width="100" height="20" x="202.5" y="22.5" />
+<rect width="100" height="20" x="302.5" y="22.5" />
+<rect width="100" height="20" x="402.5" y="22.5" />
+<rect width="100" height="20" x="502.5" y="22.5" />
+<rect width="100" height="20" x="602.5" y="22.5" />
+<rect width="100" height="20" x="1302.5" y="22.5" />
+<rect width="100" height="20" x="1402.5" y="22.5" />
+<rect width="100" height="20" x="1502.5" y="22.5" />
+<rect width="100" height="20" x="1602.5" y="22.5" />
+<rect width="100" height="20" x="1702.5" y="22.5" />
+<rect width="100" height="20" x="1802.5" y="22.5" />
+<rect width="100" height="20" x="1902.5" y="22.5" />
+
+
+<rect width="50" height="20" x="2.5" y="42.5" />
+<rect width="100" height="20" x="52.5" y="42.5" />
+<rect width="100" height="20" x="152.5" y="42.5" />
+<rect width="100" height="20" x="252.5" y="42.5" />
+<rect width="100" height="20" x="352.5" y="42.5" />
+<rect width="100" height="20" x="452.5" y="42.5" />
+<rect width="100" height="20" x="552.5" y="42.5" />
+<rect width="100" height="20" x="652.5" y="42.5" />
+<rect width="100" height="20" x="1252.5" y="42.5" />
+<rect width="100" height="20" x="1352.5" y="42.5" />
+<rect width="100" height="20" x="1452.5" y="42.5" />
+<rect width="100" height="20" x="1552.5" y="42.5" />
+<rect width="100" height="20" x="1652.5" y="42.5" />
+<rect width="100" height="20" x="1752.5" y="42.5" />
+<rect width="100" height="20" x="1852.5" y="42.5" />
+<rect width="50" height="20" x="1952.5" y="42.5" />
+
+
+<rect width="100" height="20" x="2.5" y="62.5" />
+<rect width="100" height="20" x="102.5" y="62.5" />
+<rect width="100" height="20" x="202.5" y="62.5" />
+<rect width="100" height="20" x="302.5" y="62.5" />
+<rect width="100" height="20" x="402.5" y="62.5" />
+<rect width="100" height="20" x="502.5" y="62.5" />
+<rect width="100" height="20" x="602.5" y="62.5" />
+<rect width="100" height="20" x="702.5" y="62.5" />
+<rect width="100" height="20" x="1202.5" y="62.5" />
+<rect width="100" height="20" x="1302.5" y="62.5" />
+<rect width="100" height="20" x="1402.5" y="62.5" />
+<rect width="100" height="20" x="1502.5" y="62.5" />
+<rect width="100" height="20" x="1602.5" y="62.5" />
+<rect width="100" height="20" x="1702.5" y="62.5" />
+<rect width="100" height="20" x="1802.5" y="62.5" />
+<rect width="100" height="20" x="1902.5" y="62.5" />
+</g>
+
+<g  transform="translate(2020,0)" style="filter:url(#fil)">
+<rect width="100" height="20" x="152.5" y="2.5" />
+<rect width="100" height="20" x="252.5" y="2.5" />
+<rect width="100" height="20" x="352.5" y="2.5" />
+<rect width="100" height="20" x="452.5" y="2.5" />
+<rect width="100" height="20" x="552.5" y="2.5" />
+<rect width="100" height="20" x="652.5" y="2.5" />
+<rect width="100" height="20" x="752.5" y="2.5" />
+<rect width="100" height="20" x="852.5" y="2.5" />
+<rect width="100" height="20" x="952.5" y="2.5" />
+<rect width="100" height="20" x="1052.5" y="2.5" />
+<rect width="100" height="20" x="1152.5" y="2.5" />
+<rect width="100" height="20" x="1252.5" y="2.5" />
+<rect width="100" height="20" x="1352.5" y="2.5" />
+<rect width="100" height="20" x="1452.5" y="2.5" />
+<rect width="100" height="20" x="1552.5" y="2.5" />
+<rect width="100" height="20" x="1652.5" y="2.5" />
+<rect width="100" height="20" x="1752.5" y="2.5" />
+
+<rect width="100" height="20" x="102.5" y="22.5" />
+<rect width="100" height="20" x="202.5" y="22.5" />
+<rect width="100" height="20" x="302.5" y="22.5" />
+<rect width="100" height="20" x="402.5" y="22.5" />
+<rect width="100" height="20" x="502.5" y="22.5" />
+<rect width="100" height="20" x="602.5" y="22.5" />
+<rect width="100" height="20" x="702.5" y="22.5" />
+<rect width="100" height="20" x="802.5" y="22.5" />
+<rect width="100" height="20" x="902.5" y="22.5" />
+<rect width="100" height="20" x="1002.5" y="22.5" />
+<rect width="100" height="20" x="1102.5" y="22.5" />
+<rect width="100" height="20" x="1202.5" y="22.5" />
+<rect width="100" height="20" x="1302.5" y="22.5" />
+<rect width="100" height="20" x="1402.5" y="22.5" />
+<rect width="100" height="20" x="1502.5" y="22.5" />
+<rect width="100" height="20" x="1602.5" y="22.5" />
+<rect width="100" height="20" x="1702.5" y="22.5" />
+<rect width="100" height="20" x="1802.5" y="22.5" />
+
+<rect width="100" height="20" x="52.5" y="42.5" />
+<rect width="100" height="20" x="152.5" y="42.5" />
+<rect width="100" height="20" x="252.5" y="42.5" />
+<rect width="100" height="20" x="352.5" y="42.5" />
+<rect width="100" height="20" x="452.5" y="42.5" />
+<rect width="100" height="20" x="552.5" y="42.5" />
+<rect width="100" height="20" x="652.5" y="42.5" />
+<rect width="100" height="20" x="752.5" y="42.5" />
+<rect width="100" height="20" x="852.5" y="42.5" />
+<rect width="100" height="20" x="952.5" y="42.5" />
+<rect width="100" height="20" x="1052.5" y="42.5" />
+<rect width="100" height="20" x="1152.5" y="42.5" />
+<rect width="100" height="20" x="1252.5" y="42.5" />
+<rect width="100" height="20" x="1352.5" y="42.5" />
+<rect width="100" height="20" x="1452.5" y="42.5" />
+<rect width="100" height="20" x="1552.5" y="42.5" />
+<rect width="100" height="20" x="1652.5" y="42.5" />
+<rect width="100" height="20" x="1752.5" y="42.5" />
+<rect width="100" height="20" x="1852.5" y="42.5" />
+
+<rect width="100" height="20" x="2.5" y="62.5" />
+<rect width="100" height="20" x="102.5" y="62.5" />
+<rect width="100" height="20" x="202.5" y="62.5" />
+<rect width="100" height="20" x="302.5" y="62.5" />
+<rect width="100" height="20" x="402.5" y="62.5" />
+<rect width="100" height="20" x="502.5" y="62.5" />
+<rect width="100" height="20" x="602.5" y="62.5" />
+<rect width="100" height="20" x="702.5" y="62.5" />
+<rect width="100" height="20" x="802.5" y="62.5" />
+<rect width="100" height="20" x="902.5" y="62.5" />
+<rect width="100" height="20" x="1002.5" y="62.5" />
+<rect width="100" height="20" x="1102.5" y="62.5" />
+<rect width="100" height="20" x="1202.5" y="62.5" />
+<rect width="100" height="20" x="1302.5" y="62.5" />
+<rect width="100" height="20" x="1402.5" y="62.5" />
+<rect width="100" height="20" x="1502.5" y="62.5" />
+<rect width="100" height="20" x="1602.5" y="62.5" />
+<rect width="100" height="20" x="1702.5" y="62.5" />
+<rect width="100" height="20" x="1802.5" y="62.5" />
+<rect width="100" height="20" x="1902.5" y="62.5" />
+</g>
+
+<g  transform="translate(4035,0)" style="filter:url(#fil)">
+<rect width="50" height="20" x="52.5" y="2.5" />
+<rect width="50" height="20" x="102.5" y="2.5" />
+<rect width="50" height="20" x="252.5" y="2.5" />
+<rect width="50" height="20" x="302.5" y="2.5" />
+<rect width="50" height="20" x="452.5" y="2.5" />
+<rect width="50" height="20" x="502.5" y="2.5" />
+<rect width="50" height="20" x="652.5" y="2.5" />
+<rect width="50" height="20" x="702.5" y="2.5" />
+<rect width="50" height="20" x="852.5" y="2.5" />
+<rect width="50" height="20" x="902.5" y="2.5" />
+<rect width="50" height="20" x="1052.5" y="2.5" />
+<rect width="50" height="20" x="1102.5" y="2.5" />
+<rect width="50" height="20" x="1252.5" y="2.5" />
+<rect width="50" height="20" x="1302.5" y="2.5" />
+<rect width="50" height="20" x="1452.5" y="2.5" />
+<rect width="50" height="20" x="1502.5" y="2.5" />
+<rect width="50" height="20" x="1652.5" y="2.5" />
+<rect width="50" height="20" x="1702.5" y="2.5" />
+<rect width="50" height="20" x="1852.5" y="2.5" />
+<rect width="50" height="20" x="1902.5" y="2.5" />
+
+<rect width="100" height="20" x="52.5" y="22.5" />
+<rect width="100" height="20" x="252.5" y="22.5" />
+<rect width="100" height="20" x="452.5" y="22.5" />
+<rect width="100" height="20" x="652.5" y="22.5" />
+<rect width="100" height="20" x="852.5" y="22.5" />
+<rect width="100" height="20" x="1052.5" y="22.5" />
+<rect width="100" height="20" x="1252.5" y="22.5" />
+<rect width="100" height="20" x="1452.5" y="22.5" />
+<rect width="100" height="20" x="1652.5" y="22.5" />
+<rect width="100" height="20" x="1852.5" y="22.5" />
+
+<rect width="100" height="20" x="2.5" y="42.5" />
+<rect width="100" height="20" x="102.5" y="42.5" />
+<rect width="100" height="20" x="202.5" y="42.5" />
+<rect width="100" height="20" x="302.5" y="42.5" />
+<rect width="100" height="20" x="402.5" y="42.5" />
+<rect width="100" height="20" x="502.5" y="42.5" />
+<rect width="100" height="20" x="602.5" y="42.5" />
+<rect width="100" height="20" x="702.5" y="42.5" />
+<rect width="100" height="20" x="802.5" y="42.5" />
+<rect width="100" height="20" x="902.5" y="42.5" />
+<rect width="100" height="20" x="1002.5" y="42.5" />
+<rect width="100" height="20" x="1102.5" y="42.5" />
+<rect width="100" height="20" x="1202.5" y="42.5" />
+<rect width="100" height="20" x="1302.5" y="42.5" />
+<rect width="100" height="20" x="1402.5" y="42.5" />
+<rect width="100" height="20" x="1502.5" y="42.5" />
+<rect width="100" height="20" x="1602.5" y="42.5" />
+<rect width="100" height="20" x="1702.5" y="42.5" />
+<rect width="100" height="20" x="1802.5" y="42.5" />
+<rect width="100" height="20" x="1902.5" y="42.5" />
+
+<rect width="50" height="20" x="2.5" y="62.5" />
+<rect width="100" height="20" x="52.5" y="62.5" />
+<rect width="100" height="20" x="152.5" y="62.5" />
+<rect width="100" height="20" x="252.5" y="62.5" />
+<rect width="100" height="20" x="352.5" y="62.5" />
+<rect width="100" height="20" x="452.5" y="62.5" />
+<rect width="100" height="20" x="552.5" y="62.5" />
+<rect width="100" height="20" x="652.5" y="62.5" />
+<rect width="100" height="20" x="752.5" y="62.5" />
+<rect width="100" height="20" x="852.5" y="62.5" />
+<rect width="100" height="20" x="952.5" y="62.5" />
+<rect width="100" height="20" x="1052.5" y="62.5" />
+<rect width="100" height="20" x="1152.5" y="62.5" />
+<rect width="100" height="20" x="1252.5" y="62.5" />
+<rect width="100" height="20" x="1352.5" y="62.5" />
+<rect width="100" height="20" x="1452.5" y="62.5" />
+<rect width="100" height="20" x="1552.5" y="62.5" />
+<rect width="100" height="20" x="1652.5" y="62.5" />
+<rect width="100" height="20" x="1752.5" y="62.5" />
+<rect width="100" height="20" x="1852.5" y="62.5" />
+<rect width="50" height="20" x="1952.5" y="62.5" />
+</g>
+
+<g  transform="translate(6050,0)" style="filter:url(#fil)">
+<rect width="100" height="20" x="152.5" y="2.5" />
+<rect width="100" height="20" x="552.5" y="2.5" />
+<rect width="100" height="20" x="952.5" y="2.5" />
+<rect width="100" height="20" x="1352.5" y="2.5" />
+<rect width="100" height="20" x="1752.5" y="2.5" />
+
+<rect width="100" height="20" x="102.5" y="22.5" />
+<rect width="100" height="20" x="202.5" y="22.5" />
+<rect width="100" height="20" x="502.5" y="22.5" />
+<rect width="100" height="20" x="602.5" y="22.5" />
+<rect width="100" height="20" x="902.5" y="22.5" />
+<rect width="100" height="20" x="1002.5" y="22.5" />
+<rect width="100" height="20" x="1302.5" y="22.5" />
+<rect width="100" height="20" x="1402.5" y="22.5" />
+<rect width="100" height="20" x="1702.5" y="22.5" />
+<rect width="100" height="20" x="1802.5" y="22.5" />
+
+<rect width="100" height="20" x="52.5" y="42.5" />
+<rect width="100" height="20" x="152.5" y="42.5" />
+<rect width="100" height="20" x="252.5" y="42.5" />
+<rect width="100" height="20" x="452.5" y="42.5" />
+<rect width="100" height="20" x="552.5" y="42.5" />
+<rect width="100" height="20" x="652.5" y="42.5" />
+<rect width="100" height="20" x="852.5" y="42.5" />
+<rect width="100" height="20" x="952.5" y="42.5" />
+<rect width="100" height="20" x="1052.5" y="42.5" />
+<rect width="100" height="20" x="1252.5" y="42.5" />
+<rect width="100" height="20" x="1352.5" y="42.5" />
+<rect width="100" height="20" x="1452.5" y="42.5" />
+<rect width="100" height="20" x="1652.5" y="42.5" />
+<rect width="100" height="20" x="1752.5" y="42.5" />
+<rect width="100" height="20" x="1852.5" y="42.5" />
+
+<rect width="100" height="20" x="2.5" y="62.5" />
+<rect width="100" height="20" x="102.5" y="62.5" />
+<rect width="100" height="20" x="202.5" y="62.5" />
+<rect width="100" height="20" x="302.5" y="62.5" />
+<rect width="100" height="20" x="402.5" y="62.5" />
+<rect width="100" height="20" x="502.5" y="62.5" />
+<rect width="100" height="20" x="602.5" y="62.5" />
+<rect width="100" height="20" x="702.5" y="62.5" />
+<rect width="100" height="20" x="802.5" y="62.5" />
+<rect width="100" height="20" x="902.5" y="62.5" />
+<rect width="100" height="20" x="1002.5" y="62.5" />
+<rect width="100" height="20" x="1102.5" y="62.5" />
+<rect width="100" height="20" x="1202.5" y="62.5" />
+<rect width="100" height="20" x="1302.5" y="62.5" />
+<rect width="100" height="20" x="1402.5" y="62.5" />
+<rect width="100" height="20" x="1502.5" y="62.5" />
+<rect width="100" height="20" x="1602.5" y="62.5" />
+<rect width="100" height="20" x="1702.5" y="62.5" />
+<rect width="100" height="20" x="1802.5" y="62.5" />
+<rect width="100" height="20" x="1902.5" y="62.5" />
+</g>
+
+<g  transform="translate(8065,0)" style="filter:url(#fil)">
+<rect width="50" height="20" x="2.5" y="2.5" />
+<rect width="100" height="20" x="52.5" y="2.5" />
+<rect width="100" height="20" x="152.5" y="2.5" />
+<rect width="100" height="20" x="252.5" y="2.5" />
+<rect width="100" height="20" x="352.5" y="2.5" />
+<rect width="100" height="20" x="452.5" y="2.5" />
+<rect width="100" height="20" x="552.5" y="2.5" />
+<rect width="100" height="20" x="652.5" y="2.5" />
+<rect width="100" height="20" x="752.5" y="2.5" />
+<rect width="100" height="20" x="852.5" y="2.5" />
+<rect width="100" height="20" x="952.5" y="2.5" />
+<rect width="100" height="20" x="1052.5" y="2.5" />
+<rect width="100" height="20" x="1152.5" y="2.5" />
+<rect width="100" height="20" x="1252.5" y="2.5" />
+<rect width="100" height="20" x="1352.5" y="2.5" />
+<rect width="100" height="20" x="1452.5" y="2.5" />
+<rect width="100" height="20" x="1552.5" y="2.5" />
+<rect width="100" height="20" x="1652.5" y="2.5" />
+<rect width="100" height="20" x="1752.5" y="2.5" />
+<rect width="100" height="20" x="1852.5" y="2.5" />
+<rect width="50" height="20" x="1952.5" y="2.5" />
+
+<rect width="100" height="20" x="2.5" y="22.5" />
+<rect width="100" height="20" x="102.5" y="22.5" />
+<rect width="100" height="20" x="202.5" y="22.5" />
+<rect width="100" height="20" x="302.5" y="22.5" />
+<rect width="100" height="20" x="402.5" y="22.5" />
+<rect width="100" height="20" x="502.5" y="22.5" />
+<rect width="100" height="20" x="602.5" y="22.5" />
+<rect width="100" height="20" x="702.5" y="22.5" />
+<rect width="100" height="20" x="802.5" y="22.5" />
+<rect width="100" height="20" x="902.5" y="22.5" />
+<rect width="100" height="20" x="1002.5" y="22.5" />
+<rect width="100" height="20" x="1102.5" y="22.5" />
+<rect width="100" height="20" x="1202.5" y="22.5" />
+<rect width="100" height="20" x="1302.5" y="22.5" />
+<rect width="100" height="20" x="1402.5" y="22.5" />
+<rect width="100" height="20" x="1502.5" y="22.5" />
+<rect width="100" height="20" x="1602.5" y="22.5" />
+<rect width="100" height="20" x="1702.5" y="22.5" />
+<rect width="100" height="20" x="1802.5" y="22.5" />
+<rect width="100" height="20" x="1902.5" y="22.5" />
+
+<rect width="50" height="20" x="2.5" y="42.5" />
+<rect width="100" height="20" x="52.5" y="42.5" />
+<rect width="100" height="20" x="152.5" y="42.5" />
+<rect width="100" height="20" x="252.5" y="42.5" />
+<rect width="100" height="20" x="352.5" y="42.5" />
+<rect width="100" height="20" x="452.5" y="42.5" />
+<rect width="100" height="20" x="552.5" y="42.5" />
+<rect width="100" height="20" x="652.5" y="42.5" />
+<rect width="100" height="20" x="752.5" y="42.5" />
+<rect width="100" height="20" x="852.5" y="42.5" />
+<rect width="100" height="20" x="952.5" y="42.5" />
+<rect width="100" height="20" x="1052.5" y="42.5" />
+<rect width="100" height="20" x="1152.5" y="42.5" />
+<rect width="100" height="20" x="1252.5" y="42.5" />
+<rect width="100" height="20" x="1352.5" y="42.5" />
+<rect width="100" height="20" x="1452.5" y="42.5" />
+<rect width="100" height="20" x="1552.5" y="42.5" />
+<rect width="100" height="20" x="1652.5" y="42.5" />
+<rect width="100" height="20" x="1752.5" y="42.5" />
+<rect width="100" height="20" x="1852.5" y="42.5" />
+<rect width="50" height="20" x="1952.5" y="42.5" />
+
+<rect width="100" height="20" x="2.5" y="62.5" />
+<rect width="100" height="20" x="102.5" y="62.5" />
+<rect width="100" height="20" x="202.5" y="62.5" />
+<rect width="100" height="20" x="302.5" y="62.5" />
+<rect width="100" height="20" x="402.5" y="62.5" />
+<rect width="100" height="20" x="502.5" y="62.5" />
+<rect width="100" height="20" x="602.5" y="62.5" />
+<rect width="100" height="20" x="702.5" y="62.5" />
+<rect width="100" height="20" x="802.5" y="62.5" />
+<rect width="100" height="20" x="902.5" y="62.5" />
+<rect width="100" height="20" x="1002.5" y="62.5" />
+<rect width="100" height="20" x="1102.5" y="62.5" />
+<rect width="100" height="20" x="1202.5" y="62.5" />
+<rect width="100" height="20" x="1302.5" y="62.5" />
+<rect width="100" height="20" x="1402.5" y="62.5" />
+<rect width="100" height="20" x="1502.5" y="62.5" />
+<rect width="100" height="20" x="1602.5" y="62.5" />
+<rect width="100" height="20" x="1702.5" y="62.5" />
+<rect width="100" height="20" x="1802.5" y="62.5" />
+<rect width="100" height="20" x="1902.5" y="62.5" />
+</g>
+
+</svg>

@@ -1,4 +1,4 @@
-﻿const v_port={id:"hd",h_scale:null,
+﻿const v_port={id:"hd", /* h_scale:null, */ 
 idA:[["k1a","ao"],["k1b","ao"],["k1c","ao"],["k1d","ao"],["k1e","ao"],["k1f","ao"],["k2a","ao"],["k2b","ao"],["k2c","ao"],["k2d","ao"],["k2e","ao"],["k2f","ao"],["k3a","ao"],["k3b","ao"],["k3c","ao"],["k3d","ao"],["k3e","ao"],["k3f","ao"],["u1a","op"],["u1b","op"],["u1c","op"],["por1","ap"],["por2","ap"],["por3","ap"]],
 idO:[["kar1",0],["kar2",0],["kar3",0],["u1",0],["por",0]],
 a_p(id,t){
@@ -9,25 +9,26 @@ handleEvent(){
 let vyska=window.visualViewport.height;
 let o=document.getElementById(this.id);
 o.style.height=vyska+"px"; /* upraví výšku objektu podle VW port API */
-let dor=null; /* dorovnání SCALE */
+/* let dor=null;  dorovnání SCALE */
 
+/*
 if(visualViewport.scale<1&&visualViewport.scale!=this.h_scale)
 {
 this.h_scale=visualViewport.scale;
 dor=(visualViewport.scale-1)+1;
-o.style["-webkit-transform"]="scale("+dor+")"; /* prefix css */
-o.style["-ms-transform"]="scale("+dor+")"; /* prefix css */
+o.style["-webkit-transform"]="scale("+dor+")";
+o.style["-ms-transform"]="scale("+dor+")";
 o.style.transform="scale("+dor+")";
 }
 else if(visualViewport.scale>=1&&visualViewport.scale!=this.h_scale)
 {
 this.h_scale=visualViewport.scale;
 dor=(visualViewport.scale);
-o.style["-webkit-transform"]="scale("+dor+")"; /* prefix css */
-o.style["-ms-transform"]="scale("+dor+")"; /* prefix css */
+o.style["-webkit-transform"]="scale("+dor+")";
+o.style["-ms-transform"]="scale("+dor+")";
 o.style.transform="scale("+dor+")";
 }
-
+*/
 let d=this.idO.length;
 for(let i=0;i<d;i++)
 {
@@ -143,11 +144,6 @@ this.handleEvent(); /* aktivuje Handle, pokud by bylo najeto zrovna na objekt s 
 }}};
 
 
-
-v_port.zahajit(); /* aktivuje Visual View port API + úprava hlavičky na 100vh */
-
-
-
 const odkazy={t1:500,t2:1000,
 uprav(){
 let ob=document.querySelectorAll("a"); /* najde včechny tagy A na stránce a udělá z nich pole */
@@ -203,6 +199,6 @@ let textTW="window.open('"+this._hrefTW+"','Sdílet na Twittru','width="+this.SI
 document.getElementById(this._idTW).href="javascript:"+textTW;
 }}};
 
-
+v_port.zahajit(); /* aktivuje Visual View port API + úprava hlavičky na 100vh */
 odkazy.uprav(); /* opraví odkazi na stránce na SCROOL */
 sdilet.prepis(); /* zajistí přepis HREF tlačítek pro sdílení na Facebooku a Twittru */

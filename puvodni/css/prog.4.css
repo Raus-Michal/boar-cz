@@ -288,6 +288,7 @@ justify-content:center;
 -webkit-box-align:center;
 -ms-flex-align:center;
 align-items:center;
+background:var(--b3);
 }
 
 .b-u > *:nth-child(1)
@@ -402,7 +403,6 @@ position:absolute;
 z-index:5;
 width:100%;
 height:100%;
-background:transparent;
 }
 
 img

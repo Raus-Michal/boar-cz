@@ -1,4 +1,4 @@
-﻿const v_port={id:"hd", /* h_scale:null, */ 
+﻿const v_port={id:["hd","c-svg"],
 idA:[["k1a","ao"],["k1b","ao"],["k1c","ao"],["k1d","ao"],["k1e","ao"],["k1f","ao"],["k2a","ao"],["k2b","ao"],["k2c","ao"],["k2d","ao"],["k2e","ao"],["k2f","ao"],["k3a","ao"],["k3b","ao"],["k3c","ao"],["k3d","ao"],["k3e","ao"],["k3f","ao"],["u1a","op"],["u1b","op"],["u1c","op"],["por1","ap"],["por2","ap"],["por3","ap"]],
 idO:[["kar1",0],["kar2",0],["kar3",0],["u1",0],["por",0]],
 a_p(id,t){
@@ -6,29 +6,12 @@ a_p(id,t){
 setTimeout(" document.getElementById('"+id+"').style.animationPlayState='running';",t);
 },
 handleEvent(){
-let vyska=window.visualViewport.height;
-let o=document.getElementById(this.id);
-o.style.height=vyska+"px"; /* upraví výšku objektu podle VW port API */
-/* let dor=null;  dorovnání SCALE */
+const vyska=window.visualViewport.height;
+const o1=document.getElementById(this.id[0]);
+const o2=document.getElementById(this.id[1]);
 
-/*
-if(visualViewport.scale<1&&visualViewport.scale!=this.h_scale)
-{
-this.h_scale=visualViewport.scale;
-dor=(visualViewport.scale-1)+1;
-o.style["-webkit-transform"]="scale("+dor+")";
-o.style["-ms-transform"]="scale("+dor+")";
-o.style.transform="scale("+dor+")";
-}
-else if(visualViewport.scale>=1&&visualViewport.scale!=this.h_scale)
-{
-this.h_scale=visualViewport.scale;
-dor=(visualViewport.scale);
-o.style["-webkit-transform"]="scale("+dor+")";
-o.style["-ms-transform"]="scale("+dor+")";
-o.style.transform="scale("+dor+")";
-}
-*/
+o1.style.height=vyska+"px"; /* upraví výšku objektu podle VW port API */
+o2.style.height=vyska+"px";
 let d=this.idO.length;
 for(let i=0;i<d;i++)
 {

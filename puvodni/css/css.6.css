@@ -397,6 +397,7 @@ justify-content:flex-end;
 .vol p
 {
 border-color:var(--b5) var(--b3) var(--b3) var(--b5);
+margin:2rem 1rem;
 }
 
 .kar

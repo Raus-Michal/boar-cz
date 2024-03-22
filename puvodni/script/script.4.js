@@ -126,6 +126,8 @@ this.animaceAktivace(); /* přepíše CLASS objektů na které se vztahuje anima
 this.handleEvent(); /* aktivuje Handle, pokud by bylo najeto zrovna na objekt s animací - aby se spustila */
 }}};
 
+v_port.zahajit(); /* aktivuje Visual View port API + úprava hlavičky na 100vh */
+
 
 const odkazy={t1:500,t2:1000,
 uprav(){
@@ -182,6 +184,7 @@ let textTW="window.open('"+this._hrefTW+"','Sdílet na Twittru','width="+this.SI
 document.getElementById(this._idTW).href="javascript:"+textTW;
 }}};
 
-v_port.zahajit(); /* aktivuje Visual View port API + úprava hlavičky na 100vh */
+setTimeout("v_port.zahajit();",500); /* aktivuje Visual View port API + úprava hlavičky na 100vh - pro pomalejší zařízení za 500ms */
+setTimeout("v_port.zahajit();",1000); /* aktivuje Visual View port API + úprava hlavičky na 100vh - pro ještě pomalejší zařízení za 1000ms */
 odkazy.uprav(); /* opraví odkazi na stránce na SCROOL */
 sdilet.prepis(); /* zajistí přepis HREF tlačítek pro sdílení na Facebooku a Twittru */

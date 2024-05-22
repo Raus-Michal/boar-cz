@@ -6,7 +6,7 @@
 
 <item>
      <link>https://www.boar-cz.info/</link>
-     <title>Boar-cz webové projekty</title>
+     <title>Boar-cz webové stránky na míru</title>
      <description>Boar-cz ve svém portfoliu představuje webové projekty: prezentační weby, webové články a webové aplikace. Precizní webové stránky to je Boar-cz.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>0</ror:sortOrder>
@@ -32,6 +32,14 @@
      <link>https://www.boar-cz.info/nocni-vlk/NocniVLK.html</link>
      <title>Noční VLK</title>
      <description>On-line webová aplikace, která pohlídá časové intervaly pro kontrolní obchůzky: objektu, věcí anebo osob.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.boar-cz.info/sifrovac/</link>
+     <title>Šifrovač - Šifrování textu on-line</title>
+     <description>On-line šifrování textu. Webová aplikace, která umí šifrovat a dešifrovat text.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>

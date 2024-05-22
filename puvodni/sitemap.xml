@@ -9,17 +9,17 @@
 
 <url>
   <loc>https://www.boar-cz.info/</loc>
-  <lastmod>2024-01-28T20:02:13+00:00</lastmod>
+  <lastmod>2024-05-22T07:07:05+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.boar-cz.info/kontakt/</loc>
-  <lastmod>2024-01-28T20:02:15+00:00</lastmod>
+  <lastmod>2024-03-11T07:13:13+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.boar-cz.info/programator/</loc>
-  <lastmod>2024-01-28T20:02:16+00:00</lastmod>
+  <lastmod>2024-03-11T07:13:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -28,13 +28,18 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://www.boar-cz.info/sifrovac/</loc>
+  <lastmod>2024-05-22T07:07:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://www.boar-cz.info/o-webu/</loc>
-  <lastmod>2024-01-28T20:02:48+00:00</lastmod>
+  <lastmod>2024-05-22T07:07:05+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.boar-cz.info/programator/zivotopis-raus-michal.pdf</loc>
-  <lastmod>2024-01-28T20:02:16+00:00</lastmod>
+  <lastmod>2024-03-11T07:13:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 

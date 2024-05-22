@@ -70,9 +70,9 @@
 </head>
 <body>
 <?php
-$vytv=fopen("../pocitani/navstev.txt","a");
+$vytv=fopen("../statistika/pocet.txt","a");
 fclose($vytv);
-$handle=fopen("../pocitani/navstev.txt","r+");
+$handle=fopen("../statistika/pocet.txt","r+");
 $pocet=fread($handle,20);
 fclose($handle);
 ?>
@@ -186,7 +186,7 @@ fclose($handle);
 <div class="col">
 <p>Posláním této webové stránky je <strong>ukázat schopnosti programátora Boar-cz</strong> jakožto front-end vývojáře. Tato <strong>webová stránka cílí na&nbsp;programátorské firmy</strong>, které by&nbsp;měli v&nbsp;úmyslu rozšířit svůj tým o&nbsp;dalšího člena. V&nbsp;současné době je&nbsp;kódování webů koníčkem programátora Boar-cz, ale&nbsp;<strong>s&nbsp;první solidní nabídkou, třeba právě od&nbsp;vás</strong>, se&nbsp;jeho koníček může proměnit v&nbsp;zaměstnání. <em>Konec koncům není nad&nbsp;to, když &nbsp;je práce koníčkem.</em></p>
 <p><strong>Sekundárně tato webová stránka slouží</strong> potencionálním zájemcům o&nbsp;vyrobení kvalitní webové stránky od&nbsp;programátora. Vyrobení kvalitního prezentačního webu, webového článku anebo webové aplikace, je&nbsp;náročná disciplína. Ovšem za&nbsp;solidní honorář, není problém vytvořit některý z&nbsp;uvedených druhů webů přímo na&nbsp;míru vašim potřebám.</p>
-<p>Pokud by bylo vašim záměrem <strong>mít nového kolegu ve&nbsp;vašem programátorském týmu</strong> anebo&nbsp;<strong>mít vlastní webové stránky na&nbsp;míru</strong>, neváhejte nás kontaktovat.</p>
+<p>Pokud by bylo vašim záměrem <strong>mít nového kolegu ve&nbsp;vašem programátorském týmu</strong> anebo&nbsp;<strong>mít vlastní webové stránky na&nbsp;přání</strong>, neváhejte nás kontaktovat.</p>
 </div>
 
 
@@ -232,7 +232,7 @@ fclose($handle);
 
 </section>
 
-<div class="cc"><p>Počet zobrazení homepage: <?php echo $pocet; ?> </p></div>
+<div class="cc"><p>Počet návštěv na&nbsp;homepage: <?php echo $pocet; ?> </p></div>
 
 <div class="a-box">
 <a href="../" title="Zpět na domovskou stránku">

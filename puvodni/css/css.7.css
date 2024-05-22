@@ -878,15 +878,15 @@ margin-bottom:1.5rem;
 color:white;
 }
 
-.l1,.l2,.ico1,.ico2,.ico3,.ba
+.l1,.l2,.l4,.ico1,.ico2,.ico3,.ba
 {
 display:block;
-background:url('../svg/ico-s.svg') no-repeat;
-background-size:600%;
+background:url('../svg/ico-s.1.svg') no-repeat;
+background-size:700%; /* každý obrázek + 100% - 7 svg = 700% */
 height:0;
 }
 
-.l1,.l2
+.l1,.l2,.l4
 {
 width:10rem;
 min-width:10rem;
@@ -908,33 +908,40 @@ background-position:0 0;
 
 .ico2
 {
-background-position:20% 0;
+background-position:16.666% 0;
 }
 
 .ico3
 {
-background-position:40% 0;
+background-position:33.333% 0;
 }
 
 .l1
 {
-background-position:60% 0;
+background-position:49.999% 0;
 }
 
 
 .l2
 {
-background-position:80% 0;
+background-position:66.665% 0;
 }
 
 .ba
 {
+background-position:83.331% 0;
+}
+
+.l4
+{
+/* logo projekt 4 - šifrovač */
 background-position:100% 0;
 }
 
 
 .l3
 {
+/* logo v projekt 3 - Boar */
 width:10rem;
 height:auto;
 -webkit-transform:scale(1.2);
@@ -1061,4 +1068,9 @@ background-size:2rem auto;
 {
 background:var(--b2);
 background:radial-gradient(ellipse 150% 100%,var(--b2),transparent);
+}
+
+.pt1
+{
+padding-top:1rem;
 }

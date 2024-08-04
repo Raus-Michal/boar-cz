@@ -46,7 +46,7 @@ dd{margin-left:0;}
 @font-face{
 font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
 font-family:"nadpis"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
-src:url("../font/nadpis.woff2") format("woff2"),url("../font/nadpis.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+src:url("../font/nadpis.woff2") format("woff2 supports variations"),url("../font/nadpis.woff2") format("woff2-variations"),url("../font/nadpis.woff2") format("woff2"),url("../font/nadpis.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
 font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
 font-style:normal;
 }
@@ -54,7 +54,7 @@ font-style:normal;
 @font-face{
 font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
 font-family:"text"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
-src:url("../font/text.woff2") format("woff2"),url("../font/text.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+src:url("../font/text.woff2") format("woff2 supports variations"),url("../font/text.woff2") format("woff2-variations"),url("../font/text.woff2") format("woff2"),url("../font/text.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
 font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
 font-style:normal;
 }

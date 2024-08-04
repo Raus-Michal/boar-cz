@@ -56,15 +56,19 @@ legend{padding:0 .5rem;}
 
 
 @font-face{
-font-display:swap;
-font-family:"nadpis";
-src:url("../font/nadpis.ttf");
+font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
+font-family:"nadpis"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
+src:url("../font/nadpis.woff2") format("woff2"),url("../font/nadpis.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-style:normal;
 }
 
 @font-face{
-font-display:swap;
-font-family:"text";
-src:url("../font/text.ttf");
+font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
+font-family:"text"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
+src:url("../font/text.woff2") format("woff2"),url("../font/text.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-style:normal;
 }
 
 * {
@@ -141,12 +145,13 @@ letter-spacing:.01rem;
 padding:2rem 1rem 0 1rem;
 line-height:1.2;
 margin-bottom:1rem;
+font-weight:700;
 }
 
 h1
 {
 font-size:2rem;
-font-size:calc(1.5rem + 1vw);
+font-size:calc(2rem + 2vw);
 text-align:center;
 }
 
@@ -155,19 +160,19 @@ text-align:center;
 h2
 {
 font-size:1.5rem;
-font-size:calc(1.25rem + 1vw);
+font-size:calc(1.5rem + 1vw);
 }
 
 h3
 {
 font-size:1.25rem;
-font-size:calc(1rem + 1vw);
+font-size:calc(1.25rem + 1vw);
 }
 
 h4
 {
 font-size:1.1rem;
-font-size:calc(.8rem + 1vw);
+font-size:calc(1.1rem + 1vw);
 }
 
 
@@ -275,7 +280,7 @@ font-weight:bold;
 .b-u
 {
 position:relative;
-padding:2rem 1rem 4rem 1rem;
+padding:2rem;
 display:-ms-grid;
 display:grid;
 -ms-grid-columns:auto;
@@ -289,6 +294,11 @@ justify-content:center;
 -ms-flex-align:center;
 align-items:center;
 background:var(--b3);
+margin:1rem;
+margin-bottom:2rem;
+width:auto;
+max-width:45rem; /* 720px */
+border-radius:32px 0;
 }
 
 .b-u > *:nth-child(1)
@@ -446,7 +456,7 @@ text-align:justify;
 margin:0;
 padding:1rem;
 background:var(--b2);
-border-radius:0 16px 0 16px;
+border-radius:16px 0;
 line-height:1.7;
 }
 
@@ -548,6 +558,7 @@ gap:0 3rem;
 
 .b4
 {
+width:100%;
 max-width:40ch;
 }
 
@@ -570,6 +581,28 @@ text-align:justify;
 hyphens:auto;
 padding:1rem 0;
 }
+
+
+.col
+{
+margin:0;
+-webkit-columns:20rem;
+-moz-columns:20rem;
+columns:17rem;
+gap:2rem;
+-webkit-column-rule:dotted 2px var(--b3);
+-moz-column-rule:dotted 2px var(--b3);
+column-rule:dotted 2px var(--b3);
+-webkit-column-fill:balance;
+-moz-column-fill:balance;
+column-fill:balance;
+text-align:justify;
+-webkit-hyphens:auto;
+-ms-hyphens:auto;
+hyphens:auto;
+}
+
+
 
 
 .bokem
@@ -629,6 +662,12 @@ color:white;
 width:20rem;
 }}
 
+.c-fl
+{
+display:flex;
+justify-content:center;
+}
+
 .fm
 {
 font-size:.8rem;
@@ -637,4 +676,9 @@ font-size:.8rem;
 .ibb
 {
 display:block;
+}
+
+.iib
+{
+display:inline-block;
 }

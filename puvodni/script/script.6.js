@@ -49,8 +49,8 @@ const page_Top=parseInt(window.visualViewport.pageTop); // zjistí horní polohu
 const o1=document.getElementById(this.id[0]); // první objekt změny hlavička stránky
 const o2=document.getElementById(this.id[1]); // druhý objekt změny SVG obrázek
 
-o1.style.height=`${vyska}px`; // upraví výšku objektu podle visualViewport port API
-o2.style.height=`${vyska}px`; // upraví výšku objektu podle visualViewport port API
+o1.style.minHeight=`${vyska}px`; // upraví výšku objektu podle visualViewport port API
+o2.style.minHeight=`${vyska}px`; // upraví výšku objektu podle visualViewport port API
 
 let d=this.idO.length; // délka pole s animacemi
 
@@ -151,7 +151,7 @@ let id=this.idA.length; // délka pole animací3
 for(let i=0;i<id;i++)
 {
 let ob=document.getElementById(this.idA[i][0]); // objekt HTML
-ob.className+=` ${this.idA[i][1]}`; // přidělení class objektu
+ob.classList.add(this.idA[i][1]); // přidělení class objektu
 }},
 
 DEaktivace(){

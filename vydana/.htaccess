@@ -6,21 +6,45 @@ RewriteCond %{HTTP_USER_AGENT} !(BlackBerry)
 RewriteCond %{HTTP_USER_AGENT} !(Windows\sNT\s5\.[12])
 RewriteCond %{HTTP_HOST} ^(www\.)?boar-cz.info
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L]
-ExpiresActive on
-ExpiresByType application/x-javascript A31536000
-ExpiresByType application/javascript A31536000
-ExpiresByType application/font-ttf A31536000
-ExpiresByType application/x-font-ttf A31536000
-ExpiresByType font/ttf A31536000
-ExpiresByType font/opentype A31536000
-ExpiresByType font/* A31536000
-ExpiresByType text/css A31536000
-ExpiresByType image/gif A31536000
-ExpiresByType image/jpeg A31536000
-ExpiresByType image/jpg A31536000
-ExpiresByType image/p-jpeg A31536000
-ExpiresByType image/png A31536000
-ExpiresByType image/svg+xml A31536000
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Fonts
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+
+  # CSS and JavaScript
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+
+  # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Fonts
+  <FilesMatch "\.(woff|woff2)$">
+      Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+
+  # CSS and JavaScript
+  <FilesMatch "\.(css|js)$">
+      Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+
+  # Images
+  <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp)$">
+      Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+</IfModule>
+
+
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE application/javascript
   AddOutputFilterByType DEFLATE application/json

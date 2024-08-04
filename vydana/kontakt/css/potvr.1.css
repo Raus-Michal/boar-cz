@@ -1,0 +1,421 @@
+﻿
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+   -ms-text-size-adjust: 100%;
+       text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+main {
+  display: block;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+a {
+  background-color: transparent;
+}
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+b, strong {
+  font-weight: bolder;
+}
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+img {
+  border-style: none;
+}
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+button, input { 
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+progress {
+  vertical-align: baseline;
+}
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+p, ul, ol, dl, table, blockquote, pre, figure, hr
+{
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: .5rem;
+}
+
+ul ul, ul ol, ol ul, ol ol
+{
+  margin-bottom: 0;
+}
+
+ul, ol, dd {
+  padding-left: 1.75rem;
+}
+
+dd {
+  margin-left: 0;
+}
+
+blockquote {
+  border: 0;
+  padding-left: 1.75rem;
+  margin-left: 0;
+  font-style: italic;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}  
+
+figure > table, figure > img, figure > picture {
+  margin-bottom: 0;
+}
+
+fieldset {
+  border: 0;
+}
+
+legend {
+  padding: 0 .5rem;
+}
+
+hr {
+  border-style: solid;
+  opacity: .25;
+}
+
+/* konec NORMALIZACE */
+
+:root
+{
+--b1:rgb(168,110,87); /* hnědá */
+/* přechodové barvy */
+--b2:rgb(168,151,87); /* hnědá - do béžova */
+--b2_9:rgba(168,151,87,.95); /* hnědá - do béžova 95% krytí */
+--b2_6:rgba(168,151,87,.6); /* hnědá - do béžova 60% krytí */
+--b3:rgb(168,87,104); /* hnědá - do růžova */
+--b4:rgb(87,168,110); /* zelená */
+--b5:rgb(110,87,168); /* fialová */
+
+/* dobrý kontrast: b2 a černá , b4 a černá */
+/* dobrý kontrast: b5 a bílá */
+}
+
+@font-face{
+font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
+font-family:"nadpis"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
+src:url("../font/nadpis.woff2") format("woff2"),url("../font/nadpis.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-style:normal;
+}
+
+@font-face{
+font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
+font-family:"text"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
+src:url("../font/text.woff2") format("woff2"),url("../font/text.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-style:normal;
+}
+
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+
+body
+{
+display:-webkit-box;
+display:-ms-flexbox;
+display:flex;
+-ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+-webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+text-align:center;
+font-family: "text","Arial","Sans-Serif"; /* Formátování pro Bezpatkové písmo */
+color:black;
+font-size:100%;
+background: darkgray;
+padding:0 1rem 0 1rem;
+margin:0;
+min-height:100vh;
+}
+
+
+h1 , h2 , h3 , h4 , h5
+{
+font-family:"nadpis","Verda";
+letter-spacing: 0.1rem; /*vlastnost určuje mezeru mezi jednotlivými písmeny */
+-webkit-font-variant-ligatures: common-ligatures;
+font-variant-ligatures: common-ligatures;
+font-weight:700;
+}
+
+h1
+{
+font-size: 1.5rem;
+margin-bottom:1.5rem;
+}
+
+h2
+{
+font-size: 1.25rem;
+margin-bottom:1.25rem;
+}
+
+h3
+{
+font-size: 1rem;
+margin-bottom:1rem;
+}
+
+
+
+/* pokud je obrazovka větší než 39em - 624px  */
+@media only screen and (min-width: 39em)
+{
+h1
+{
+font-size: calc(1.5rem + .1vw);
+}
+
+h2
+{
+font-size: calc(1.25rem + .1vw);
+}
+
+h3
+{
+font-size: calc(1rem + .05vw);
+}}
+
+.potvrzeni
+{
+width:80%;
+max-width:500px;
+background:white;
+border-radius: 8px;
+overflow: hidden;
+}
+
+
+.dia_hlavicka
+{
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: normal;
+    -ms-flex-direction: row;
+        flex-direction: row;
+-ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+-webkit-box-align:center;
+    -ms-flex-align:center;
+        align-items:center;
+-webkit-box-pack: start;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+padding: 5px;
+margin:0;
+margin-bottom: 1rem;
+gap:1rem;
+background-color: var(--b2);
+border-bottom: 2px solid black;
+}
+
+.hla_p
+{
+font-family: "nadpis", "Verda";
+margin:0;
+}
+
+.dia_obsah
+{
+padding:1rem;
+}
+
+.px50
+{
+width:50px;
+height:50px;
+}
+
+svg
+{
+width:100%;
+height:auto;
+}
+
+.w80
+{
+width:5rem;
+width:calc(5rem + 1vw);
+height:auto;
+margin-bottom:1.5rem;
+}
+
+.vse_velkym
+{
+text-transform: uppercase; /* vše velkým */
+}
+
+
+.but
+{
+border:1px dotted var(--b4);
+padding:.5rem;
+color:black;
+background:white;
+cursor:pointer;
+font-weight:600;
+}
+
+.anim_o
+{
+-webkit-animation: zobraz 1s 1s both;
+        animation: zobraz 1s 1s both;
+}
+
+@-webkit-keyframes zobraz
+{
+0%{ opacity:.2;}
+100%{ opacity:1;}
+}
+
+@keyframes zobraz
+{
+0%{ opacity:.2;}
+100%{ opacity:1;}
+}
+

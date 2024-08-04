@@ -2,44 +2,44 @@
 <html lang="cs" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width , initial-scale=1.0 , viewport-fit=cover">
-<link rel="stylesheet" href="../css/kon.4.css">
-<meta name="description" content="Kontaktní formulář pomocí kterého můžete napsat zprávu na Boar-cz.">
-<meta name="keywords" content="kontakt Boar-cz,napsat Boar-cz">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<link rel="stylesheet" href="css/kon.2.css">
+<meta name="description" content="Kontaktní formulář pomocí kterého můžete napsat zprávu provozovateli webu.">
+<meta name="keywords" content="kontaktní formulář,kontakt">
 <meta name="author" content="Boar-cz">
-<meta name="application-name" content="Boar-cz">
-<meta property="og:title" content="Boar-cz - kontakt">
-<meta property="og:description" content="Kontaktní formulář pomocí kterého můžete napsat zprávu na Boar-cz.">
+<meta name="robots" content="index,follow">
+<meta name="application-name" content="Kontaktní formulář">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kontaktní formulář">
+<meta property="og:description" content="Kontaktní formulář pomocí kterého můžete napsat zprávu provozovateli webu.">
 <meta property="og:image" content="https://www.boar-cz.info/nahled/nahled.gif">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:site_name" content="Boar-cz">
-<meta property="article:tag" content="Boar-cz">
 <meta property="og:url" content="https://www.boar-cz.info">
-<meta name="robots" content="index , follow">
+<meta property="og:update_time" content="2024-08-04T18:00:00+01:00">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:site" content="@boar-cz">
 <meta property="twitter:url" content="https://www.boar-cz.info/">
-<meta property="twitter:title" content="Boar-cz - kontakt">
-<meta property="twitter:description" content="Kontaktní formulář pomocí kterého můžete napsat zprávu na Boar-cz.">
+<meta property="twitter:title" content="Kontaktní formulář">
+<meta property="twitter:description" content="Kontaktní formulář pomocí kterého můžete napsat zprávu provozovateli webu.">
 <meta property="twitter:image" content="https://www.boar-cz.info/nahled/nahled.gif">
-<meta name="author" content="Boar-cz">
-<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-<link rel="manifest" href="../favicon/site.webmanifest">
-<link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#ffc40d">
 <meta name="theme-color" content="#ffffff">
-<title>Boar-cz - kontakt</title>
+<title>Kontaktní formulář</title>
 <script type="application/ld+json" class="schemantra">
 {
 "@context": "https://schema.org",
 "@type": "WebApplication",
 "@id": "WebApplication",
-"dateCreated": "2023-01-26",
-"dateModified": "2024-03-08",
-"datePublished": "2023-01-26",
-"version": "[1,0]",
+"dateCreated": "2024-06-03",
+"dateModified": "2024-08-04",
+"datePublished": "2024-06-03",
+"version": "[1,1]",
 "mainEntityOfPage": "https://www.boar-cz.info",
 "description": "Kontaktní formulář, který po změně loga, názvu a barev se stává univerzální aplikací pro jakýkoli web.",
 "abstract": "Jednoduchá Javascriptová aplikace na odesílání emailu pomocí vyplnění formuláře od uživatele.",
@@ -131,7 +131,15 @@
 <button id="ne" class="but" type="button" title="Neuvádět email">Nechci uvádět email</button>
 </li>
 <li class="fr">
-<button id="pr1" class="but bf" type="button" title="Proč vyplnit jméno a email?"><span id="s1" class="i"> </span>Proč vyplnit?</button>
+<button id="pr1" class="but bf" type="button" title="Proč vyplnit jméno a email?"><span id="s1" class="i">
+<svg width="40" height="40" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="black" fill="black">
+<g id="info">
+<circle fill="none" cx="200" cy="200" r="197" />
+<path d="m 132.8,151.5 h 135.4 v 35.4 h -40.6 v 107.3 h 40.6 v 35.4 H 132.8 v -35.4 h 40.6 V 186.9 h -40.6 z" />
+<circle cx="200" cy="89" r="35" />
+</g>
+</svg>
+</span>Proč vyplnit?</button>
 </li>
 </ul>
 </fieldset>
@@ -154,7 +162,11 @@
 <label><strong>Výsledek</strong>:</label><input id="v" type="number" min="0" title="Zapište součet čísel výše"  required>
 </li>
 <li class="fr">
-<button id="pr2" class="but bf" type="button" title="Proč kontrolní výpočet?"><span id="s2" class="i"> </span>Proč výpočet?</button>
+<button id="pr2" class="but bf" type="button" title="Proč kontrolní výpočet?"><span id="s2" class="i">
+<svg width="40" height="40" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="black" fill="black">
+<use xlink:href="#info" />
+</svg>
+</span>Proč výpočet?</button>
 </li>
 </ul>
 </fieldset>
@@ -222,7 +234,11 @@ Home page
 <dialog id="d-u">
 <div class="d-h">
 <div class="bf">
-<div class="i"> </div>
+<div class="i">
+<svg class="i-w" width="40" height="40" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="black" fill="black">
+<use xlink:href="#info" />
+</svg>
+</div>
 <p>Informace</p>
 </div>
 </div>
@@ -238,7 +254,11 @@ Home page
 <dialog id="d-c">
 <div class="d-h">
 <div class="bf">
-<div class="i"> </div>
+<div class="i">
+<svg class="i-w" width="40" height="40" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="black" fill="black">
+<use xlink:href="#info" />
+</svg>
+</div>
 <p>Informace</p>
 </div>
 </div>
@@ -254,7 +274,11 @@ Home page
 <dialog id="d-v">
 <div class="d-h">
 <div class="bf">
-<div class="i"> </div>
+<div class="i">
+<svg class="i-w" width="40" height="40" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="black" fill="black">
+<use xlink:href="#info" />
+</svg>
+</div>
 <p>Informace</p>
 </div>
 </div>
@@ -272,7 +296,11 @@ Home page
 <dialog id="d-o">
 <div class="d-h">
 <div class="bf">
-<div class="i"> </div>
+<div class="i">
+<svg class="i-w" width="40" height="40" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="black" fill="black">
+<use xlink:href="#info" />
+</svg>
+</div>
 <p>Informace</p>
 </div>
 </div>
@@ -283,7 +311,7 @@ Home page
 </div>
 <div class="d-p oo">
 <div class="s-b">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 40" fill="transparent" stroke="rgb(87,168,110)" stroke-width="5">
+<svg width="190" height="40" viewBox="0 0 190 40" fill="transparent" stroke="rgb(87,168,110)" stroke-width="5">
 <circle cx="20" cy="20" r="10" opacity="0">
 <animate id="cir_1" begin="indefined" attributeName="opacity" from="0" to="1" dur="500ms" fill="freeze" restart="whenNotActive" />
 <animate begin="cir_6.end + 500ms" attributeName="opacity" from="1" to="0" dur="500ms" fill="freeze" />
@@ -313,6 +341,6 @@ Home page
 </div>
 </dialog>
 
-<script src="../script/kontakt.3.js" async> </script>
+<script src="script/kontakt.1.js" async> </script>
 </body>
 </html>

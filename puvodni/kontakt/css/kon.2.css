@@ -59,6 +59,7 @@ legend{padding:0 .5rem;}
 /* dobrý kontrast: b5 a bílá */
 }
 
+
 @font-face{
 font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
 font-family:"nadpis"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
@@ -105,7 +106,7 @@ cursor:pointer;
 
 button
 {
-font-weight:normal;
+font-weight:600;
 }
 
 a,a:link,a:visited,a:active
@@ -125,7 +126,7 @@ h1,h2,h3,h4
 font-family:"nadpis","Verda","Sans-Serif";
 -webkit-font-variant-ligatures:common-ligatures;
 font-variant-ligatures:common-ligatures;
-font-weight:normal;
+font-weight:700;
 letter-spacing:.01rem;
 padding-top:1rem;
 line-height:1.2;
@@ -417,25 +418,22 @@ padding:.5rem;
 }
 
 
-.i
-{
-display:block;
-background:url('../svg/ico-s.1.svg') no-repeat;
-background-size:700%;
-height:0;
-}
 
 .i
 {
+display:inline-block;
 width:2rem;
 min-width:2rem;
-padding-bottom:2rem;
+height:2rem;
+min-height:2rem;
 }
 
-.i
+.i-w
 {
-background-position:0 0;
+stroke:white;
+fill:white;
 }
+
 
 .aa,.but
 {

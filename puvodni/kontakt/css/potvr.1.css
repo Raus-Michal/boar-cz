@@ -231,15 +231,19 @@ hr {
 }
 
 @font-face{
-font-display:swap;
-font-family:"nadpis";
-src:url("../font/nadpis.ttf");
+font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
+font-family:"nadpis"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
+src:url("../font/nadpis.woff2") format("woff2"),url("../font/nadpis.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-style:normal;
 }
 
 @font-face{
-font-display:swap;
-font-family:"text";
-src:url("../font/text.ttf");
+font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
+font-family:"text"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
+src:url("../font/text.woff2") format("woff2"),url("../font/text.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-style:normal;
 }
 
 *{-webkit-box-sizing:border-box;box-sizing:border-box;}
@@ -273,8 +277,8 @@ h1 , h2 , h3 , h4 , h5
 font-family:"nadpis","Verda";
 letter-spacing: 0.1rem; /*vlastnost určuje mezeru mezi jednotlivými písmeny */
 -webkit-font-variant-ligatures: common-ligatures;
-        font-variant-ligatures: common-ligatures;
-font-weight: normal;
+font-variant-ligatures: common-ligatures;
+font-weight:700;
 }
 
 h1
@@ -367,6 +371,12 @@ width:50px;
 height:50px;
 }
 
+svg
+{
+width:100%;
+height:auto;
+}
+
 .w80
 {
 width:5rem;
@@ -388,6 +398,7 @@ padding:.5rem;
 color:black;
 background:white;
 cursor:pointer;
+font-weight:600;
 }
 
 .anim_o

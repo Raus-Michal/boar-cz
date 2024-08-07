@@ -392,7 +392,7 @@ place-items:center center;
 text-align:center;
 margin:0;
 height:5rem;
-line-height:2.25; /* zajistí centrování textu karty na střed, pokud se vleze do jednoho řádku, jinak u karty použít CLASS .lh125 */
+line-height:2.25; /* zajistí centrování textu karty na střed, pokud se vleze do jednoho řádku, jinak u karty použít CLASS .lh1 */
 font-size:1.25rem;
 background:var(--b5);
 color:white;
@@ -430,9 +430,9 @@ width:90%;
 transform:translate(0,50%);
 }}
 
-.kar li.lh125 /* class se používá u karet, které jsou dvou řádkové a line-height:2 by způsobila příliš velké řádkovéní */
+.kar li.lh1 /* class se používá u karet, které jsou dvou řádkové a line-height:2 by způsobila příliš velké řádkovéní */
 {
-line-height:1.25;
+line-height:1.1;
 }
 
 @-webkit-keyframes opa

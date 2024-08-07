@@ -260,7 +260,8 @@ border-radius:4px;
 
 .h-n ol li a
 {
-line-height:1.2;
+line-height:.5;
+margin-top:.2rem;
 margin-bottom:0;
 padding:1rem;
 width:100%;

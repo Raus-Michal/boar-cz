@@ -1,6 +1,0 @@
-﻿Sitemap: http://boar-cz.info/sitemap.xml
-Sitemap: http://www.boar-cz.info/sitemap.xml
-Sitemap: https://boar-cz.info/sitemap.xml
-Sitemap: https://www.boar-cz.info/sitemap.xml
-User-agent: *
-Disallow: /kontakt/ok/

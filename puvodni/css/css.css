@@ -308,14 +308,15 @@ width:100%;
 max-width:400px;
 height:auto;
 margin:1rem;
-border-top:4px solid;
+border-top:2px solid;
 margin-top:2rem;
-border-radius:8px 8px 0 0;
+border-radius:4px 4px 0 0;
 }
 
 figcaption
 {
 padding-top:.25rem;
+line-height:1.25;
 }
 
 .r
@@ -484,6 +485,7 @@ font-size:calc(2rem + 1vw);
 text-align:center;
 font-weight:900;
 line-height:1;
+margin-bottom:0;
 }
 
 

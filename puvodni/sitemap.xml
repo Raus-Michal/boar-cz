@@ -9,38 +9,48 @@
 
 <url>
   <loc>https://www.boar-cz.info/</loc>
-  <lastmod>2024-05-22T07:07:05+00:00</lastmod>
+  <lastmod>2024-09-27T05:13:37+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.boar-cz.info/kontakt/</loc>
-  <lastmod>2024-03-11T07:13:13+00:00</lastmod>
+  <lastmod>2024-09-19T07:18:28+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.boar-cz.info/programator/</loc>
-  <lastmod>2024-03-11T07:13:14+00:00</lastmod>
+  <lastmod>2024-09-27T05:13:52+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.boar-cz.info/nocni-vlk/NocniVLK.html</loc>
-  <lastmod>2024-01-04T19:25:15+00:00</lastmod>
+  <loc>https://www.boar-cz.info/article-nocni-vlk/</loc>
+  <lastmod>2024-09-27T05:31:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.boar-cz.info/sifrovac/</loc>
-  <lastmod>2024-05-22T07:07:05+00:00</lastmod>
+  <lastmod>2024-09-27T05:40:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.boar-cz.info/o-webu/</loc>
-  <lastmod>2024-05-22T07:07:05+00:00</lastmod>
+  <lastmod>2024-09-27T05:40:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.boar-cz.info/programator/zivotopis-raus-michal.pdf</loc>
-  <lastmod>2024-03-11T07:13:14+00:00</lastmod>
+  <lastmod>2024-09-27T05:13:53+00:00</lastmod>
   <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.boar-cz.info/nocni-vlk/Nocni-VLK.html</loc>
+  <lastmod>2024-09-27T05:11:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.boar-cz.info/nocni-vlk/data/</loc>
+  <lastmod>2024-09-27T05:11:50+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 

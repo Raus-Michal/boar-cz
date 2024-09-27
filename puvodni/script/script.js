@@ -10,7 +10,7 @@ setTimeout(`document.getElementById("${id}").style.animationPlayState="running";
 
 async statistika(){
 // funkce odešle připočtení statistiky po interakci stránky s uživatelem
-if(this.pocet_pouziti!=-1) // -1 této proměnné bude určovat blokaci v počítání, protože uživatel již byl připočítán
+if(this.pocet_pouziti!==-1) // -1 této proměnné bude určovat blokaci v počítání, protože uživatel již byl připočítán
 {
 ++this.pocet_pouziti; // přičte použití visualViewport
 if(this.pocet_pouziti>50) // pokud uživatel použil visualViewport více jak 50x
@@ -61,12 +61,12 @@ let ob=document.getElementById(this.idO[i][0]); // objekt - kterým se spouští
 if(((page_Top-(vyska/2)-(ob.offsetHeight/2)+200)>(ob.offsetTop))&&((page_Top-(vyska/2)-200-(ob.offsetHeight/2))<(ob.offsetTop)))
 {
 /* podmínky a změna 3. parametru id objektu zabrání opětovnému spouštění animace */
-if(this.idO[i][1]==0)
+if(this.idO[i][1]===0)
 {
 /* pokud nebyla animace na objektu spuštěna - následně změní parametr na 1 - čímž označí, že animace byla na objektu spuštěna */
 this.idO[i][1]=1;
 }
-else if(this.idO[i][1]==1)
+else if(this.idO[i][1]===1)
 {
 /* pokud bude mít id objektu parametr na 1 - znamená to, že již byla animace jednou spuštěna a bude return z funkce */
 return;
@@ -75,7 +75,7 @@ return;
 
 let t=[0,500,1000,1500,2000,2500]; /* časy postupného pouštění animací */
 
-if(this.idO[i][0]==this.idO[0][0])
+if(this.idO[i][0]===this.idO[0][0])
 {
 /* Pokud narazí uživatel scroolem na ID hlavního kontajneru spustí postupně 6 objektů karet daného bloku */
 let z=0; /* začátek ID bloku pouštěných animací */
@@ -89,7 +89,7 @@ this.a_p(this.idA[zP][0],t[i]); /* spustí první až šestou animaci KARET */
 return;
 }
 
-if(this.idO[i][0]==this.idO[1][0])
+if(this.idO[i][0]===this.idO[1][0])
 {
 let z=6;
 let b=12;
@@ -102,7 +102,7 @@ this.a_p(this.idA[zP][0],t[i]);
 return;
 }
 
-if(this.idO[i][0]==this.idO[2][0])
+if(this.idO[i][0]===this.idO[2][0])
 {
 let z=12;
 let b=18;
@@ -115,7 +115,7 @@ this.a_p(this.idA[zP][0],t[i]);
 return;
 }
 
-if(this.idO[i][0]==this.idO[3][0])
+if(this.idO[i][0]===this.idO[3][0])
 {
 /* Pokud narazí uživatel scroolem na ID hlavního kontajneru spustí postupně 2 animace OPACITY */
 this.a_p(this.idA[18][0],t[0]); /* spustí první animaci */
@@ -124,7 +124,7 @@ this.a_p(this.idA[20][0],t[2]); /* spustí třetí animaci */
 return;
 }
 
-if(this.idO[i][0]==this.idO[4][0])
+if(this.idO[i][0]===this.idO[4][0])
 {
 /* Pokud narazí uživatel scroolem na ID hlavního kontajneru spustí postupně 3 animace Nájezdu karty */
 let z=21; /* začátek ID bloku pouštěných animací */
@@ -181,22 +181,22 @@ for(let i=0;i<ob_s;i++)
 {
 let hr=ob[i].href; /* načte href objektu */
 let hr_p=hr.indexOf("#"); /* pozice # v řetězci */
-if(hr_p!=-1) /* pokud se pozice v řetězci == -1 , tak nebyl znak v řetězci nalezen */
+if(hr_p!==-1) /* pokud se pozice v řetězci === -1 , tak nebyl znak v řetězci nalezen */
 {
 let poz_rez=hr_p+1; /* posune polohu řezu pro odkaz o jedno místo od # */
 let odkaz=ob[i].href.slice(poz_rez); /* vytvoří konečný odkaz ořezáním původního */
-if(odkaz!="") /* pokud nebude odkaz prázdným řetězcem */
+if(odkaz!=="") /* pokud nebude odkaz prázdným řetězcem */
 {
 ob[i].href=`javascript:odkazy.roluj('${odkaz}');`; /* upravý href každého odkazu na javascriptovou funkci */
 
-if(odkaz=="boar-cz")
+if(odkaz==="boar-cz")
 {
 ob[i].href=`javascript:odkazy.roluj('${odkaz}',1);`; /* výjimka pro tlačíto Boar-cz, které dělá krátký posun z menu do první části Article */
 }
 }}}},
 
 roluj(id,ne=0){
-if(ne==0) /* pokud není druhý parametr funkce roven nule - neprovede blokaci animací */
+if(ne===0) /* pokud není druhý parametr funkce roven nule - neprovede blokaci animací */
 {
 v_port.DEaktivace(); /* vypne posluchač pro animace */
 }

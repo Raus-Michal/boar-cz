@@ -639,8 +639,8 @@ max-width:15rem;
 height:auto;
 }
 
-/* 512 px */
-@media only screen and (min-width:32em)
+/* 480 px */
+@media only screen and (min-width:30em)
 {
 .pr
 {

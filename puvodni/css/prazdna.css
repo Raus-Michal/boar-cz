@@ -1,0 +1,408 @@
+﻿html{line-height:1.15;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%;}
+main{display:block;}
+h1{font-size:2em;margin: 0.67em 0;}
+a{background-color:transparent;}
+abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;}
+b,strong{font-weight:bolder;}
+small{font-size:80%;}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sub{bottom:-0.25em;}
+sup{top:-0.5em;}
+img{border-style:none;}
+button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0;}
+button,input{overflow:visible;}
+button,select{text-transform:none;}
+button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button;appearance:button;}
+button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0;}
+button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText;}
+fieldset{padding: .35em .75em .625em;}
+legend{-webkit-box-sizing:border-box;box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal;}
+progress{vertical-align:baseline;}
+textarea{overflow:auto;}
+[type="checkbox"],[type="radio"]{-webkit-box-sizing: border-box;box-sizing: border-box;padding: 0;}
+[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height: auto;}
+[type="search"]{-webkit-appearance:textfield;appearance:textfield;outline-offset:-2px;}
+[type="search"]::-webkit-search-decoration{-webkit-appearance: none;}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit;}
+details{display:block;}
+summary{display:list-item;}
+template{display:none;}
+[hidden]{display:none;}
+p,ul,ol,dl,table,blockquote,pre,figure,hr{padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:1rem;}
+h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;}
+ul ul,ul ol,ol ul,ol ol{margin-bottom:0;}
+ul,ol,dd{padding-left:1.75rem;}
+dd{margin-left: 0;}
+blockquote{border:0;padding-left:1.75rem;margin-left:0;font-style:italic;}
+figure{margin-left:0;margin-right:0;}
+figure>table,figure>img,figure>picture{margin-bottom:0;}
+fieldset{border:0;}
+legend{padding:0 .5rem;}
+
+:root
+{
+--b1:rgb(168,110,87); /* hnědá */
+/* přechodové barvy */
+--b2:rgb(168,151,87); /* hnědá - do béžova */
+--b2_9:rgba(168,151,87,.95); /* hnědá - do béžova 95% krytí */
+--b2_6:rgba(168,151,87,.6); /* hnědá - do béžova 60% krytí */
+--b3:rgb(168,87,104); /* hnědá - do růžova */
+--b4:rgb(87,168,110); /* zelená */
+--b5:rgb(110,87,168); /* fialová */
+
+/* dobrý kontrast: b2 a černá , b4 a černá */
+/* dobrý kontrast: b5 a bílá */
+}
+
+
+@font-face{
+font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
+font-family:"nadpis"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
+src:url("../font/nadpis.woff2") format("woff2"),url("../font/nadpis.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-style:normal;
+}
+
+@font-face{
+font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
+font-family:"text"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
+src:url("../font/text.woff2") format("woff2"),url("../font/text.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-style:normal;
+}
+
+* {
+-webkit-box-sizing:border-box;
+box-sizing:border-box;
+}
+
+body
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-pack:center;
+justify-content:center;
+height:100vh;
+width:100%;
+color:black;
+background:white;
+font-family:"text","Arial","Sans-Serif";
+font-size:100%;
+line-height:1;
+margin:0;
+}
+
+header
+{
+padding:1rem;
+background:var(--b5);
+border-bottom:2px solid black;
+}
+
+
+article
+{
+contain:content;  /* prohlížeči dá instrukci, že prvky, které uživatel nevidí může vynechat z počítání stránky */
+background:white;
+}
+
+section
+{
+background:white;
+}
+
+a,button
+{
+cursor:pointer;
+}
+
+button
+{
+font-weight:normal;
+}
+
+a,a:link,a:visited,a:active
+{
+color:black;
+text-decoration:none;
+}
+
+p
+{
+font-size:1rem;
+line-height:1.3;
+}
+
+h1,h2,h3,h4
+{
+font-family:"nadpis",sans-serif;
+-webkit-font-variant-ligatures:common-ligatures;
+font-variant-ligatures:common-ligatures;
+font-weight:normal;
+letter-spacing:.01rem;
+padding:2rem 1rem 0 1rem;
+line-height:1.2;
+margin-bottom:1rem;
+font-weight:700;
+}
+
+h1
+{
+font-size:2rem;
+font-size:calc(2rem + 2vw);
+text-align:center;
+}
+
+h2
+{
+font-size:1.5rem;
+font-size:calc(1.5rem + 1vw);
+}
+
+h3
+{
+font-size:1.25rem;
+font-size:calc(1.25rem + 1vw);
+}
+
+h4
+{
+font-size:1.1rem;
+font-size:calc(1.1rem + 1vw);
+}
+
+
+/* > 1200 px */
+@media only screen and (min-width:76em)
+{
+h1
+{
+font-size:3rem;
+}
+h2
+{
+font-size:2.5rem;
+}
+h3
+{
+font-size:2rem;
+}
+h4
+{
+font-size:1.25rem;
+}}
+
+svg
+{
+width:100%;
+height:auto;
+}
+
+.h-con
+{
+display:-ms-grid;
+display:grid;
+-ms-grid-rows:auto 1fr auto auto;
+grid-template-rows:auto 1fr auto auto;
+width:100%;
+min-height:100vh;
+}
+
+.boxC /* box pro centraci */
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-pack:center;
+justify-content:center;
+}
+
+.boxM /* box pro maximální šířku */
+{
+max-width:75rem; /* 1200px */
+}
+
+.l-box
+{
+display:-webkit-box;
+display:flex;
+gap:.5rem;
+background:var(--b4);
+width:-moz-fit-content;
+width:-webkit-fit-content;
+width:fit-content;
+border-radius:2.5rem;
+padding-right:1rem;
+}
+
+.svg-box
+{
+width:5rem;
+height:5rem;
+background:var(--b2);
+border-radius:50%;
+padding:.5rem;
+}
+
+.t-box
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+flex-direction:column;
+-webkit-box-pack:center;
+justify-content:center;
+}
+
+.t-box p
+{
+margin:0;
+}
+
+.t-box p:first-child
+{
+font-weight:bold;
+}
+
+img
+{
+width:100%;
+height:auto;
+}
+
+mark
+{
+background:rgba(168,110,87,.3);
+}
+
+.a-box
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-pack:center;
+justify-content:center;
+margin:1rem;
+margin-bottom:2rem;
+}
+
+.a-box a
+{
+font-weight:bold;
+border:1px dotted var(--b4);
+padding:.5rem;
+width:100%;
+background:white;
+}
+
+/* větší jak 496px */
+@media only screen and (min-width:31em)
+{
+.a-box a
+{
+width:auto;
+}}
+
+.lb
+{
+width:3rem;
+height:3rem;
+}
+
+.ls
+{
+width:100%;
+height:100%;
+}
+
+.cl
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-align:center;
+align-items:center;
+-webkit-box-pack:center;
+justify-content:center;
+gap:1rem;
+}
+
+.cl p
+{
+margin-bottom:0;
+}
+
+
+.ods
+{
+max-width:40ch;
+text-align:justify;
+hyphens:auto;
+padding:1rem;
+margin:0;
+}
+
+
+.bokem
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+flex-direction:column;
+gap:2rem;
+padding:1rem;
+background:var(--b5);
+color:white;
+}
+
+.pata
+{
+padding:1rem;
+background:var(--b5);
+border-top:2px solid black;
+color:white;
+text-align:center;
+}
+
+.pata p
+{
+margin-bottom:0;
+}
+
+address a
+{
+display:inline-block;
+margin:.5rem;
+padding:.5rem;
+border:1px dotted var(--b4);
+}
+
+.bokem ul li
+{
+margin-bottom:1.5rem;
+}
+
+.bokem div a,.bokem li a,.pata address a
+{
+color:white;
+}
+
+
+.fm
+{
+font-size:.8rem;
+}
+
+.ibb
+{
+display:block;
+}
+
+.iib
+{
+display:inline-block;
+}
+
+.pt1
+{
+padding-top:1rem;
+}

@@ -140,9 +140,8 @@ font-family:"nadpis",sans-serif;
 font-variant-ligatures:common-ligatures;
 font-weight:normal;
 letter-spacing:.01rem;
-padding:2rem 1rem 0 1rem;
 line-height:1.2;
-margin-bottom:1rem;
+margin:.5rem 1rem;
 font-weight:700;
 }
 
@@ -153,6 +152,7 @@ font-size:calc(2rem + 2vw);
 text-align:center;
 line-height:1;
 margin-bottom:2rem;
+padding-top:1rem;
 }
 
 h1 .h1m
@@ -220,7 +220,7 @@ margin-top:.5rem;
 
 section
 {
-margin-top:2rem;
+margin-bottom:2rem;
 }
 
 .h-con
@@ -339,11 +339,13 @@ line-height:1.25;
 font-weight:1000;
 max-width:16rem;
 padding:.5rem;
+padding-top:.75rem;
 margin-top:1rem;
 background:white;
 border-radius:16px;
 text-align:center;
 width:100%;
+border:1px dotted var(--b4);
 }
 
 
@@ -356,7 +358,7 @@ justify-content:flex-end;
 }
 .up-box /* box pro upoutání - za nadpisem H1 */
 {
-border-radius:32px 2px 2px 32px;
+border-radius:32px;
 flex-direction:row;
 align-items:center;
 }
@@ -410,6 +412,7 @@ padding-top:0;
 {
 padding:1rem;
 width:100%;
+
 }
 
 .box-video video
@@ -417,6 +420,7 @@ width:100%;
 width:100%; /* Šířka videa přizpůsobena kontejneru */
 height:auto; /* Výška automaticky nastavena podle poměru stran */
 display:block; /* Odstraní spodní mezeru */
+aspect-ratio:768/576;
 }
 
 .sez /* pro seznamy ul,ol */
@@ -440,8 +444,7 @@ display:-webkit-box;
 display:flex;
 -webkit-box-pack:center;
 justify-content:center;
-margin:1rem;
-margin-bottom:2rem;
+margin:2rem 1rem;
 }
 
 .a-box a
@@ -490,9 +493,9 @@ margin-bottom:0;
 }
 
 
-.ods
+.ods,.col p
 {
-max-width:40ch;
+max-width:30rem;
 min-width: 33ch;
 text-align:justify;
 hyphens:auto;
@@ -568,7 +571,7 @@ padding-top:1rem;
 }
 
 
-.l1
+.l1,.l2
 {
 display:block;
 background:url('../svg/ico-whi.svg') no-repeat;
@@ -583,6 +586,12 @@ min-width:10rem;
 {
 /* logo Noční VLK */
 background-position:49.999% 0;
+}
+
+.l2
+{
+/* logo šifrovač */
+background-position:100% 0;
 }
 
 

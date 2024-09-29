@@ -46,9 +46,9 @@
 </g>
 
 <!-- ico šifrovač -->
-<g transform="translate(2400,0)" stroke="rgb(167,163,192)" fill="none">
+<g transform="translate(2400,0)" stroke="black" fill="none">
 <circle stroke-width="20" cx="200" cy="200" r="180" />
-<g stroke="rgb(45,45,18)" stroke-linecap="round" stroke-linejoin="round">
+<g stroke="white" stroke-linecap="round" stroke-linejoin="round">
 <path stroke-width="80" d="M 330,80 180,150 270,250 80,350" />
 <path stroke-width="60" d="M 40,160 100,200 40,240" />
 </g></g>

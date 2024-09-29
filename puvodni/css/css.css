@@ -796,6 +796,7 @@ font-size:1.5rem;
 font-weight:700;
 border:1px dotted var(--b4);
 padding:1rem;
+padding-bottom:.75rem;
 width:25rem;
 max-width:100%;
 text-align:center;

@@ -31,15 +31,15 @@
 <item>
      <link>https://www.boar-cz.info/article-nocni-vlk/</link>
      <title>Noční VLK - Hlídání časových intervalů a správa kontrol</title>
-     <description>Noční VLK - efektivní nástroj pro hlídání časových intervalů a řízení kontrol objektů, osob a věcí. Zaznamenávejte výzvy, využijte minutku a plánovač pro efektivní správu času.</description>
+     <description>Noční VLK - efektivní nástroj pro hlídání časových intervalů a řízení kontrol objektů, osob a věcí.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://www.boar-cz.info/sifrovac/</link>
-     <title>Šifrovač - Šifrování textu on-line</title>
-     <description>On-line šifrování textu. Bezpečnější zasílání textových zpráv pomocí šifrování.</description>
+     <link>https://www.boar-cz.info/article-sifrovac/</link>
+     <title>Šifrovač - šifrování textu online | Bezpečné a rychlé</title>
+     <description>Šifrovač - nejjednodušší způsob, jak šifrovat a dešifrovat text online. Zabezpečte své elektronické zprávy během několika sekund.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
@@ -64,6 +64,14 @@
      <link>https://www.boar-cz.info/nocni-vlk/Nocni-VLK.html</link>
      <title>Noční VLK - spouštění aplikace</title>
      <description>On-line webová aplikace, která pohlídá časové intervaly pro kontrolní obchůzky: objektu, věcí anebo osob.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.boar-cz.info/sifrovac/</link>
+     <title>Šifrovač - Šifrování textu on-line</title>
+     <description>On-line šifrování textu. Bezpečnější zasílání textových zpráv pomocí šifrování.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>2</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>

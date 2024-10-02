@@ -599,6 +599,7 @@ background-position:100% 0;
 
 .ar
 {
+display:block;
 aspect-ratio:800/1067;
 }
 

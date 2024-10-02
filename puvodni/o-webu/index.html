@@ -79,11 +79,31 @@ fclose($vytv);
 $handle=fopen("../statistika/homepage.txt","r+");
 $homepage=fread($handle,20);
 fclose($handle);
+
 $vytv2=fopen("../statistika/homepage-v.txt","a");
 fclose($vytv2);
 $handle2=fopen("../statistika/homepage-v.txt","r+");
 $homepage_vyz=fread($handle2,20);
 fclose($handle2);
+
+$vytv3=fopen("../statistika/vlk.txt","a");
+fclose($vytv3);
+$handle3=fopen("../statistika/vlk.txt","r+");
+$vlk=fread($handle3,20);
+fclose($handle3);
+
+$vytv4=fopen("../statistika/vlk-vyznamni.txt","a");
+fclose($vytv4);
+$handle4=fopen("../statistika/vlk-vyznamni.txt","r+");
+$vlk_vyznam=fread($handle4,20);
+fclose($handle4);
+
+$vytv5=fopen("../statistika/vlk-vyzkouset.txt","a");
+fclose($vytv5);
+$handle5=fopen("../statistika/vlk-vyzkouset.txt","r+");
+$vlk_vyzkouset=fread($handle5,20);
+fclose($handle5);
+
 ?>
 <div class="h-con">
 <header>
@@ -253,6 +273,9 @@ fclose($handle2);
 <div class="cc">
 <p>Počet návštěv na&nbsp;homepage: <?php echo $homepage; ?> </p>
 <p>Počet návštěv na&nbsp;homepage (významní): <?php echo $homepage_vyz; ?> </p>
+<p>Počet návštěv na&nbsp;article Noční VLK: <?php echo $vlk; ?> </p>
+<p>Počet návštěv na&nbsp;article Noční VLK (významní): <?php echo $vlk_vyznam; ?> </p>
+<p>Počet kliků na&nbsp;vyzkoušení Noční VLKa: <?php echo $vlk_vyzkouset; ?> </p>
 </div>
 
 <div class="a-box">

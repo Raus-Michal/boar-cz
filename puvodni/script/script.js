@@ -1,4 +1,6 @@
-﻿const v_port={id:["hd","c-svg"],
+﻿const v_port={
+id:["hd","c-svg"], // id HTML prvků na které bude aplikovaný rozměr Visual View portu
+casovac:null, // časovač pro kontrolu faktické změny rozměru objektů podle Visual view portu
 idA:[["k1a","ao"],["k1b","ao"],["k1c","ao"],["k1d","ao"],["k1e","ao"],["k1f","ao"],["k2a","ao"],["k2b","ao"],["k2c","ao"],["k2d","ao"],["k2e","ao"],["k2f","ao"],["k3a","ao"],["k3b","ao"],["k3c","ao"],["k3d","ao"],["k3e","ao"],["k3f","ao"],["u1a","op"],["u1b","op"],["u1c","op"],["por1","ap"],["por2","ap"],["por3","ap"]],
 idO:[["kar1",0],["kar2",0],["kar3",0],["u1",0],["por",0]],
 pocet_pouziti:0, // určuje kolikrát uživatel použil visualViewport, který se spouští mimojiné scroolem uživatele
@@ -39,18 +41,38 @@ xhr.send('data='+encodeURIComponent(dataToSend));  // Odeslání dat
 catch(err){
 console.log("Statistická data neodeslána. Chyba:"+err);
 }}}},
+vyska_header(){
+ // funkce upraví výšku header na výšku view portu
 
-handleEvent(){
+const o1=document.getElementById(this.id[0]); // první objekt změny hlavička stránky
+const o2=document.getElementById(this.id[1]); // druhý objekt změny box pro SVG obrázek
 
-this.statistika(); // vede statistiku o návštěvnosti - odesláním dat
+const o1_v=parseInt(o1.clientHeight); // výška objektu 1
+const o2_v=parseInt(o2.clientHeight); // výška objektu 2
 
+const d_v=parseInt(window.screen.availHeight); // dostupnou výšky zařízení
+const v=parseInt(window.visualViewport.height); // zjistí výšku visualViewport
+
+if(o1_v!==v||o2_v!==v)
+{
+// pokud se výška jednoho ze sledovaných objektů !== výšce View portu
+
+clearTimeout(this.casovac); // vynulování časovače objektu
+
+ o1.style.height=`${d_v}px`; // přepsání hodnoty výšky, dostupnou výšky zařízení, pomůže lepšímu přepisu výšky visualViewport
+ o2.style.height=`${d_v}px`; // přepsání hodnoty výšky, dostupnou výšky zařízení, pomůže lepšímu přepisu výšky visualViewport
+
+ o1.style.height=`${v}px`; // upraví výšku objektu podle visualViewport port API
+ o2.style.height=`${v}px`; // upraví výšku objektu podle visualViewport port API
+
+this.casovac=setTimeout(()=>{
+this.vyska_header(); // rekluze, funkce spustí za určitý čas, sama sebe
+ },500); // tímto časovačem se za určitý čas provede opět kontrola rozměrů sledovaných objektů
+}},
+animace(){
+// funkce zajišťuje animace HTML objektů na stránce
 const vyska=parseInt(window.visualViewport.height); // zjistí výšku visualViewport
 const page_Top=parseInt(window.visualViewport.pageTop); // zjistí horní polohu visualViewport
-const o1=document.getElementById(this.id[0]); // první objekt změny hlavička stránky
-const o2=document.getElementById(this.id[1]); // druhý objekt změny SVG obrázek
-
-o1.style.height=`${vyska}px`; // upraví výšku objektu podle visualViewport port API
-o2.style.height=`${vyska}px`; // upraví výšku objektu podle visualViewport port API
 
 let d=this.idO.length; // délka pole s animacemi
 
@@ -136,7 +158,13 @@ let zP=z+i;  /* zP určuje počáteční ID bloku animací */
 this.a_p(this.idA[zP][0],t[i]);
 }
 return;
-}}}},
+}}}
+},
+handleEvent(){
+this.statistika(); // vede statistiku o návštěvnosti - odesláním dat
+this.vyska_header(); // upraví výšku header na výšku view portu
+this.animace(); // funkce zajišťuje animace HTML objektů na stránce
+},
 
 aktivace(){
 /* Posluchače */
@@ -165,9 +193,7 @@ if(window&&window.visualViewport) /* test - zda je visualViewport podporováno *
 {
 this.aktivace(); /* zapne posluchač visualViewport */
 this.animaceAktivace(); /* přepíše CLASS objektů na které se vztahuje animace */
-this.handleEvent(); /* aktivuje Handle, pokud by bylo najeto zrovna na objekt s animací - aby se spustila */
-setTimeout(this.handleEvent.bind(this),500); /* aktivuje Visual View port API + úprava hlavičky na 100vh - pro pomalejší zařízení za 500ms */
-setTimeout(this.handleEvent.bind(this),1000); /* aktivuje Visual View port API + úprava hlavičky na 100vh - pro ještě pomalejší zařízení za 1000ms */
+this.handleEvent(); // aktivuje Handle, aby upravil výšku headeru na výšku Visual view portu, dále pokud by bylo najeto zrovna na objekt s animací - aby se spustila
 }}};
 
 v_port.zahajit(); /* aktivuje Visual View port API + úprava hlavičky na 100vh */

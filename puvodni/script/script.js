@@ -4,6 +4,7 @@ casovac:null, // časovač pro kontrolu faktické změny rozměru objektů podle
 idA:[["k1a","ao"],["k1b","ao"],["k1c","ao"],["k1d","ao"],["k1e","ao"],["k1f","ao"],["k2a","ao"],["k2b","ao"],["k2c","ao"],["k2d","ao"],["k2e","ao"],["k2f","ao"],["k3a","ao"],["k3b","ao"],["k3c","ao"],["k3d","ao"],["k3e","ao"],["k3f","ao"],["u1a","op"],["u1b","op"],["u1c","op"],["por1","ap"],["por2","ap"],["por3","ap"]],
 idO:[["kar1",0],["kar2",0],["kar3",0],["u1",0],["por",0]],
 pocet_pouziti:0, // určuje kolikrát uživatel použil visualViewport, který se spouští mimojiné scroolem uživatele
+odeslano:[false,false], // určuje jestli byla odeslána statistika 0=návětěva 1=významná návštěva, false=neodesláno, true=odesláno
 
 a_p(id,t){
 // funkce zapne animaci objektu ID po čase T
@@ -12,21 +13,34 @@ setTimeout(`document.getElementById("${id}").style.animationPlayState="running";
 
 async statistika(){
 // funkce odešle připočtení statistiky po interakci stránky s uživatelem
-if(this.pocet_pouziti!==-1) // -1 této proměnné bude určovat blokaci v počítání, protože uživatel již byl připočítán
-{
-++this.pocet_pouziti; // přičte použití visualViewport
-if(this.pocet_pouziti>50) // pokud uživatel použil visualViewport více jak 50x
-{
-this.pocet_pouziti=-1; // nastavením proměnné na -1, určuje ukončení počítání použití visualViewport uživatelem
 
-const dataToSend='boar'; // data, která budou zaslána
+if(this.odeslano[0]===false||this.odeslano[1]===false)
+{
+// pokud nebyla zaslána statistika 1 nebo statistika 2
+++this.pocet_pouziti; // přičte použití visualViewport
+let dataToSend=""; // data která se budou odesílat
+if(this.pocet_pouziti>20&&this.pocet_pouziti<300&&this.odeslano[0]===false) // pokud je na stránce přítomen uživatel
+{
+dataToSend="homepage"; // data, která budou zaslána
+this.odeslano[0]=true; // určuje jestli byla odeslána statistika 0=návětěva 1=významná návštěva, false=neodesláno, true=odesláno
+}
+else if(this.pocet_pouziti>300&&this.odeslano[1]===false) // pokud je na stránce přítomen významný uživatel
+{
+dataToSend="homepageVyz"; // data, která budou zaslána
+this.odeslano[1]=true; // určuje jestli byla odeslána statistika 0=návětěva 1=významná návštěva, false=neodesláno, true=odesláno
+}
+else
+{
+return; // pokud nebude splněna ani jedna podmínka
+}
+
 try{
   // Vytvoření AJAX požadavku
 const xhr=new XMLHttpRequest();
 
-xhr.open('POST','statistika/zapis.php',true);
-xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-
+xhr.open("POST","statistika/zapis.php",true);
+xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+/*
 // Reakce na dokončení požadavku
 xhr.onload=()=>{
 if(xhr.status===200){
@@ -34,13 +48,16 @@ if(xhr.status===200){
 }else{
 // console.log('Došlo k chybě při odesílání dat.');
 }
-};
+}; */
 
-xhr.send('data='+encodeURIComponent(dataToSend));  // Odeslání dat
+xhr.send(`data=${encodeURIComponent(dataToSend)}`);  // Odeslání dat
 }
 catch(err){
-console.log("Statistická data neodeslána. Chyba:"+err);
-}}}},
+console.log(`Statistická data neodeslána. Chyba:${err}`);
+}
+}
+
+},
 vyska_header(){
  // funkce upraví výšku header na výšku view portu
 
@@ -108,10 +125,8 @@ for(let i=0;i<cik;i++)
 let zP=z+i; /* zP určuje počáteční ID bloku animací */
 this.a_p(this.idA[zP][0],t[i]); /* spustí první až šestou animaci KARET */
 }
-return;
 }
-
-if(this.idO[i][0]===this.idO[1][0])
+else if(this.idO[i][0]===this.idO[1][0])
 {
 let z=6;
 let b=12;
@@ -120,11 +135,8 @@ for(let i=0;i<cik;i++)
 {
 let zP=z+i;
 this.a_p(this.idA[zP][0],t[i]);
-}
-return;
-}
-
-if(this.idO[i][0]===this.idO[2][0])
+}}
+else if(this.idO[i][0]===this.idO[2][0])
 {
 let z=12;
 let b=18;
@@ -133,20 +145,15 @@ for(let i=0;i<cik;i++)
 {
 let zP=z+i;
 this.a_p(this.idA[zP][0],t[i]);
-}
-return;
-}
-
-if(this.idO[i][0]===this.idO[3][0])
+}}
+else if(this.idO[i][0]===this.idO[3][0])
 {
 /* Pokud narazí uživatel scroolem na ID hlavního kontajneru spustí postupně 2 animace OPACITY */
 this.a_p(this.idA[18][0],t[0]); /* spustí první animaci */
 this.a_p(this.idA[19][0],t[1]); /* spustí druhou animaci */
 this.a_p(this.idA[20][0],t[2]); /* spustí třetí animaci */
-return;
 }
-
-if(this.idO[i][0]===this.idO[4][0])
+else if(this.idO[i][0]===this.idO[4][0])
 {
 /* Pokud narazí uživatel scroolem na ID hlavního kontajneru spustí postupně 3 animace Nájezdu karty */
 let z=21; /* začátek ID bloku pouštěných animací */
@@ -157,7 +164,6 @@ for(let i=0;i<cik;i++)
 let zP=z+i;  /* zP určuje počáteční ID bloku animací */
 this.a_p(this.idA[zP][0],t[i]);
 }
-return;
 }}}
 },
 handleEvent(){

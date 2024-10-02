@@ -74,11 +74,16 @@
 </head>
 <body>
 <?php
-$vytv=fopen("../statistika/pocet.txt","a");
+$vytv=fopen("../statistika/homepage.txt","a");
 fclose($vytv);
-$handle=fopen("../statistika/pocet.txt","r+");
-$pocet=fread($handle,20);
+$handle=fopen("../statistika/homepage.txt","r+");
+$homepage=fread($handle,20);
 fclose($handle);
+$vytv2=fopen("../statistika/homepage-v.txt","a");
+fclose($vytv2);
+$handle2=fopen("../statistika/homepage-v.txt","r+");
+$homepage_vyz=fread($handle2,20);
+fclose($handle2);
 ?>
 <div class="h-con">
 <header>
@@ -236,7 +241,10 @@ fclose($handle);
 
 </section>
 
-<div class="cc"><p>Počet návštěv na&nbsp;homepage: <?php echo $pocet; ?> </p></div>
+<div class="cc">
+<p>Počet návštěv na&nbsp;homepage: <?php echo $homepage; ?> </p>
+<p>Počet návštěv na&nbsp;homepage (významní): <?php echo $homepage_vyz; ?> </p>
+</div>
 
 <div class="a-box">
 <a href="../" title="Zpět na domovskou stránku">

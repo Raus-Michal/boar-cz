@@ -1,14 +1,26 @@
 <?php
 // Přijetí dat
 if($_SERVER['REQUEST_METHOD']==='POST'){
-$sifrovani = $_POST['data'];
+$sifrovani=$_POST['data'];
 
-if($sifrovani=="boar")
+if($sifrovani=="homepage")
 {
 // podmínka, aby zaslaná data odpovídali klíči: sifrovani - potom teprve provede přičtení
-$test = fopen("pocet.txt" , "a");
+$test = fopen("homepage.txt" , "a");
 fclose($test); // pokud soubor neexistuje - vytvoří ho
-$cteni = fopen("pocet.txt" , "r+"); // otevře soubor pro čtení
+$cteni = fopen("homepage.txt" , "r+"); // otevře soubor pro čtení
+$pocet = fread($cteni,20);
+++$pocet; // přidá +1
+rewind($cteni);
+fwrite($cteni,$pocet);
+fclose($cteni); // zavře soubor
+}
+else if($sifrovani=="homepageVyz")
+{
+// podmínka, aby zaslaná data odpovídali klíči: sifrovani - potom teprve provede přičtení
+$test = fopen("homepage-v.txt" , "a");
+fclose($test); // pokud soubor neexistuje - vytvoří ho
+$cteni = fopen("homepage-v.txt" , "r+"); // otevře soubor pro čtení
 $pocet = fread($cteni,20);
 ++$pocet; // přidá +1
 rewind($cteni);

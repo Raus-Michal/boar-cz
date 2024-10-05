@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html><html lang="cs" dir="ltr">
 <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<link rel="stylesheet" href="../css/o-webu.css?v=2">
+<link rel="stylesheet" href="../css/o-webu.css?v=3">
 <meta name="description" content="Obecné informace o webové stránce Boar-cz - webové stavby.">
 <meta name="keywords" content="o webu,informace">
 <meta name="author" content="Boar-cz">
@@ -107,7 +107,7 @@ fclose($handle5);
 ?>
 <div class="h-con">
 <header>
-<a class="d-ib" href="../" title="Home page">
+<a class="d-ib" href="../#info-web" title="Home page">
 <div class="l-box">
 <div class="svg-box">
 <svg width="400" height="400" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="rgb(110,87,168)" fill="none">
@@ -171,6 +171,7 @@ fclose($handle5);
 <li><a href="#obecne" title="Obecné informace o webu">Obecně o&nbsp;webové stránce</a></li>
 <li><a href="#poslani" title="Poslání webu">Poslání webové stránky</a></li>
 <li><a href="#budoucnost" title="Budoucnost webu">Budoucnost webové stránky</a></li>
+<li><a href="#statistika" title="Statistika webu">Statistika webové stránky</a></li>
 </ul>
 </nav>
 <div class="boxC"><div class="boxM">
@@ -266,20 +267,50 @@ fclose($handle5);
 </picture>
 <figcaption>&copy;&#8239;2024 SEO webové stránky</figcaption>
 </figure>
-
-
 </section>
 
-<div class="cc">
-<p>Počet návštěv na&nbsp;homepage: <?php echo $homepage; ?> </p>
-<p>Počet návštěv na&nbsp;homepage (významní): <?php echo $homepage_vyz; ?> </p>
-<p>Počet návštěv na&nbsp;article Noční VLK: <?php echo $vlk; ?> </p>
-<p>Počet návštěv na&nbsp;article Noční VLK (významní): <?php echo $vlk_vyznam; ?> </p>
-<p>Počet kliků na&nbsp;vyzkoušení Noční VLKa: <?php echo $vlk_vyzkouset; ?> </p>
+<section id="statistika">
+<h2>Statistika webové stránky</h2>
+<div class="col">
+<p>Je dobré vědět, jestli webové stránky někdo navštěvuje a&nbsp;jak hojně. Proto je do&nbsp;tohoto webu přidán na&nbsp;sledovaných místech posluchač, který nám spočítá návštěvnost.</p>
+<p>Abychom nemuseli mít nevzhlednou lištičku cookies a&nbsp;obtěžovat uživatele webu s&nbsp;dotazem, zda&nbsp;se nechá dobrovolně sledovat, je&nbsp;tato statistika pouze o&nbsp;interakci neznámých uživatelů. Nicméně i&nbsp;tak se&nbsp;nám hodí.</p>
 </div>
+<div class="boxC">
+<table>
+<thead>
+<tr>
+<th scope="rowgroup">Sledovaný úsek</th>
+<th scope="col">Počet uživatelů</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Návštěv na&nbsp;homepage</th>
+<td><?php echo $homepage; ?></td>
+</tr>
+<tr>
+<th scope="row">Návštěv na&nbsp;homepage (významní)</th>
+<td><?php echo $homepage_vyz; ?></td>
+</tr>
+<tr>
+<th scope="row">Návštěv na&nbsp;article Noční&nbsp;VLK</th>
+<td><?php echo $vlk; ?></td>
+</tr>
+<tr>
+<th scope="row">Návštěv na&nbsp;article Noční&nbsp;VLK (významní)</th>
+<td><?php echo $vlk_vyznam; ?></td>
+</tr>
+<tr>
+<th scope="row">Kliků na&nbsp;Vyzkoušet Noční&nbsp;VLKa</th>
+<td><?php echo $vlk_vyzkouset; ?></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 
 <div class="a-box">
-<a href="../" title="Zpět na domovskou stránku">
+<a href="../#info-web" title="Home page">
 <div class="cl">
 <div class="lb">
 <svg class="ls" width="400" height="400" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="rgb(110,87,168)" fill="none">
@@ -302,10 +333,12 @@ fclose($handle5);
 </ul>
 </div>
 </aside>
-<footer class="pata">
+<footer class="pata tc">
 <p>&copy;&#8239;2024 Boar-cz</p>
 <p class="fm">(všechna práva vyhrazena)</p>
-<address><p>Máte otázku k&nbsp;těmto webovým&nbsp;stránkám? <a href="../kontakt/" title="Kontakt na provozovatele webu">Kontaktujte&nbsp;nás</a></p></address>
+<address class="pt1"><p>Máte otázku k&nbsp;těmto webovým&nbsp;stránkám?</p>
+<a href="../kontakt/" title="Kontakt na provozovatele webu">Kontaktujte&nbsp;nás</a></address>
 </footer>
 </div>
+<script src="../script/o-webu.js" async> </script>
 </body></html>

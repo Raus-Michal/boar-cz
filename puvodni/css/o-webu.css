@@ -1,6 +1,6 @@
 ﻿html{line-height: 1.15;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%;}
 main{display:block;}
-h1{font-size:2em;margin: 0.67em 0;}
+h1{font-size:2em;margin:.67em 0;}
 a{background-color: transparent;}
 abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;}
 b,strong{font-weight: bolder;}
@@ -10,18 +10,18 @@ sub{bottom:-0.25em;}
 sup{top:-0.5em;}
 img{border-style:none;}
 button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0;}
-button,input{overflow: visible;}
-button,select{text-transform: none;}
-button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button;}
+button,input{overflow:visible;}
+button,select{text-transform:none;}
+button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button;appearance:button;}
 button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0;}
 button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText;}
-fieldset{padding: .35em .75em .625em;}
+fieldset{padding:.35em.75em.625em;}
 legend{-webkit-box-sizing:border-box;box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal;}
 progress{vertical-align:baseline;}
 textarea{overflow:auto;}
-[type="checkbox"],[type="radio"]{-webkit-box-sizing: border-box;box-sizing: border-box;padding: 0;}
-[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height: auto;}
-[type="search"]{-webkit-appearance: textfield;outline-offset: -2px;}
+[type="checkbox"],[type="radio"]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0;}
+[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto;}
+[type="search"]{-webkit-appearance:textfield;appearance:textfield;outline-offset:-2px;}
 [type="search"]::-webkit-search-decoration{-webkit-appearance: none;}
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit;}
 details{display:block;}
@@ -35,7 +35,7 @@ ul,ol,dd{padding-left:1.75rem;}
 dd{margin-left: 0;}
 blockquote{border:0;padding-left:1.75rem;margin-left:0;font-style:italic;}
 figure{margin-left:0;margin-right:0;}
-figure > table,figure > img,figure > picture{margin-bottom:0;}
+figure>table,figure>img,figure>picture{margin-bottom:0;}
 fieldset{border:0;}
 legend{padding:0 .5rem;}
 
@@ -73,13 +73,12 @@ font-style:normal;
 
 * {
 -webkit-box-sizing:border-box;
-        box-sizing:border-box;
+box-sizing:border-box;
 }
 
 body
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-pack:center;
 -ms-flex-pack:center;
@@ -88,7 +87,7 @@ height:100vh;
 width:100%;
 color:black;
 background:var(--b2);
-font-family:"text","Arial","Sans-Serif";
+font-family:"text",sans-serif;
 font-size:100%;
 line-height:1;
 margin:0;
@@ -154,8 +153,6 @@ column-rule:dotted 2px var(--b3);
 -moz-column-fill:balance;
 column-fill:balance;
 text-align:justify;
--webkit-hyphens:auto;
--ms-hyphens:auto;
 hyphens:auto;
 }
 
@@ -202,7 +199,7 @@ line-height:1.3;
 
 h1,h2,h3,h4
 {
-font-family:"nadpis","Verda","Sans-Serif";
+font-family:"nadpis",sans-serif;
 -webkit-font-variant-ligatures:common-ligatures;
 font-variant-ligatures:common-ligatures;
 font-weight:normal;
@@ -236,12 +233,9 @@ height:auto;
 
 .h-con
 {
-display:-ms-grid;
 display:grid;
--ms-grid-rows:auto 1fr auto auto;
 grid-template-rows:auto 1fr auto auto;
 width:100%;
-/* max-width:75rem;  1200px */
 min-height:100vh;
 border-left:1px dotted var(--b5);
 border-right:1px dotted var(--b5);
@@ -250,10 +244,8 @@ border-right:1px dotted var(--b5);
 .boxC
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-pack:center;
--ms-flex-pack:center;
 justify-content:center;
 }
 
@@ -266,7 +258,6 @@ width:100%;
 .l-box
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 gap:.5rem;
 background:var(--b4);
@@ -289,7 +280,6 @@ padding:.75rem;
 .t-box
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-orient:vertical;
 -webkit-box-direction:normal;
@@ -340,10 +330,53 @@ margin:auto;
 max-width:800px;
 }}
 
+
+table
+{
+border-collapse:collapse; /* border-collapse má výchozí hodnotu separate, kdy prohlížeč od sebe odděluje jednotlivé buňky tabulky a tím vytváří dvojté rámečky */
+margin:2rem 0;
+}
+
+td
+{
+text-align:center;
+}
+
+th,td
+{
+padding:.5rem;
+font-family:"nadpis",sans-serif; /* Formátování pro Bezpatkové písmo */
+font-size:.8rem;
+line-height:1.25;
+border:1px solid var(--b5);
+}
+
+/* pokud je obrazovka větší než 39em - 624px */
+@media only screen and (min-width:39em)
+{
+th,td
+{
+padding:.5rem;
+}}
+tbody tr:nth-of-type(even)
+{
+background:var(--b4);
+}
+
+thead tr
+{
+background:var(--b2);
+}
+
+thead tr th,thead tr td
+{
+font-family:"text",sans-serif;
+}
+
+
 .a-box
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-pack:center;
 -ms-flex-pack:center;
@@ -383,14 +416,11 @@ height:100%;
 .cl
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-align:center;
-    -ms-flex-align:center;
-        align-items:center;
+align-items:center;
 -webkit-box-pack:center;
-    -ms-flex-pack:center;
-        justify-content:center;
+justify-content:center;
 gap:1rem;
 }
 
@@ -413,19 +443,15 @@ max-width:40ch;
 .ha
 {
 text-align:justify;
--webkit-hyphens:auto;
--ms-hyphens:auto;
 hyphens:auto;
 }
 
 .bokem
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-orient:vertical;
 -webkit-box-direction:normal;
--ms-flex-direction:column;
 flex-direction:column;
 gap:2rem;
 padding:1rem;
@@ -439,7 +465,6 @@ padding:1rem;
 background:var(--b5);
 border-top:2px solid black;
 color:white;
-text-align:center;
 }
 
 .pata p
@@ -447,7 +472,7 @@ text-align:center;
 margin-bottom:0;
 }
 
-address p a
+address a
 {
 display:inline-block;
 margin:.5rem;
@@ -461,7 +486,7 @@ margin-bottom:1.5rem;
 line-height:1.25;
 }
 
-.bokem div a,.bokem li a,.pata address p a
+.bokem div a,.bokem li a,.pata address a
 {
 color:white;
 }
@@ -486,3 +511,12 @@ width:20rem;
 font-size:.8rem;
 }
 
+.tc
+{
+text-align:center;
+}
+
+.pt1
+{
+padding-top:1rem;
+}

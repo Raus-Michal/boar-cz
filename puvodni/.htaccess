@@ -9,6 +9,8 @@ AddType image/jpeg .jpg .jpeg
 AddType image/png .png
 AddType image/gif .gif
 AddType image/svg+xml .svg .svgz
+AddType image/avif .avif
+AddType image/webp .webp
 
 # Video
 AddType video/mp4 .mp4
@@ -118,3 +120,9 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L]
       Header set Cache-Control "public, max-age=31536000"
   </FilesMatch>
 </IfModule>
+
+# Ochrana konfiguračního souboru pro databázi, tímto způsobem zakážeme přímý přístup k souboru 
+<Files "config/db.php">
+Order Allow,Deny
+Deny from all
+</Files>

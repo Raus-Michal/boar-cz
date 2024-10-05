@@ -63,6 +63,42 @@ rewind($cteni);
 fwrite($cteni,$pocet);
 fclose($cteni); // zavře soubor
 }
+else if($sifrovani=="vyzkouset-sifrovac")
+{
+// podmínka, aby zaslaná data odpovídali klíči: sifrovani - potom teprve provede přičtení
+$test = fopen("sifrovac-vyzkouset.txt" , "a");
+fclose($test); // pokud soubor neexistuje - vytvoří ho
+$cteni = fopen("sifrovac-vyzkouset.txt" , "r+"); // otevře soubor pro čtení
+$pocet = fread($cteni,20);
+++$pocet; // přidá +1
+rewind($cteni);
+fwrite($cteni,$pocet);
+fclose($cteni); // zavře soubor
+}
+else if($sifrovani=="navsteva-sifrovac")
+{
+// podmínka, aby zaslaná data odpovídali klíči: sifrovani - potom teprve provede přičtení
+$test = fopen("sifrovac.txt" , "a");
+fclose($test); // pokud soubor neexistuje - vytvoří ho
+$cteni = fopen("sifrovac.txt" , "r+"); // otevře soubor pro čtení
+$pocet = fread($cteni,20);
+++$pocet; // přidá +1
+rewind($cteni);
+fwrite($cteni,$pocet);
+fclose($cteni); // zavře soubor
+}
+else if($sifrovani=="vyznamni-sifrovac")
+{
+// podmínka, aby zaslaná data odpovídali klíči: sifrovani - potom teprve provede přičtení
+$test = fopen("sifrovac-vyznamni.txt" , "a");
+fclose($test); // pokud soubor neexistuje - vytvoří ho
+$cteni = fopen("sifrovac-vyznamni.txt" , "r+"); // otevře soubor pro čtení
+$pocet = fread($cteni,20);
+++$pocet; // přidá +1
+rewind($cteni);
+fwrite($cteni,$pocet);
+fclose($cteni); // zavře soubor
+}
 }else{
 http_response_code(405); // Method Not Allowed
 }

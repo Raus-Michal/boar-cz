@@ -1,6 +1,6 @@
 const statistika={
 id_but:["vyzkouset-1","vyzkouset-2"], // id buttonů, které podléhají statistice
-data:["vyzkouset-vlk","navsteva-vlk","vyznamni-vlk"], // data, která jsou odesílána
+data:["vyzkouset-sifrovac","navsteva-sifrovac","vyznamni-sifrovac"], // data, která jsou odesílána
 pocet:0, // proměnná hlídá počet scrool na stránce
 odeslano_scroll:[false,false], // proměnná hlídá, zda už byly statistiky scroll [návštěvník,významní]
 async odesli_data(data){

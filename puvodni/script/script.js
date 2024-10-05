@@ -5,7 +5,7 @@ idA:[["k1a","ao"],["k1b","ao"],["k1c","ao"],["k1d","ao"],["k1e","ao"],["k1f","ao
 idO:[["kar1",0],["kar2",0],["kar3",0],["u1",0],["por",0]],
 pocet_pouziti:0, // určuje kolikrát uživatel použil visualViewport, který se spouští mimojiné scroolem uživatele
 odeslano:[false,false], // určuje jestli byla odeslána statistika 0=návětěva 1=významná návštěva, false=neodesláno, true=odesláno
-
+resize_acive:false, // proměnná hlídá, zda jiš došlo jednou k aktivaci posluchče pro resize obrazovky false=nedošlo, true=došlo
 a_p(id,t){
 // funkce zapne animaci objektu ID po čase T
 setTimeout(`document.getElementById("${id}").style.animationPlayState="running";`,t); // spuštění animace za čas t
@@ -60,30 +60,26 @@ console.log(`Statistická data neodeslána. Chyba:${err}`);
 },
 vyska_header(){
  // funkce upraví výšku header na výšku view portu
-
 const o1=document.getElementById(this.id[0]); // první objekt změny hlavička stránky
 const o2=document.getElementById(this.id[1]); // druhý objekt změny box pro SVG obrázek
 
 const o1_v=parseInt(o1.clientHeight); // výška objektu 1
 const o2_v=parseInt(o2.clientHeight); // výška objektu 2
 
-const d_v=parseInt(window.screen.availHeight); // dostupnou výšky zařízení
-const v=parseInt(window.visualViewport.height); // zjistí výšku visualViewport
+const d_v= parseInt(window.innerHeight) || parseInt(document.documentElement.clientHeight); // Získání aktuální výšky viewportu
 
-if(o1_v!==v||o2_v!==v)
+
+if(o1_v!==d_v||o2_v!==d_v)
 {
 // pokud se výška jednoho ze sledovaných objektů !== výšce View portu
 
 clearTimeout(this.casovac); // vynulování časovače objektu
 
- o1.style.height=`${d_v}px`; // přepsání hodnoty výšky, dostupnou výšky zařízení, pomůže lepšímu přepisu výšky visualViewport
- o2.style.height=`${d_v}px`; // přepsání hodnoty výšky, dostupnou výšky zařízení, pomůže lepšímu přepisu výšky visualViewport
-
- o1.style.height=`${v}px`; // upraví výšku objektu podle visualViewport port API
- o2.style.height=`${v}px`; // upraví výšku objektu podle visualViewport port API
+ o1.style.height=`${d_v}px`; // přepsání hodnoty výšky na aktuální výšku viewportu
+ o2.style.height=`${d_v}px`; // přepsání hodnoty výšky na aktuální výšku viewportu
 
 this.casovac=setTimeout(()=>{
-this.vyska_header(); // rekluze, funkce spustí za určitý čas, sama sebe
+this.vyska_header(); // rekluze, funkce spustí za určitý čas, sama sebe, aby zkontrolovala, zda došlo k změně výšky sledovaných objektů na výšku viewportu
  },500); // tímto časovačem se za určitý čas provede opět kontrola rozměrů sledovaných objektů
 }},
 animace(){
@@ -168,19 +164,29 @@ this.a_p(this.idA[zP][0],t[i]);
 },
 handleEvent(){
 this.statistika(); // vede statistiku o návštěvnosti - odesláním dat
-this.vyska_header(); // upraví výšku header na výšku view portu
 this.animace(); // funkce zajišťuje animace HTML objektů na stránce
 },
-
+DEaktivace(){
+// Posluchače - ODEBERE pro SCROLL (používá se při posunu na homepage pomocí scrollTo, během toho se to vypíná)
+window.visualViewport.removeEventListener("resize",this.vyska_header.bind(this)); // posluchač změny velikosti okna spustí funkci, která upraví výšku header na výšku zařízení uživatele
+window.visualViewport.removeEventListener("scroll",this); // posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace
+removeEventListener("scroll",this);// posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace
+},
 aktivace(){
-/* Posluchače */
-window.visualViewport.addEventListener("resize",this);
-window.visualViewport.addEventListener("scroll",this);
-addEventListener("scroll",this);
+// Posluchače - PŘIDÁ
+
+if(!this.resize_acive)
+{
+// proměnná hlídá, aby nedošlo vícekrát k zapnutí zbytečně tohoto posluchače, ten kvůli použití this.bind(this) nelze odebrat, tudíš jeho vícepřidání zatěžuje zařízení uživatele
+window.visualViewport.addEventListener("resize",this.vyska_header.bind(this)); // posluchač změny velikosti okna spustí funkci, která upraví výšku header na výšku zařízení uživatele
+this.resize_acive=true; // změna proměnné určí, že již byl posluchač aktivován
+}
+window.visualViewport.addEventListener("scroll",this); // posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace
+addEventListener("scroll",this);// posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace
 },
 
 async animaceAktivace(){
-/* přidělení CLASS s animací ID objektům */
+// přidělení CLASS s animací ID objektům
 let id=this.idA.length; // délka pole animací3
 for(let i=0;i<id;i++)
 {
@@ -188,22 +194,16 @@ let ob=document.getElementById(this.idA[i][0]); // objekt HTML
 ob.classList.add(this.idA[i][1]); // přidělení class objektu
 }},
 
-DEaktivace(){
-window.visualViewport.removeEventListener("resize",this); // posluchač na změnu velkosti okna stránky
-window.visualViewport.removeEventListener("scroll",this); // posluchač na scrool stránky
-removeEventListener("scroll",this); // posluchač na scrool stránky
-},
-
 zahajit(){
+// funkce zahájí procesy, které upravý výšku header stránky na výšku obrazovky zařízení uživatele a zapne posluchače Visual View port API - scroll a resize
+this.vyska_header(); // funkce přizpůsobí výšku headeru výšce obrazovky zařízení uživatele
 if(window&&window.visualViewport) /* test - zda je visualViewport podporováno */
 {
-this.aktivace(); /* zapne posluchač visualViewport */
-this.animaceAktivace(); /* přepíše CLASS objektů na které se vztahuje animace */
-this.handleEvent(); // aktivuje Handle, aby upravil výšku headeru na výšku Visual view portu, dále pokud by bylo najeto zrovna na objekt s animací - aby se spustila
+this.aktivace(); // zapne posluchač visualViewport
+this.animaceAktivace(); // přepíše CLASS objektů na které se vztahuje animace
 }}};
 
-v_port.zahajit(); /* aktivuje Visual View port API + úprava hlavičky na 100vh */
-
+v_port.zahajit(); // aktivuje Visual View port API + úprava hlavičky na 100vh
 
 const odkazy={t1:500,t2:1000,
 async uprav(){

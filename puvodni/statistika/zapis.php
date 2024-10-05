@@ -135,6 +135,42 @@ rewind($cteni);
 fwrite($cteni,$pocet);
 fclose($cteni); // zavře soubor
 }
+else if($sifrovani=="vyzkouset-konopi")
+{
+// podmínka, aby zaslaná data odpovídali klíči: sifrovani - potom teprve provede přičtení
+$test = fopen("vyzkouset-konopi.txt" , "a");
+fclose($test); // pokud soubor neexistuje - vytvoří ho
+$cteni = fopen("vyzkouset-konopi.txt" , "r+"); // otevře soubor pro čtení
+$pocet = fread($cteni,20);
+++$pocet; // přidá +1
+rewind($cteni);
+fwrite($cteni,$pocet);
+fclose($cteni); // zavře soubor
+}
+else if($sifrovani=="navsteva-konopi")
+{
+// podmínka, aby zaslaná data odpovídali klíči: sifrovani - potom teprve provede přičtení
+$test = fopen("konopi.txt" , "a");
+fclose($test); // pokud soubor neexistuje - vytvoří ho
+$cteni = fopen("konopi.txt" , "r+"); // otevře soubor pro čtení
+$pocet = fread($cteni,20);
+++$pocet; // přidá +1
+rewind($cteni);
+fwrite($cteni,$pocet);
+fclose($cteni); // zavře soubor
+}
+else if($sifrovani=="vyznamni-konopi")
+{
+// podmínka, aby zaslaná data odpovídali klíči: sifrovani - potom teprve provede přičtení
+$test = fopen("konopi-vyznamni.txt" , "a");
+fclose($test); // pokud soubor neexistuje - vytvoří ho
+$cteni = fopen("konopi-vyznamni.txt" , "r+"); // otevře soubor pro čtení
+$pocet = fread($cteni,20);
+++$pocet; // přidá +1
+rewind($cteni);
+fwrite($cteni,$pocet);
+fclose($cteni); // zavře soubor
+}
 }else{
 http_response_code(405); // Method Not Allowed
 }

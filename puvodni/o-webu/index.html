@@ -141,6 +141,24 @@ $handle11=fopen("../statistika/zivotopis.txt","r+");
 $zivotopis=fread($handle11,20);
 fclose($handle11);
 
+$vytv12=fopen("../statistika/vyzkouset-konopi.txt","a");
+fclose($vytv12);
+$handle12=fopen("../statistika/vyzkouset-konopi.txt","r+");
+$konopi_vyzkouset=fread($handle12,20);
+fclose($handle12);
+
+$vytv13=fopen("../statistika/konopi.txt","a");
+fclose($vytv13);
+$handle13=fopen("../statistika/konopi.txt","r+");
+$konopi=fread($handle13,20);
+fclose($handle13);
+
+$vytv14=fopen("../statistika/konopi-vyznamni.txt","a");
+fclose($vytv14);
+$handle14=fopen("../statistika/konopi-vyznamni.txt","r+");
+$konopi_vyznamni=fread($handle14,20);
+fclose($handle14);
+
 ?>
 <div class="h-con">
 <header>
@@ -286,7 +304,7 @@ fclose($handle11);
 <p>Budoucí vývoj webové stránky:</p>
 <ul>
 <li>Layout webu rozšířit na&nbsp;šířku 2500&#8239;px</li>
-<li>Udělat fotogalerii programátora (5 až&#8239;8 fotografii)</li>
+<li>Udělat fotogalerii programátora (5&#8239;až&#8239;8 fotografii)</li>
 <li>Zvážit možnost použití technologie AMP</li>
 <li>Při&nbsp;více projektech udělat samostatnou stránku pro&nbsp;sekci Webové projekty</li>
 </ul>
@@ -353,7 +371,6 @@ fclose($handle11);
 <th scope="row">Kliků na&nbsp;Vyzkoušet Šifrovač</th>
 <td><?php echo $sifrovac_vyzkouset; ?></td>
 </tr>
-
 <tr>
 <th scope="row">Návštěv na&nbsp;article Programátor</th>
 <td><?php echo $programator; ?></td>
@@ -366,7 +383,18 @@ fclose($handle11);
 <th scope="row">Kliků na&nbsp;Životopis PDF</th>
 <td><?php echo $zivotopis; ?></td>
 </tr>
-
+<tr>
+<th scope="row">Návštěv na&nbsp;article Konopí</th>
+<td><?php echo $konopi; ?></td>
+</tr>
+<tr>
+<th scope="row">Návštěv na&nbsp;article Konopí (významní)</th>
+<td><?php echo $konopi_vyznamni; ?></td>
+</tr>
+<tr>
+<th scope="row">Kliků na&nbsp;Vyzkoušet Konopí</th>
+<td><?php echo $konopi_vyzkouset; ?></td>
+</tr>
 </tbody>
 </table>
 </div>

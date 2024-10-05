@@ -123,6 +123,24 @@ $handle8=fopen("../statistika/sifrovac-vyzkouset.txt","r+");
 $sifrovac_vyzkouset=fread($handle8,20);
 fclose($handle8);
 
+$vytv9=fopen("../statistika/programator.txt","a");
+fclose($vytv9);
+$handle9=fopen("../statistika/programator.txt","r+");
+$programator=fread($handle9,20);
+fclose($handle9);
+
+$vytv10=fopen("../statistika/programator-vyznamni.txt","a");
+fclose($vytv10);
+$handle10=fopen("../statistika/programator-vyznamni.txt","r+");
+$programator_vyznamni=fread($handle10,20);
+fclose($handle10);
+
+$vytv11=fopen("../statistika/zivotopis.txt","a");
+fclose($vytv11);
+$handle11=fopen("../statistika/zivotopis.txt","r+");
+$zivotopis=fread($handle11,20);
+fclose($handle11);
+
 ?>
 <div class="h-con">
 <header>
@@ -335,6 +353,20 @@ fclose($handle8);
 <th scope="row">Kliků na&nbsp;Vyzkoušet Šifrovač</th>
 <td><?php echo $sifrovac_vyzkouset; ?></td>
 </tr>
+
+<tr>
+<th scope="row">Návštěv na&nbsp;article Programátor</th>
+<td><?php echo $programator; ?></td>
+</tr>
+<tr>
+<th scope="row">Návštěv na&nbsp;article Programátor (významní)</th>
+<td><?php echo $programator_vyznamni; ?></td>
+</tr>
+<tr>
+<th scope="row">Kliků na&nbsp;Životopis PDF</th>
+<td><?php echo $zivotopis; ?></td>
+</tr>
+
 </tbody>
 </table>
 </div>

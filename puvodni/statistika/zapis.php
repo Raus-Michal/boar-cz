@@ -99,6 +99,42 @@ rewind($cteni);
 fwrite($cteni,$pocet);
 fclose($cteni); // zavře soubor
 }
+else if($sifrovani=="navsteva-programator")
+{
+// podmínka, aby zaslaná data odpovídali klíči: sifrovani - potom teprve provede přičtení
+$test = fopen("programator.txt" , "a");
+fclose($test); // pokud soubor neexistuje - vytvoří ho
+$cteni = fopen("programator.txt" , "r+"); // otevře soubor pro čtení
+$pocet = fread($cteni,20);
+++$pocet; // přidá +1
+rewind($cteni);
+fwrite($cteni,$pocet);
+fclose($cteni); // zavře soubor
+}
+else if($sifrovani=="vyznamni-programator")
+{
+// podmínka, aby zaslaná data odpovídali klíči: sifrovani - potom teprve provede přičtení
+$test = fopen("programator-vyznamni.txt" , "a");
+fclose($test); // pokud soubor neexistuje - vytvoří ho
+$cteni = fopen("programator-vyznamni.txt" , "r+"); // otevře soubor pro čtení
+$pocet = fread($cteni,20);
+++$pocet; // přidá +1
+rewind($cteni);
+fwrite($cteni,$pocet);
+fclose($cteni); // zavře soubor
+}
+else if($sifrovani=="pdf-zivotopis")
+{
+// podmínka, aby zaslaná data odpovídali klíči: sifrovani - potom teprve provede přičtení
+$test = fopen("zivotopis.txt" , "a");
+fclose($test); // pokud soubor neexistuje - vytvoří ho
+$cteni = fopen("zivotopis.txt" , "r+"); // otevře soubor pro čtení
+$pocet = fread($cteni,20);
+++$pocet; // přidá +1
+rewind($cteni);
+fwrite($cteni,$pocet);
+fclose($cteni); // zavře soubor
+}
 }else{
 http_response_code(405); // Method Not Allowed
 }

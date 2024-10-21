@@ -260,6 +260,13 @@ let textTW=`window.open('${hrefTW}','Sdílet na Twittru','width=${this.SIRKA},he
 document.getElementById(this._idTW).href=`javascript:${textTW}`;
 }}};
 
-
 odkazy.uprav(); /* opraví odkazi na stránce na SCROOL */
 sdilet.prepis(); /* zajistí přepis HREF tlačítek pro sdílení na Facebooku a Twittru */
+
+window.addEventListener("load",()=>{
+// posluchač po načtení stránky
+v_port.vyska_header(); // srovnání výšky headeru na výšku obrazovky zařízení
+setTimeout(()=>{
+v_port.vyska_header();  // srovnání výšky headeru na výšku obrazovky zařízení
+},500); // menší zpoždění pro pomalejší zařízení
+});  

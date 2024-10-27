@@ -26,7 +26,7 @@ this.odeslano[0]=true; // určuje jestli byla odeslána statistika 0=návětěva
 }
 else if(this.pocet_pouziti>300&&this.odeslano[1]===false) // pokud je na stránce přítomen významný uživatel
 {
-dataToSend="homepageVyz"; // data, která budou zaslána
+dataToSend="homepage_vyz"; // data, která budou zaslána
 this.odeslano[1]=true; // určuje jestli byla odeslána statistika 0=návětěva 1=významná návštěva, false=neodesláno, true=odesláno
 }
 else
@@ -34,27 +34,24 @@ else
 return; // pokud nebude splněna ani jedna podmínka
 }
 
-try{
-  // Vytvoření AJAX požadavku
-const xhr=new XMLHttpRequest();
+const token=document.querySelector("meta[name='csrf-token']").getAttribute("content"); // načte token z meta tagu HTML
+const data=`csrf_token=${encodeURIComponent(token)}&zapocti=${encodeURIComponent(dataToSend)}`; // nachystá data na odeslání pro fetch API metodou post
 
-xhr.open("POST","statistika/zapis.php",true);
-xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-/*
-// Reakce na dokončení požadavku
-xhr.onload=()=>{
-if(xhr.status===200){
-// console.log('Data byla úspěšně odeslána.'); 
-}else{
-// console.log('Došlo k chybě při odesílání dat.');
-}
-}; */
-
-xhr.send(`data=${encodeURIComponent(dataToSend)}`);  // Odeslání dat
-}
-catch(err){
-console.log(`Statistická data neodeslána. Chyba:${err}`);
-}
+// Vytvoření AJAX požadavku
+fetch("statistika/zapis.php",{
+method:"POST",  // Metoda POST
+headers:{
+"Content-Type":"application/x-www-form-urlencoded"  // Nastavení typu obsahu
+},
+body:data  // data ve formátu klíč=hodnota
+})
+.then(response=>response.text())  // Očekáváme textovou odpověď
+.then(result=>{
+console.log('Výsledek:',result);
+})
+.catch(error=>{
+console.error('Chyba při odesílání dat:',error);
+});
 }
 
 },

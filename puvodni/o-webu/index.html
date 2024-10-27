@@ -74,91 +74,7 @@
 </head>
 <body>
 <?php
-$vytv=fopen("../statistika/homepage.txt","a");
-fclose($vytv);
-$handle=fopen("../statistika/homepage.txt","r+");
-$homepage=fread($handle,20);
-fclose($handle);
-
-$vytv2=fopen("../statistika/homepage-v.txt","a");
-fclose($vytv2);
-$handle2=fopen("../statistika/homepage-v.txt","r+");
-$homepage_vyz=fread($handle2,20);
-fclose($handle2);
-
-$vytv3=fopen("../statistika/vlk.txt","a");
-fclose($vytv3);
-$handle3=fopen("../statistika/vlk.txt","r+");
-$vlk=fread($handle3,20);
-fclose($handle3);
-
-$vytv4=fopen("../statistika/vlk-vyznamni.txt","a");
-fclose($vytv4);
-$handle4=fopen("../statistika/vlk-vyznamni.txt","r+");
-$vlk_vyznam=fread($handle4,20);
-fclose($handle4);
-
-$vytv5=fopen("../statistika/vlk-vyzkouset.txt","a");
-fclose($vytv5);
-$handle5=fopen("../statistika/vlk-vyzkouset.txt","r+");
-$vlk_vyzkouset=fread($handle5,20);
-fclose($handle5);
-
-$vytv6=fopen("../statistika/sifrovac.txt","a");
-fclose($vytv6);
-$handle6=fopen("../statistika/sifrovac.txt","r+");
-$sifrovac=fread($handle6,20);
-fclose($handle6);
-
-$vytv7=fopen("../statistika/sifrovac-vyznamni.txt","a");
-fclose($vytv7);
-$handle7=fopen("../statistika/sifrovac-vyznamni.txt","r+");
-$sifrovac_vyznamni=fread($handle7,20);
-fclose($handle7);
-
-
-$vytv8=fopen("../statistika/sifrovac-vyzkouset.txt","a");
-fclose($vytv8);
-$handle8=fopen("../statistika/sifrovac-vyzkouset.txt","r+");
-$sifrovac_vyzkouset=fread($handle8,20);
-fclose($handle8);
-
-$vytv9=fopen("../statistika/programator.txt","a");
-fclose($vytv9);
-$handle9=fopen("../statistika/programator.txt","r+");
-$programator=fread($handle9,20);
-fclose($handle9);
-
-$vytv10=fopen("../statistika/programator-vyznamni.txt","a");
-fclose($vytv10);
-$handle10=fopen("../statistika/programator-vyznamni.txt","r+");
-$programator_vyznamni=fread($handle10,20);
-fclose($handle10);
-
-$vytv11=fopen("../statistika/zivotopis.txt","a");
-fclose($vytv11);
-$handle11=fopen("../statistika/zivotopis.txt","r+");
-$zivotopis=fread($handle11,20);
-fclose($handle11);
-
-$vytv12=fopen("../statistika/vyzkouset-konopi.txt","a");
-fclose($vytv12);
-$handle12=fopen("../statistika/vyzkouset-konopi.txt","r+");
-$konopi_vyzkouset=fread($handle12,20);
-fclose($handle12);
-
-$vytv13=fopen("../statistika/konopi.txt","a");
-fclose($vytv13);
-$handle13=fopen("../statistika/konopi.txt","r+");
-$konopi=fread($handle13,20);
-fclose($handle13);
-
-$vytv14=fopen("../statistika/konopi-vyznamni.txt","a");
-fclose($vytv14);
-$handle14=fopen("../statistika/konopi-vyznamni.txt","r+");
-$konopi_vyznamni=fread($handle14,20);
-fclose($handle14);
-
+include '../statistika/config/cteni.php';
 ?>
 <div class="h-con">
 <header>
@@ -349,15 +265,15 @@ fclose($handle14);
 </tr>
 <tr>
 <th scope="row">Návštěv na&nbsp;article Noční&nbsp;VLK</th>
-<td><?php echo $vlk; ?></td>
+<td><?php echo $nocni_vlk; ?></td>
 </tr>
 <tr>
 <th scope="row">Návštěv na&nbsp;article Noční&nbsp;VLK (významní)</th>
-<td><?php echo $vlk_vyznam; ?></td>
+<td><?php echo $nocni_vlk_vyz; ?></td>
 </tr>
 <tr>
 <th scope="row">Kliků na&nbsp;Vyzkoušet Noční&nbsp;VLKa</th>
-<td><?php echo $vlk_vyzkouset; ?></td>
+<td><?php echo $klik_vlk; ?></td>
 </tr>
 <tr>
 <th scope="row">Návštěv na&nbsp;article Šifrovač</th>
@@ -365,11 +281,11 @@ fclose($handle14);
 </tr>
 <tr>
 <th scope="row">Návštěv na&nbsp;article Šifrovač (významní)</th>
-<td><?php echo $sifrovac_vyznamni; ?></td>
+<td><?php echo $sifrovac_vyz; ?></td>
 </tr>
 <tr>
 <th scope="row">Kliků na&nbsp;Vyzkoušet Šifrovač</th>
-<td><?php echo $sifrovac_vyzkouset; ?></td>
+<td><?php echo $klik_sifrovac; ?></td>
 </tr>
 <tr>
 <th scope="row">Návštěv na&nbsp;article Programátor</th>
@@ -377,11 +293,11 @@ fclose($handle14);
 </tr>
 <tr>
 <th scope="row">Návštěv na&nbsp;article Programátor (významní)</th>
-<td><?php echo $programator_vyznamni; ?></td>
+<td><?php echo $programator_vyz; ?></td>
 </tr>
 <tr>
 <th scope="row">Kliků na&nbsp;Životopis PDF</th>
-<td><?php echo $zivotopis; ?></td>
+<td><?php echo $klik_programator; ?></td>
 </tr>
 <tr>
 <th scope="row">Návštěv na&nbsp;article Konopí</th>
@@ -389,11 +305,11 @@ fclose($handle14);
 </tr>
 <tr>
 <th scope="row">Návštěv na&nbsp;article Konopí (významní)</th>
-<td><?php echo $konopi_vyznamni; ?></td>
+<td><?php echo $konopi_vyz; ?></td>
 </tr>
 <tr>
 <th scope="row">Kliků na&nbsp;Vyzkoušet Konopí</th>
-<td><?php echo $konopi_vyzkouset; ?></td>
+<td><?php echo $klik_konopi; ?></td>
 </tr>
 </tbody>
 </table>

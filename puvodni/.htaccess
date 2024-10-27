@@ -1,6 +1,6 @@
 
-# NASTAVENÍ, že první bude hledat index.html a když ho nenajde, tak index.php, to platí pro homepage i podsložky webu
-DirectoryIndex index.html index.php
+# NASTAVENÍ, že první bude hledat index.php a když ho nenajde, tak index.html, to platí pro homepage i podsložky webu
+DirectoryIndex index.php index.html
 
 # NASTAVENÍ MIME
 

@@ -1,31 +1,28 @@
 const statistika={
 id_but:"zivotopis", // id buttonů, které podléhají statistice
-data:["pdf-zivotopis","navsteva-programator","vyznamni-programator"], // data, která jsou odesílána
+data:["klik_programator","programator","programator_vyz"], // data, která jsou odesílána
 pocet:0, // proměnná hlídá počet scrool na stránce
 odeslano_scroll:[false,false], // proměnná hlídá, zda už byly statistiky scroll [návštěvník,významní]
-async odesli_data(data){
+async odesli_data(co_poslat){
 // funkce odesílá data
-try{
-  // Vytvoření AJAX požadavku
-const xhr=new XMLHttpRequest();
+const token=document.querySelector("meta[name='csrf-token']").getAttribute("content"); // načte token z meta tagu HTML
+const data=`csrf_token=${encodeURIComponent(token)}&zapocti=${encodeURIComponent(co_poslat)}`; // nachystá data na odeslání pro fetch API metodou post
 
-xhr.open("POST","../statistika/zapis.php",true); // otevření souboru který zajistí odeslání
-xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-/*
-// Reakce na dokončení požadavku
-xhr.onload=()=>{
-if(xhr.status===200){
-// console.log('Data byla úspěšně odeslána.'); 
-}else{
-// console.log('Došlo k chybě při odesílání dat.');
-}
-}; */
-
-xhr.send(`data=${encodeURIComponent(data)}`);  // Odeslání dat
-}
-catch(err){
-console.log(`Statistická data neodeslána. Chyba:${err}`);
-}
+// Vytvoření AJAX požadavku
+fetch("../statistika/zapis.php",{
+method:"POST",  // Metoda POST
+headers:{
+"Content-Type":"application/x-www-form-urlencoded"  // Nastavení typu obsahu
+},
+body:data  // data ve formátu klíč=hodnota
+})
+.then(response=>response.text())  // Očekáváme textovou odpověď
+.then(result=>{
+console.log('Výsledek:',result);
+})
+.catch(error=>{
+console.error('Chyba při odesílání dat:',error);
+});
 },
 handleEvent()
 {

@@ -262,8 +262,7 @@ sdilet.prepis(); /* zajistí přepis HREF tlačítek pro sdílení na Facebooku 
 
 window.addEventListener("load",()=>{
 // posluchač po načtení stránky
-v_port.vyska_header(); // srovnání výšky headeru na výšku obrazovky zařízení
 setTimeout(()=>{
 v_port.vyska_header();  // srovnání výšky headeru na výšku obrazovky zařízení
-},500); // menší zpoždění pro pomalejší zařízení
-});  
+},1000); // menší zpoždění pro pomalejší zařízení
+});

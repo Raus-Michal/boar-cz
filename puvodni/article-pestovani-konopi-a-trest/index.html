@@ -8,7 +8,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 <meta charset="utf-8">
 <meta name="csrf-token" content="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8'); ?>">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<link rel="stylesheet" href="../css/projekty.css?v=4">
+<link rel="stylesheet" href="../css/projekty.css?v=5">
 <link rel="preload" as="image" href="../svg/ico-whi.svg">
 <meta name="description" content="Pěstování konopí a trest - Právní důsledky pěstování konopí s vyšší koncentrací THC. Přehled trestů, reálné případy a kalkulátor pro výpočet hrozícího trestu.">
 <meta name="keywords" content="pěstování konopí,konopí,trest">
@@ -134,7 +134,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 <section>
 <div class="boxC"><div class="boxM">
 <h2>Co&nbsp;je Pěstování konopí a&nbsp;trest&#8239;?</h2>
-<p class="ods">Webová stránka Pěstování konopí a&nbsp;trest, poskytuje komplexní přehled právních důsledků pěstování konopí s&nbsp;vyšší než&nbsp;zákonem povolenou koncentrací látky&nbsp;THC.</p>
+<p class="ods">Webová stránka Pěstování konopí a&nbsp;trest, <strong>poskytuje komplexní přehled právních důsledků pěstování konopí</strong> s&nbsp;vyšší než&nbsp;zákonem povolenou koncentrací látky&nbsp;THC.</p>
 
 <div class="img-con">
 <div class="img-box">
@@ -154,6 +154,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 
 <div class="col">
 <p>Zahrnuje podrobné informace o&nbsp;hrozících trestech, skutečných případech z&nbsp;rozhodnutí soudů, a&nbsp;nabízí aplikaci Kalkulátor pro&nbsp;orientační výpočet hrozícího trestu, podle počtu pěstovaných rostlin.</p>
+<p>Přečtením obsahu webové stránky a&nbsp;jednotlivých sekcí, návštěvník získá jednoznačnou odpověď na&nbsp;otázku, jaký trest hrozí za&nbsp;pěstování konopí v&nbsp;určitém rozsahu a&nbsp;za&nbsp;určitých okolností. Pokud u&nbsp;návštěvníka panuje určitá nejistota, je&nbsp;možné využít Kalkulátor pro&nbsp;upřesnění možného trestu, který za&nbsp;pěstování konopí hrozí.</p>
 </div>
 </div>
 
@@ -203,7 +204,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 <div class="img-con">
 <div class="col">
 <p>Aplikace Kalkulátor je&nbsp;klíčovou součástí webu Pěstování konopí a&nbsp;trest. Umožňuje uživatelům vypočítat orientační výši trestu odnětí svobody na&nbsp;základě počtu pěstovaných rostlin a&nbsp;dalších relevantních faktorů.</p>
-<p>Tento nástroj je&nbsp;určen pro&nbsp;rychlou a&nbsp;přehlednou orientaci v&nbsp;právních rizicích spojených s&nbsp;pěstováním konopí.</p>
+<p>Tento nástroj je&nbsp;určen pro&nbsp;rychlou a&nbsp;přehlednou orientaci v&nbsp;právních rizicích spojených s&nbsp;pěstováním konopí, které má&nbsp;vyšší než povolenou koncentraci látky&nbsp;THC. Do&nbsp;Kalkulátoru stačí zadat vstupní hodnoty a&nbsp;za&nbsp;malou chvilku máte výsledek!</p>
 </div>
 
 <div class="img-box">
@@ -229,7 +230,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 <div class="boxC"><div class="boxM">
 
 <h2>Skutečné případy z&nbsp;rozhodnutí soudů</h2>
-<p class="ods">Stránka zahrnuje analýzy několika významných soudních rozhodnutí týkajících se pěstování konopí.</p>
+<p class="ods">Sekce Skutečné případy <strong>zahrnuje analýzy významných soudních rozhodnutí</strong> týkajících&nbsp;se pěstování konopí. Uvedené případy, se&nbsp;mohou zdát zastaralé, nicméně jedná&nbsp;se o&nbsp;právní precedenty nejvyšších soudů, které doposud nebyly překonány a&nbsp;pro <abbr>soudy nižších stupňů</abbr> (okresních a&nbsp;krajských soudů) jsou stále závazné.</p>
 
 <div class="img-con">
 <div class="img-box">
@@ -249,6 +250,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 
 <div class="col">
 <p>Tyto případy jsou podrobně popsány, aby&nbsp;poskytly uživatelům přehled o&nbsp;tom, jak&nbsp;jsou právní předpisy aplikovány v&nbsp;praxi, a&nbsp;jaké tresty byly vyneseny za&nbsp;konkrétní okolnosti, množství a&nbsp;koncentraci látky&nbsp;THC.</p>
+<p>Jednotlivé případy také <strong>ukazují možnosti právní argumentace</strong>, které již byly požity a&nbsp;jak se&nbsp;s&nbsp;nimi soudy vypořádaly. Z&nbsp;těchto argumentů je&nbsp;pak zřejmé, jaké v&nbsp;budoucnosti z&nbsp;obhajoby vyloučit a&nbsp;kam právní argumentaci směřovat.</p>
 </div>
 </div>
 
@@ -307,6 +309,20 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 </main>
 
 <aside class="bokem">
+
+<div class="fl b-s">
+<div class="b-s2">
+<a id="sdil-fb" class="fl a-s ac" href="https://www.facebook.com/sharer/sharer.php?u=https://www.boar-cz.info/article-pestovani-konopi-a-trest/" title="Sdílet článek Pěstování konopí a trest na FB" target="_blank" rel="nofollow">
+<div class="ico2"> </div>
+Sdílet na&nbsp;Facebooku</a>
+</div>
+<div class="b-s2">
+<a id="sdil-tw" class="fl a-s ac" href="https://twitter.com/intent/tweet?url=https://www.boar-cz.info/article-pestovani-konopi-a-trest/&text=" title="Sdílet článek Pěstování konopí a trest na X" target="_blank" rel="nofollow">
+<div class="ico3"> </div>
+Sdílet na&nbsp;Twitteru
+</a>
+</div></div>
+
 <div>
 <p>Partnerské stránky</p>
 <ul>
@@ -321,6 +337,6 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 <a href="../kontakt/" title="Kontakt na provozovatele webu">Kontaktujte&nbsp;nás</a></address>
 </footer>
 </div>
-<script src="../script/a-konopi.js?v=1" async></script>
+<script src="../script/a-konopi.js?v=2" async></script>
 </body>
 </html>

@@ -53,4 +53,28 @@ this.odesli_data(this.data[0]); // přidá posluchač click buttonům s id uvede
 
 }};
 
+const sdilet={_idFB:"sdil-fb",_idTW:"sdil-tw",SIRKA:600,VYSKA:600,min_VYSKA:800,min_SIRKA:800,
+async prepis(){
+let vyska=parseInt(window.screen.height); // výška obrazovky
+let sirka=parseInt(window.screen.width); // šířka obrazovky
+let z_leva=sirka/2-this.SIRKA/2;
+let z_hora=vyska/2-this.VYSKA/2;
+
+// funkce přepíše HREF na tlačítkách sdílet Facebook a sdílet Twitter
+if(document.getElementById(this._idFB)&&vyska>this.min_VYSKA&&sirka>this.min_SIRKA)
+{
+const hrefFB=document.getElementById(this._idFB).href; // načte stávající href odkazu
+document.getElementById(this._idFB).target=""; // target musí být prázdý jinak nové okno neotevře
+let textFB=`window.open('${hrefFB}','Sdílet na FB','width=${this.SIRKA},height=${this.VYSKA},left=${z_leva},top=${z_hora}');`; // příprava nového href
+document.getElementById(this._idFB).href=`javascript:${textFB}`; // dokončení nového href
+}
+if(document.getElementById(this._idTW)&&vyska>this.min_VYSKA&&sirka>this.min_SIRKA)
+{
+const hrefTW=document.getElementById(this._idTW).href;
+document.getElementById(this._idTW).target=""; // target musí být prázdý jinak nové okno neotevře
+let textTW=`window.open('${hrefTW}','Sdílet na Twittru','width=${this.SIRKA},height=${this.VYSKA},left=${z_leva},top=${z_hora}');`;
+document.getElementById(this._idTW).href=`javascript:${textTW}`;
+}}};
+
 statistika.aktivace(); // aktivuje script pro odesílání statistiky
+sdilet.prepis(); // zajistí přepis HREF tlačítek pro sdílení na Facebooku a Twittru

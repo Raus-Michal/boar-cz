@@ -653,3 +653,72 @@ margin:auto;
 {
 padding:1rem;
 }
+
+
+/* Sdílet na sociálních sítích */
+
+.fl
+{
+display:-webkit-box;
+display:flex;
+}
+
+.b-s
+{
+gap:1rem;
+-webkit-box-pack:space-evenly;
+justify-content:space-evenly;
+flex-wrap:wrap;
+}
+
+.b-s2
+{
+width:100%;
+}
+
+/* větší než Mobil L */
+@media only screen and (min-width:27em)
+{
+.b-s2
+{
+width:20rem;
+}}
+
+.a-s
+{
+gap:1rem;
+border:1px dotted var(--b4);
+padding:.5rem;
+width:100%;
+}
+
+.ac
+{
+-webkit-box-align:center;
+align-items:center;
+}
+
+.ico2,.ico3
+{
+display:block;
+background:url('../svg/ico-s.svg?=v2') no-repeat;
+background-size:700%; /* každý obrázek + 100% - 7 svg = 700% */
+height:0;
+}
+
+.ico2,.ico3
+{
+width:3rem;
+min-width:3rem;
+padding-bottom:3rem;
+}
+
+.ico2
+{
+background-position:16.666% 0;
+}
+
+.ico3
+{
+background-position:33.333% 0;
+}

@@ -121,8 +121,7 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L]
   </FilesMatch>
 </IfModule>
 
-# Ochrana konfiguračního souboru pro databázi, tímto způsobem zakážeme přímý přístup k souboru 
-<Files "config/db.php">
-Order Allow,Deny
-Deny from all
-</Files>
+# Nastavení vlastní chybové stránky
+ErrorDocument 500 /errors/500.html
+ErrorDocument 404 /errors/404.html
+ErrorDocument 403 /errors/403.html

@@ -1,4 +1,4 @@
-﻿html{line-height:1.15;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%;}
+﻿html{line-height:1.15;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%;}
 main{display:block;}
 h1{font-size:2em;margin: 0.67em 0;}
 a{background-color: transparent;}
@@ -12,17 +12,17 @@ img{border-style:none;}
 button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0;}
 button,input{overflow: visible;}
 button,select{text-transform: none;}
-button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button;}
+button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button;appearance:button;}
 button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0;}
 button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText;}
-fieldset{padding: .35em .75em .625em;}
+fieldset{padding:.35em .75em .625em;}
 legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal;}
 progress{vertical-align:baseline;}
 textarea{overflow:auto;}
-[type="checkbox"],[type="radio"]{box-sizing: border-box;padding: 0;}
-[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height: auto;}
-[type="search"]{-webkit-appearance: textfield;outline-offset: -2px;}
-[type="search"]::-webkit-search-decoration{-webkit-appearance: none;}
+[type="checkbox"],[type="radio"]{box-sizing:border-box;padding: 0;}
+[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto;}
+[type="search"]{-webkit-appearance:textfield;appearance:textfield;outline-offset:-2px;}
+[type="search"]::-webkit-search-decoration{-webkit-appearance:none;appearance:none;}
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit;}
 details{display:block;}
 summary{display:list-item;}
@@ -35,7 +35,7 @@ ul,ol,dd{padding-left:1.75rem;}
 dd{margin-left: 0;}
 blockquote{border:0;padding-left:1.75rem;margin-left:0;font-style:italic;}
 figure{margin-left:0;margin-right:0;}
-figure > table,figure > img,figure > picture{margin-bottom:0;}
+figure>table,figure>img,figure>picture{margin-bottom:0;}
 fieldset{border:0;}
 legend{padding:0 .5rem;}
 
@@ -63,7 +63,7 @@ legend{padding:0 .5rem;}
 font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
 font-family:"nadpis"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
 src:url("../font/nadpis.woff2") format("woff2 supports variations"),url("../font/nadpis.woff2") format("woff2-variations"),url("../font/nadpis.woff2") format("woff2"),url("../font/nadpis.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
-font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-weight:100 900; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
 font-style:normal;
 }
 
@@ -71,7 +71,7 @@ font-style:normal;
 font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
 font-family:"text"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
 src:url("../font/text.woff2") format("woff2 supports variations"),url("../font/text.woff2") format("woff2-variations"),url("../font/text.woff2") format("woff2"),url("../font/text.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
-font-weight:100 1000; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-weight:100 700; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
 font-style:normal;
 }
 
@@ -84,13 +84,12 @@ box-sizing:border-box;
 body
 {
 display:-moz-grid;
-display:-ms-grid;
 display:grid;
 place-items:center center;
 height:100vh;
 width:100%;
 color:black;
-background:grey;
+background:white;
 font-family:"text","Arial","Sans-Serif";
 font-size:100%;
 line-height:1;
@@ -156,15 +155,12 @@ height:auto;
 
 .con
 {
-display:-ms-grid;
 display:grid;
--ms-grid-rows:auto 1fr auto;
 grid-template-rows:auto 1fr auto;
 background:var(--b2);
 border:1px solid black;
 width:100%;
 height:100vh;
-max-width:64em; /* 1024px */
 }
 
 
@@ -197,17 +193,14 @@ height:100%;
 width:1rem;
 height:1rem;
 -webkit-transform:scale(1.5) translate(-.1rem,0);
--ms-transform:scale(1.5) translate(-.1rem,0);
 transform:scale(1.5) translate(-.1rem,0);
 }
 
 .cl
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-align:center;
--ms-flex-align:center;
 align-items:center;
 gap:.5rem;
 }
@@ -220,13 +213,10 @@ font-size:1.25rem;
 .bh
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-align:center;
--ms-flex-align:center;
 align-items:center;
 -webkit-box-pack:justify;
--ms-flex-pack:justify;
 justify-content:space-between;
 gap:1rem;
 margin:.5rem;
@@ -313,10 +303,10 @@ background:var(--b4); /* barva ukazatele měřidla */
 
 input,textarea
 {
-padding:.25rem;
+padding:.5rem .25rem .25rem .25rem;
 border:1px solid var(--b5);
 border-radius:2px;
-line-height:1;
+line-height:1.5;
 }
 
 input:focus-visible,textarea:focus-visible
@@ -327,10 +317,8 @@ outline:1px solid var(--b4);
 form
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-pack:center;
--ms-flex-pack:center;
 justify-content:center;
 -webkit-transition:500ms;
 -o-transition:500ms;
@@ -368,13 +356,10 @@ text-align:right;
 
 .g1,.g2
 {
-display:-ms-grid;
 display:grid;
--ms-grid-columns:5rem 1rem 1fr;
 grid-template-columns:5rem 1fr;
 gap:1rem;
 -webkit-box-align:center;
--ms-flex-align:center;
 align-items:center;
 margin-bottom:2rem;
 }
@@ -386,9 +371,7 @@ margin-bottom:1rem;
 
 .can
 {
-display:-ms-grid;
 display:grid;
--ms-grid-columns:1fr 1rem 1fr 1rem 1fr;
 grid-template-columns:repeat(3,1fr);
 gap:1rem;
 }
@@ -406,10 +389,8 @@ border-radius:4px;
 footer
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-pack:justify;
--ms-flex-pack:justify;
 justify-content:space-between;
 border-top:1px solid black;
 gap:1rem;
@@ -446,13 +427,11 @@ background:white;
 .aa
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 gap:.25rem;
 font-size:.8rem;
 text-align:center;
 -webkit-box-align:center;
--ms-flex-align:center;
 align-items:center;
 }
 
@@ -465,18 +444,13 @@ text-align:right;
 
 dialog
 {
--ms-grid-rows:auto 1fr auto;
-grid-template-rows:auto 1fr auto;
 width:80%;
 max-width:500px;
-height:-moz-fit-content;
-height:-webkit-fit-content;
-height:fit-content;
-max-height:80%;
 border:0;
 padding:0;
 margin:auto;
 border-radius:8px;
+background-color:var(--b5);
 }
 
 dialog::-webkit-backdrop
@@ -506,13 +480,13 @@ color:white;
 {
 padding:0 1rem 0 1rem;
 overflow:auto;
+background-color:white;
 }
 
 .d-s p
 {
 text-align:justify;
 -webkit-hyphens:auto;
--ms-hyphens:auto;
 hyphens:auto;
 }
 
@@ -527,10 +501,8 @@ text-align:right;
 .bf
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-align:center;
--ms-flex-align:center;
 align-items:center;
 gap:.5rem;
 }
@@ -538,10 +510,8 @@ gap:.5rem;
 .oo
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-pack:center;
--ms-flex-pack:center;
 justify-content:center;
 padding:.5rem;
 }
@@ -560,8 +530,6 @@ font-weight:bold;
 
 .ass
 {
--ms-flex-item-align:start;
--ms-grid-row-align:start;
 align-self:start;
 padding-top:calc(.25rem + 1px);
 }
@@ -569,10 +537,8 @@ padding-top:calc(.25rem + 1px);
 .fr
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-pack:end;
--ms-flex-pack:end;
 justify-content:flex-end;
 }
 
@@ -593,17 +559,13 @@ background:white;
 z-index:100;
 padding:1rem;
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
 -webkit-box-orient:vertical;
 -webkit-box-direction:normal;
--ms-flex-direction:column;
 flex-direction:column;
 -webkit-box-pack:center;
--ms-flex-pack:center;
 justify-content:center;
 -webkit-box-align:center;
--ms-flex-align:center;
 align-items:center;
 }
 
@@ -617,7 +579,6 @@ text-align:center;
 {
 text-align:justify;
 -webkit-hyphens:auto;
--ms-hyphens:auto;
 hyphens:auto;
 }
 

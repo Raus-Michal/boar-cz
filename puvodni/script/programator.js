@@ -76,5 +76,30 @@ let textTW=`window.open('${hrefTW}','Sdílet na Twittru','width=${this.SIRKA},he
 document.getElementById(this._idTW).href=`javascript:${textTW}`;
 }}};
 
+const odkazy={
+id:["a-programator"], // id odkazů, které se budou měnit
+t1:500,
+t2:1000,
+async uprav(){
+let ob_s=this.id.length; // načte délku řetězce
+for(let i=0;i<ob_s;i++)
+{
+let hr=document.getElementById(this.id[i]).href; /* načte href objektu */
+let hr_p=hr.indexOf("#"); /* pozice # v řetězci */
+if(hr_p!==-1) /* pokud se pozice v řetězci === -1 , tak nebyl znak v řetězci nalezen */
+{
+let poz_rez=hr_p+1; /* posune polohu řezu pro odkaz o jedno místo od # */
+let odkaz=hr.slice(poz_rez); /* vytvoří konečný odkaz ořezáním původního */
+if(odkaz!=="") /* pokud nebude odkaz prázdným řetězcem */
+{
+document.getElementById(this.id[i]).href=`javascript:odkazy.roluj('${odkaz}');`; /* upravý href každého odkazu na javascriptovou funkci */
+}}}},
+
+roluj(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth",block:"start"}); /* provede scrool na objekt */
+setTimeout(`document.getElementById('${id}').scrollIntoView({behavior:'smooth',block:'start'});`,this.t1); /* za 500ms provede opět scrool na objekt */
+}};
+
+odkazy.uprav(); // upraví odkazy na stránce na SCROOL
 statistika.aktivace(); // aktivuje script pro odesílání statistiky
 sdilet.prepis(); // zajistí přepis HREF tlačítek pro sdílení na Facebooku a Twittru

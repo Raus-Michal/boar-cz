@@ -63,8 +63,23 @@ const o2=document.getElementById(this.id[1]); // druhý objekt změny box pro SV
 const o1_v=parseInt(o1.clientHeight); // výška objektu 1
 const o2_v=parseInt(o2.clientHeight); // výška objektu 2
 
-const d_v= parseInt(window.innerHeight) || parseInt(document.documentElement.clientHeight); // Získání aktuální výšky viewportu
+let d_v; // proměnná, která bude určovat výšku zařízení
 
+ // Kontrola, zda je podporováno API `visualViewport`
+ if(window.visualViewport){
+// Pokud je dostupné, použijeme přesnou výšku viditelné oblasti
+d_v=parseInt(window.visualViewport.height);
+}else if(window.devicePixelRatio){
+// Pokud není dostupné `visualViewport`, ale zařízení podporuje `devicePixelRatio`,
+// přepočítáme výšku podle logické velikosti a pixelového poměru.
+d_v=parseInt(window.innerHeight/window.devicePixelRatio);
+}else if (document.documentElement&&document.documentElement.clientHeight) {
+// Fallback: použijeme `document.documentElement.clientHeight`, pokud je dostupný
+d_v=parseInt(document.documentElement.clientHeight);
+}else {
+// Poslední možnost: použijeme základní `window.innerHeight`
+d_v=parseInt(window.innerHeight);
+}
 
 if(o1_v!==d_v||o2_v!==d_v)
 {
@@ -73,7 +88,9 @@ if(o1_v!==d_v||o2_v!==d_v)
 clearTimeout(this.casovac); // vynulování časovače objektu
 
  o1.style.height=`${d_v}px`; // přepsání hodnoty výšky na aktuální výšku viewportu
+ o1.style.minHeight=`${d_v}px`; // přepsání hodnoty minimální výšky na aktuální výšku viewportu
  o2.style.height=`${d_v}px`; // přepsání hodnoty výšky na aktuální výšku viewportu
+ o2.style.minHeight=`${d_v}px`; // přepsání hodnoty minimální výšky na aktuální výšku viewportu
 
 this.casovac=setTimeout(()=>{
 this.vyska_header(); // rekluze, funkce spustí za určitý čas, sama sebe, aby zkontrolovala, zda došlo k změně výšky sledovaných objektů na výšku viewportu

@@ -57,6 +57,12 @@ console.error('Chyba při odesílání dat:',error);
 },
 vyska_header(){
  // funkce upraví výšku header na výšku view portu
+
+if(CSS.supports("height","1dvh")||CSS.supports("height","1svh")){
+// podmínka otestuje, jestli prohlížeč zařízení podporuje jednotky SVH nebo DVH
+return; // funkce bude ukončena - integrované jednotky, který pohlídají výšku jsou implementovány v prohlížeči
+}
+
 const o1=document.getElementById(this.id[0]); // první objekt změny hlavička stránky
 const o2=document.getElementById(this.id[1]); // druhý objekt změny box pro SVG obrázek
 

@@ -2,20 +2,25 @@
 id:"hc", // id hlavního kontejneru
 handleEvent(){
 
-let vyska; // proměnná, která bude požita jako výška v PX
+let d_v; // proměnná, která bude určovat výšku zařízení
 
-if(window&&window.visualViewport) // test - zda je visualViewport podporováno
-{
-// pokud je visualViewport API podporováno
-const v_vw_port=parseInt(window.visualViewport.height); // výška visual view portu
-vyska=`${v_vw_port}px`; // výška visual view portu pro CSS úpravu výšky hlavního kontejneru
-}
-else
-{
-const d_v=parseInt(window.innerHeight)||parseInt(document.documentElement.clientHeight); // Získání aktuální výšky viewportu
-vyska=`${d_v}px`; // výška visual portu pro CSS úpravu výšky hlavního kontejneru
+// Kontrola, zda je podporováno API `visualViewport`
+if(window.visualViewport){
+// Pokud je dostupné, použijeme přesnou výšku viditelné oblasti
+d_v=parseInt(window.visualViewport.height);
+}else if(window.devicePixelRatio){
+// Pokud není dostupné `visualViewport`, ale zařízení podporuje `devicePixelRatio`,
+// přepočítáme výšku podle logické velikosti a pixelového poměru.
+d_v=parseInt(window.innerHeight/window.devicePixelRatio);
+}else if(document.documentElement&&document.documentElement.clientHeight) {
+// Fallback: použijeme `document.documentElement.clientHeight`, pokud je dostupný
+d_v=parseInt(document.documentElement.clientHeight);
+}else{
+// Poslední možnost: použijeme základní `window.innerHeight`
+d_v=parseInt(window.innerHeight);
 }
 
+const vyska=`${d_v}px`; // výška visual portu pro CSS úpravu výšky hlavního kontejneru
 
 const o=document.getElementById(this.id); // hlavní kontejner
 const o1=document.body; // body
@@ -42,6 +47,14 @@ addEventListener("scroll",this); // pro scroll
 },
 
 zahajit(){
+// funkce zahájí základní procesy pro hlídání výšky okna hlavního kontejneru
+
+if(CSS.supports("height","1svh")) // test jestli prohlížeč zařízení podporuje CSS jednotky SVH
+{
+// podmínka otestuje, jestli prohlížeč zařízení podporuje jednotky SVH
+return; // pokud jsou jednotky SVH podporovány, funkce bude ukončena
+}
+
 this.aktivace(); // zapne poluchače událostí
 this.handleEvent(); // zapne první úpravu výšky hlavního kontajneru a body
 }

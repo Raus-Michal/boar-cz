@@ -6,6 +6,7 @@ idO:[["kar1",0],["kar2",0],["kar3",0],["u1",0],["por",0]],
 pocet_pouziti:0, // určuje kolikrát uživatel použil visualViewport, který se spouští mimojiné scroolem uživatele
 odeslano:[false,false], // určuje jestli byla odeslána statistika 0=návětěva 1=významná návštěva, false=neodesláno, true=odesláno
 resize_acive:false, // proměnná hlídá, zda jiš došlo jednou k aktivaci posluchče pro resize obrazovky false=nedošlo, true=došlo
+dvh_svh:false, // proměná určuje jestli prohlížeč zařízení podporuje CSS jednotky dvh anebo svh - pokud ano=TRUE, pokud ne=FALSE
 a_p(id,t){
 // funkce zapne animaci objektu ID po čase T
 setTimeout(`document.getElementById("${id}").style.animationPlayState="running";`,t); // spuštění animace za čas t
@@ -55,14 +56,17 @@ console.error('Chyba při odesílání dat:',error);
 }
 
 },
+test_dvh_svh()
+{
+// funkce otestuje jestli prohlížeč zařízení podporuje CSS jednotky SVH anebo DVH
+if(CSS.supports("height","1dvh")||CSS.supports("height","1svh"))
+{
+// podmínka otestuje, jestli prohlížeč zařízení podporuje jednotky SVH nebo DVH
+this.dvh_svh=true; // proměná bude změněna na TRUE - integrované jednotky, který pohlídají výšku jsou implementovány v prohlížeči
+}
+},
 vyska_header(){
  // funkce upraví výšku header na výšku view portu
-
-if(CSS.supports("height","1dvh")||CSS.supports("height","1svh")){
-// podmínka otestuje, jestli prohlížeč zařízení podporuje jednotky SVH nebo DVH
-return; // funkce bude ukončena - integrované jednotky, který pohlídají výšku jsou implementovány v prohlížeči
-}
-
 const o1=document.getElementById(this.id[0]); // první objekt změny hlavička stránky
 const o2=document.getElementById(this.id[1]); // druhý objekt změny box pro SVG obrázek
 
@@ -71,8 +75,8 @@ const o2_v=parseInt(o2.clientHeight); // výška objektu 2
 
 let d_v; // proměnná, která bude určovat výšku zařízení
 
- // Kontrola, zda je podporováno API `visualViewport`
- if(window.visualViewport){
+// Kontrola, zda je podporováno API `visualViewport`
+if(window.visualViewport){
 // Pokud je dostupné, použijeme přesnou výšku viditelné oblasti
 d_v=parseInt(window.visualViewport.height);
 }else if(window.devicePixelRatio){
@@ -194,10 +198,12 @@ removeEventListener("scroll",this);// posluchač sleduje scrool uživatele a zap
 },
 aktivace(){
 // Posluchače - PŘIDÁ
+this.test_dvh_svh(); // funkce otestuje jestli prohlížeč zařízení podporuje CSS jednotky SVH anebo DVH
 
-if(!this.resize_acive)
+if(!this.resize_acive&&!this.dvh_svh)
 {
-// proměnná hlídá, aby nedošlo vícekrát k zapnutí zbytečně tohoto posluchače, ten kvůli použití this.bind(this) nelze odebrat, tudíš jeho vícepřidání zatěžuje zařízení uživatele
+// proměnná hlídá, aby nedošlo vícekrát k zapnutí zbytečně tohoto posluchače, ten kvůli použití this.bind(this) nelze odebrat, tudíš jeho vícepřidání zatěžuje zařízení uživatele - dále také hlídá jestli prohlížeč zařízení podporuje CSS jednotky dvh nebo svh - v případě podpory těchto jednotej, je aktivace posluchače nadbytečná
+this.vyska_header(); // funkce přizpůsobí výšku headeru výšce obrazovky zařízení uživatele
 window.visualViewport.addEventListener("resize",this.vyska_header.bind(this)); // posluchač změny velikosti okna spustí funkci, která upraví výšku header na výšku zařízení uživatele
 this.resize_acive=true; // změna proměnné určí, že již byl posluchač aktivován
 }
@@ -216,7 +222,6 @@ ob.classList.add(this.idA[i][1]); // přidělení class objektu
 
 zahajit(){
 // funkce zahájí procesy, které upravý výšku header stránky na výšku obrazovky zařízení uživatele a zapne posluchače Visual View port API - scroll a resize
-this.vyska_header(); // funkce přizpůsobí výšku headeru výšce obrazovky zařízení uživatele
 if(window&&window.visualViewport) /* test - zda je visualViewport podporováno */
 {
 this.aktivace(); // zapne posluchač visualViewport
@@ -284,8 +289,12 @@ odkazy.uprav(); /* opraví odkazi na stránce na SCROOL */
 sdilet.prepis(); /* zajistí přepis HREF tlačítek pro sdílení na Facebooku a Twittru */
 
 window.addEventListener("load",()=>{
-// posluchač po načtení stránky
+// posluchač po načtení stránky - opatření nastavení výšky headeru pro pomalejší zařízení
+v_port.test_dvh_svh(); // funkce otestuje jestli prohlížeč zařízení podporuje CSS jednotky SVH anebo DVH
+if(!v_port.dvh_svh)
+{
 setTimeout(()=>{
 v_port.vyska_header();  // srovnání výšky headeru na výšku obrazovky zařízení
 },1000); // menší zpoždění pro pomalejší zařízení
+}
 });

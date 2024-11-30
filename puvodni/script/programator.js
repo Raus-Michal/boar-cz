@@ -53,53 +53,34 @@ this.odesli_data(this.data[0]); // přidá posluchač click buttonům s id uvede
 
 }};
 
-const sdilet={_idFB:"sdil-fb",_idTW:"sdil-tw",SIRKA:600,VYSKA:600,min_VYSKA:800,min_SIRKA:800,
+const odkaz={
+id:["sdil-fb","sdil-tw","massenger","linked","zivotopis"], // id odkazů, které mají být změněny
+SIRKA:600, // šířka nového okna
+VYSKA:600, // výška nového okna
+min_VYSKA:800, // minimální výška obrazovky
+min_SIRKA:800, // minimální šířka obrazovky
 async prepis(){
-let vyska=parseInt(window.screen.height); // výška obrazovky
-let sirka=parseInt(window.screen.width); // šířka obrazovky
-let z_leva=sirka/2-this.SIRKA/2;
-let z_hora=vyska/2-this.VYSKA/2;
+// funkce přepíše HREF, tak aby se odkazy otvíraly v novém pracovním okně
 
-// funkce přepíše HREF na tlačítkách sdílet Facebook a sdílet Twitter
-if(document.getElementById(this._idFB)&&vyska>this.min_VYSKA&&sirka>this.min_SIRKA)
+const vyska=parseInt(window.screen.height); // výška obrazovky
+const sirka=parseInt(window.screen.width); // šířka obrazovky
+const z_leva=sirka/2-this.SIRKA/2; // centrace nového okna zleva
+const z_hora=vyska/2-this.VYSKA/2; // centrace nového okna zhora
+
+
+if(vyska>this.min_VYSKA&&sirka>this.min_SIRKA)
 {
-const hrefFB=document.getElementById(this._idFB).href; // načte stávající href odkazu
-document.getElementById(this._idFB).target=""; // target musí být prázdý jinak nové okno neotevře
-let textFB=`window.open('${hrefFB}','Sdílet na FB','width=${this.SIRKA},height=${this.VYSKA},left=${z_leva},top=${z_hora}');`; // příprava nového href
-document.getElementById(this._idFB).href=`javascript:${textFB}`; // dokončení nového href
+// podmínka = pokud je obrazovka zařízení dostatečně velká
+const d=this.id.length; // délka pole id odkazů
+for(let i=0;i<d;i++)
+{
+// smyčka změní odkazi všech id prvků v poli this.id
+const old_href=document.getElementById(this.id[i]).href; // načte stávající href odkazu
+document.getElementById(this.id[i]).target=""; // target musí být prázdý jinak nové okno neotevře
+const new_href=`window.open('${old_href}','_blank','width=${this.SIRKA},height=${this.VYSKA},left=${z_leva},top=${z_hora},resizable=yes');`; // příprava nového href
+document.getElementById(this.id[i]).href=`javascript:${new_href}`; // dokončení nového href
 }
-if(document.getElementById(this._idTW)&&vyska>this.min_VYSKA&&sirka>this.min_SIRKA)
-{
-const hrefTW=document.getElementById(this._idTW).href;
-document.getElementById(this._idTW).target=""; // target musí být prázdý jinak nové okno neotevře
-let textTW=`window.open('${hrefTW}','Sdílet na Twittru','width=${this.SIRKA},height=${this.VYSKA},left=${z_leva},top=${z_hora}');`;
-document.getElementById(this._idTW).href=`javascript:${textTW}`;
 }}};
 
-const odkazy={
-id:["a-programator"], // id odkazů, které se budou měnit
-t1:500,
-t2:1000,
-async uprav(){
-let ob_s=this.id.length; // načte délku řetězce
-for(let i=0;i<ob_s;i++)
-{
-let hr=document.getElementById(this.id[i]).href; /* načte href objektu */
-let hr_p=hr.indexOf("#"); /* pozice # v řetězci */
-if(hr_p!==-1) /* pokud se pozice v řetězci === -1 , tak nebyl znak v řetězci nalezen */
-{
-let poz_rez=hr_p+1; /* posune polohu řezu pro odkaz o jedno místo od # */
-let odkaz=hr.slice(poz_rez); /* vytvoří konečný odkaz ořezáním původního */
-if(odkaz!=="") /* pokud nebude odkaz prázdným řetězcem */
-{
-document.getElementById(this.id[i]).href=`javascript:odkazy.roluj('${odkaz}');`; /* upravý href každého odkazu na javascriptovou funkci */
-}}}},
-
-roluj(id){
-document.getElementById(id).scrollIntoView({behavior:"smooth",block:"start"}); /* provede scrool na objekt */
-setTimeout(`document.getElementById('${id}').scrollIntoView({behavior:'smooth',block:'start'});`,this.t1); /* za 500ms provede opět scrool na objekt */
-}};
-
-odkazy.uprav(); // upraví odkazy na stránce na SCROOL
 statistika.aktivace(); // aktivuje script pro odesílání statistiky
-sdilet.prepis(); // zajistí přepis HREF tlačítek pro sdílení na Facebooku a Twittru
+odkaz.prepis(); // zajistí přepis HREF tlačítek na JS funkci window.open

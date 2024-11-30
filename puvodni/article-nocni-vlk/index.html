@@ -8,7 +8,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 <meta charset="utf-8">
 <meta name="csrf-token" content="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8'); ?>">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<link rel="stylesheet" href="../css/projekty.css?v=5">
+<link rel="stylesheet" href="../css/projekty.css?v=6">
 <link rel="preload" as="image" href="../svg/ico-whi.svg">
 <meta name="description" content="Noční VLK - efektivní nástroj pro hlídání časových intervalů a řízení kontrol objektů, osob a věcí.">
 <meta name="keywords" content="Noční VLK,hlídání časových intervalů,řízení kontrol">
@@ -21,12 +21,12 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:update_time" content="2024-09-25T18:00:00+01:00">
+<meta property="og:update_time" content="2024-11-29T18:00:00+01:00">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:site_name" content="Boar-cz">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2024-09-25T18:00:00+1:00">
-<meta property="article:modified_time" content="2024-09-29T18:00:00+1:00">
+<meta property="article:modified_time" content="2024-11-29T18:00:00+1:00">
 <meta property="article:section" content="Co je Noční VLK?,Klíčové funkce aplikace Noční VLK,Jak používat aplikaci Noční VLK?,Bezpečnost a technické aspekty aplikace,Často kladené otázky (FAQ)">
 <meta property="article:tag" content="Boar-cz">
 <meta name="robots" content="index,follow">
@@ -76,7 +76,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 }
 },
 "datePublished": "2024-09-25",
-"dateModified": "2024-09-29"
+"dateModified": "2024-11-29"
 }
 </script>
 </head>
@@ -318,6 +318,11 @@ Video návod aplikace Noční&nbsp;VLK
 <aside class="bokem">
 
 <div class="fl b-s">
+<div class="b-s2">
+<a class="fl a-s ac" href="../o-webu/" title="Informace o webu">
+<div class="ico1"> </div>
+Informace o&nbsp;webové stránce</a>
+</div>
 <div class="b-s2">
 <a id="sdil-fb" class="fl a-s ac" href="https://www.facebook.com/sharer/sharer.php?u=https://www.boar-cz.info/article-nocni-vlk/" title="Sdílet článek Noční VLK na FB" target="_blank" rel="nofollow">
 <div class="ico2"> </div>

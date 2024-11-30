@@ -698,7 +698,7 @@ width:100%;
 align-items:center;
 }
 
-.ico2,.ico3
+.ico1,.ico2,.ico3
 {
 display:block;
 background:url('../svg/ico-s.svg?=v2') no-repeat;
@@ -706,7 +706,12 @@ background-size:700%; /* každý obrázek + 100% - 7 svg = 700% */
 height:0;
 }
 
-.ico2,.ico3
+.ico1
+{
+background-position:0 0;
+}
+
+.ico1,.ico2,.ico3
 {
 width:3rem;
 min-width:3rem;

@@ -397,17 +397,17 @@ justify-content:center;
 {
 display:flex;
 gap:2rem;
-padding:1rem calc(1rem + 1vw);
+padding:1rem;
 margin-bottom:1rem;
 flex-wrap:wrap;
 justify-content:center;
 }
 
-.ip1,.ip2,.ip3,.ip4,.ip5,.ip6,.ip7,.ip8,.ip9,.ip10,.ip11 /* ikony */
+.ip1,.ip2,.ip3,.ip4,.ip5,.ip6,.ip7,.ip8,.ip9,.ip10,.ip11,.ip12,.ip13,.ip14,.ip15,.ip16,.ip17 /* ikony */
 {
 display:block;
-background:url('../svg/ico-prog.svg') no-repeat;
-background-size:1100%; /* každý obrázek + 100% - 7 svg = 700% */
+background:url('../svg/ico-prog.svg?v=1') no-repeat;
+background-size:1700%; /* každý obrázek + 100% , 17 svg = 1700% */
 height:0;
 }
 
@@ -419,7 +419,7 @@ height:2rem;
 min-height:2rem;
 }
 
-.ip3,.ip4,.ip5,.ip6,.ip7,.ip8,.ip9,.ip10,.ip11
+.ip3,.ip4,.ip5,.ip6,.ip7,.ip8,.ip9,.ip10,.ip11,.ip12,.ip13,.ip14,.ip15,.ip16,.ip17
 {
 width:5rem;
 min-width:5rem;
@@ -434,50 +434,80 @@ background-position:0 0;
 
 .ip2 /* linkedIn */
 {
-background-position:10% 0;
+background-position:6.25% 0;
 }
 
 .ip3 /* vs-code */
 {
-background-position:20% 0;
+background-position:12.5% 0;
 }
 
-.ip4 /* html5 */
+.ip4 /* inskape */
 {
-background-position:30% 0;
+background-position:18.75% 0;
 }
 
-.ip5 /* css3 */
+.ip5 /* photoshop */
 {
-background-position:40% 0;
+background-position:25% 0;
 }
 
-.ip6 /* javascript */
+.ip6 /* html5 */
+{
+background-position:31.25% 0;
+}
+
+.ip7 /* css3 */
+{
+background-position:37.5% 0;
+}
+
+.ip8 /* javascript */
+{
+background-position:43.75% 0;
+}
+
+.ip9 /* typescript */
 {
 background-position:50% 0;
 }
 
-.ip7 /* php */
+.ip10 /* vue */
 {
-background-position:60% 0;
+background-position:56.25% 0;
 }
 
-.ip8 /* vue */
+.ip11 /* php */
 {
-background-position:70% 0;
+background-position:62.5% 0;
 }
 
-.ip9 /* node-js */
+.ip12 /* JSON */
 {
-background-position:80% 0;
+background-position:68.75% 0;
 }
 
-.ip10 /* git */
+.ip13 /* node-js */
 {
-background-position:90% 0;
+background-position:75% 0;
 }
 
-.ip11 /* gitHuB */
+.ip14 /* SVG */
+{
+background-position:81.25% 0;
+}
+
+.ip15 /* git */
+{
+background-position:87.5% 0;
+}
+
+.ip16 /* gitHuB */
+{
+background-position:93.75% 0;
+}
+
+.ip17 /* chatGPT */
 {
 background-position:100% 0;
 }

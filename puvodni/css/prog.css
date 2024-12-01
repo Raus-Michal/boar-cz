@@ -111,7 +111,7 @@ section section
 background:white;
 }
 
-a,button
+a,button,summary
 {
 cursor:pointer;
 }
@@ -125,6 +125,17 @@ a,a:link,a:visited,a:active
 {
 color:black;
 text-decoration:none;
+}
+
+summary
+{
+color:var(--b5);
+text-decoration:underline var(--b4);
+}
+
+details
+{
+margin-bottom:1rem;
 }
 
 p
@@ -316,6 +327,11 @@ height:auto;
 mark
 {
 background:rgba(168,110,87,.3);
+}
+
+#zivotopis
+{
+font-family:"nadpis",sans-serif;
 }
 
 .i-b

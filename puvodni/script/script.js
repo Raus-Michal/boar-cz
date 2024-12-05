@@ -1,5 +1,5 @@
 ﻿const v_port={
-id:["hd","c-svg"], // id HTML prvků na které bude aplikovaný rozměr Visual View portu
+id:["hd","c-svg","svg_obr"], // id HTML prvků na které bude aplikovaný rozměr Visual View portu
 casovac:null, // časovač pro kontrolu faktické změny rozměru objektů podle Visual view portu
 idA:[["k1a","ao"],["k1b","ao"],["k1c","ao"],["k1d","ao"],["k1e","ao"],["k1f","ao"],["k2a","ao"],["k2b","ao"],["k2c","ao"],["k2d","ao"],["k2e","ao"],["k2f","ao"],["k3a","ao"],["k3b","ao"],["k3c","ao"],["k3d","ao"],["k3e","ao"],["k3f","ao"],["u1a","op"],["u1b","op"],["u1c","op"],["por1","ap"],["por2","ap"],["por3","ap"]],
 idO:[["kar1",0],["kar2",0],["kar3",0],["u1",0],["por",0]],
@@ -69,9 +69,11 @@ vyska_header(){
  // funkce upraví výšku header na výšku view portu
 const o1=document.getElementById(this.id[0]); // první objekt změny hlavička stránky
 const o2=document.getElementById(this.id[1]); // druhý objekt změny box pro SVG obrázek
+const o3=document.getElementById(this.id[2]); // třetí objekt změny SVG obrázek
 
 const o1_v=parseInt(o1.clientHeight); // výška objektu 1
 const o2_v=parseInt(o2.clientHeight); // výška objektu 2
+const o3_v=parseInt(o3.clientHeight); // výška objektu 3
 
 let d_v; // proměnná, která bude určovat výšku zařízení
 
@@ -86,10 +88,12 @@ d_v=parseInt(window.innerHeight/window.devicePixelRatio);
 }else if (document.documentElement&&document.documentElement.clientHeight) {
 // Fallback: použijeme `document.documentElement.clientHeight`, pokud je dostupný
 d_v=parseInt(document.documentElement.clientHeight);
-}else {
+}else{
 // Poslední možnost: použijeme základní `window.innerHeight`
 d_v=parseInt(window.innerHeight);
 }
+
+o3.style.maxHeight=`${d_v}px`; // přepsání hodnoty maximální výšky na aktuální výšku viewportu
 
 if(o1_v!==d_v||o2_v!==d_v)
 {

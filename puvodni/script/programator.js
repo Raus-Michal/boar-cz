@@ -82,5 +82,29 @@ document.getElementById(this.id[i]).href=`javascript:${new_href}`; // dokončen�
 }
 }}};
 
+class Zmen_odkaz_home
+{
+// objekt slouží ke změně odkazů na homepage, pokud bude návštěvník přicházet z homepage, bude mít odkaz locatin.search: ?z-webu a odkazy na článku Programátor se změní tak, aby při kliku na ně byl uživatel nasměrován na kotvu z které přišel - button Informace o programátorovi
+search="?z-webu"; // location.seatch, který bude očekáván, pokud návštěvník příjde z homepage
+new_href="../#programator"; // nový, href odkazů na homepage s kotvou na tlačítko Informace o programátorovi
+id_transcript=["a_home1","a_home2"]; // id A HTML ELEMENTŮ u kterých se bude měnit href na homepage
+async akce()
+{
+if(location.search===this.search)
+{
+const d=this.id_transcript.length;
+for(let i=0;i<d;i++)
+{
+// smyčka zajistí přepis HREF všech elementů s ID uvedených v poli this.id_transcript
+const a=document.getElementById(this.id_transcript[i]); // A HTML objekt
+if(a)
+{
+// poud HTML objekt existuje
+a.href=this.new_href; // změna href u odkazů na homepage
+}
+}}}}
+
+const zmen_odkaz_home=new Zmen_odkaz_home(); // vytvoří objekt
+zmen_odkaz_home.akce(); // změně odkazů na homepage, pokud bude návštěvník přicházet z homepage, bude mít odkaz locatin.search: ?z-webu a odkazy na článku Programátor se změní tak, aby při kliku na ně byl uživatel nasměrován na kotvu z které přišel - button Informace o programátorovi
 statistika.aktivace(); // aktivuje script pro odesílání statistiky
 odkaz.prepis(); // zajistí přepis HREF tlačítek na JS funkci window.open

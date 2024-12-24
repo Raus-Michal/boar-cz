@@ -329,11 +329,6 @@ mark
 background:rgba(168,110,87,.3);
 }
 
-#zivotopis
-{
-font-family:"nadpis",sans-serif;
-}
-
 .i-b
 {
 aspect-ratio:1/1;
@@ -538,6 +533,25 @@ background:white;
 {
 width:auto;
 }}
+
+.a-box-plus
+{
+gap:1rem;
+flex-wrap:wrap;
+}
+
+.a-box-plus a
+{
+flex:1;
+}
+
+.f_n
+{
+font-weight:bold;
+font-size:1.25rem;
+font-family:"nadpis",sans-serif;
+width:18ch;
+}
 
 .lb
 {

@@ -29,7 +29,8 @@ $data[$zapocti]=$new_data; // přičte stávající počet uživatelů
 else
 {
 // pokud soubor $JSON s daty neexistuje
-$data = array($zapocti=>1); // budou data prozatím pole s jedním uživatelem pro konkrétní webovou stránku
+$aktualniDatum=date('Y-m-d'); // Formát pro rok-měsíc-den
+$data=array($zapocti=>1,"aktualniDatum"=>$aktualniDatum); // budou data prozatím pole s jedním uživatelem pro konkrétní webovou stránku a datumem, kdy byla statistika založena
 }
 $newJsonData = json_encode($data, JSON_PRETTY_PRINT); // aktualizovaná data zakóduje na JSON formát
 file_put_contents($file_data, $newJsonData); // přepíše stávající JSON s aktualizovanými daty

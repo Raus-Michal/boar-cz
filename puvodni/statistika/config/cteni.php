@@ -6,6 +6,17 @@ if (file_exists($file_data)){
 $jsonData = file_get_contents($file_data); // načte soubor JSON
 $data = json_decode($jsonData, true); // dekóduje data JSON
 
+if($data["aktualniDatum"])
+{
+// pokud budou data o zahájení statistiky
+$aktualniDatum=$data["aktualniDatum"];
+}
+else
+{
+// pokud nebudou data o zahájení statistiky
+$aktualniDatum="datum není k dispozici";
+}
+
 if($data["homepage"])
 {
 // pokud budou data o statistice homepage

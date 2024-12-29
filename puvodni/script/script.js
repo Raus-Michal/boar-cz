@@ -208,11 +208,11 @@ if(!this.resize_acive&&!this.dvh_svh)
 {
 // proměnná hlídá, aby nedošlo vícekrát k zapnutí zbytečně tohoto posluchače, ten kvůli použití this.bind(this) nelze odebrat, tudíš jeho vícepřidání zatěžuje zařízení uživatele - dále také hlídá jestli prohlížeč zařízení podporuje CSS jednotky dvh nebo svh - v případě podpory těchto jednotej, je aktivace posluchače nadbytečná
 this.vyska_header(); // funkce přizpůsobí výšku headeru výšce obrazovky zařízení uživatele
-window.visualViewport.addEventListener("resize",this.vyska_header.bind(this)); // posluchač změny velikosti okna spustí funkci, která upraví výšku header na výšku zařízení uživatele
-this.resize_acive=true; // změna proměnné určí, že již byl posluchač aktivován
+window.visualViewport.addEventListener("resize",this.vyska_header.bind(this),{passive:true}); // posluchač změny velikosti okna spustí funkci, která upraví výšku header na výšku zařízení uživatele
+this.resize_acive=true; // změna proměnné určí, že již byl posluchač aktivován; { passive: true } jako třetí parametr ve addEventListener, což prohlížeči řekne, že event handler nebude volat preventDefault(), což umožňuje lepší optimalizaci výkonu.
 }
-window.visualViewport.addEventListener("scroll",this); // posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace
-addEventListener("scroll",this);// posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace
+window.visualViewport.addEventListener("scroll",this,{passive:true}); // posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace; { passive: true } jako třetí parametr ve addEventListener, což prohlížeči řekne, že event handler nebude volat preventDefault(), což umožňuje lepší optimalizaci výkonu.
+addEventListener("scroll",this,{passive:true});// posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace; { passive: true } jako třetí parametr ve addEventListener, což prohlížeči řekne, že event handler nebude volat preventDefault(), což umožňuje lepší optimalizaci výkonu.
 },
 
 async animaceAktivace(){

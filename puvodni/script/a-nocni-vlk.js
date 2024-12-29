@@ -54,9 +54,9 @@ aktivace(){
 
 if(window&&window.visualViewport) // test - zda je visualViewport podporováno
 {
-window.visualViewport.addEventListener("scroll",this); // aktivuje posluchač pro pohyb na webu - prostřednictvím Visual View port API
+window.visualViewport.addEventListener("scroll",this,{passive:true}); // aktivuje posluchač pro pohyb na webu - prostřednictvím Visual View port API; { passive: true } jako třetí parametr ve addEventListener, což prohlížeči řekne, že event handler nebude volat preventDefault(), což umožňuje lepší optimalizaci výkonu.
 }
-addEventListener("scroll",this); // aktivuje sekundární posluchač pro pohyb na webu
+addEventListener("scroll",this,{passive:true}); // aktivuje sekundární posluchač pro pohyb na webu; { passive: true } jako třetí parametr ve addEventListener, což prohlížeči řekne, že event handler nebude volat preventDefault(), což umožňuje lepší optimalizaci výkonu.
 
 const d=this.id_but.length; // délka pole
 for(let i=0;i<d;i++)

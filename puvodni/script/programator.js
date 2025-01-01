@@ -1,8 +1,10 @@
-const statistika={
-id_but:"zivotopis", // id buttonů, které podléhají statistice
-data:["klik_programator","programator","programator_vyz"], // data, která jsou odesílána
-pocet:0, // proměnná hlídá počet scrool na stránce
-odeslano_scroll:[false,false], // proměnná hlídá, zda už byly statistiky scroll [návštěvník,významní]
+"use strict";
+class Statistika
+{
+id_but="zivotopis"; // id buttonů, které podléhají statistice
+data=["klik_programator","programator","programator_vyz"]; // data, která jsou odesílána
+pocet=0; // proměnná hlídá počet scrool na stránce
+odeslano_scroll=[false,false]; // proměnná hlídá, zda už byly statistiky scroll [návštěvník,významní]
 async odesli_data(co_poslat){
 // funkce odesílá data
 const token=document.querySelector("meta[name='csrf-token']").getAttribute("content"); // načte token z meta tagu HTML
@@ -23,7 +25,7 @@ console.log('Výsledek:',result);
 .catch(error=>{
 console.error('Chyba při odesílání dat:',error);
 });
-},
+};
 handleEvent()
 {
 
@@ -39,9 +41,8 @@ else if(this.pocet>150&&this.odeslano_scroll[1]===false)
 this.odesli_data(this.data[2]); // pošle data funkci, že byl návštěvník významný
 this.odeslano_scroll[1]=true;
 }
-},
+};
 aktivace(){
-
 if(window&&window.visualViewport) // test - zda je visualViewport podporováno
 {
 window.visualViewport.addEventListener("scroll",this,{passive:true}); // aktivuje posluchač pro pohyb na webu - prostřednictvím Visual View port API; { passive: true } jako třetí parametr ve addEventListener, což prohlížeči řekne, že event handler nebude volat preventDefault(), což umožňuje lepší optimalizaci výkonu.
@@ -50,16 +51,16 @@ addEventListener("scroll",this,{passive:true}); // aktivuje sekundární posluch
 document.getElementById(this.id_but).addEventListener("click",()=>{
 this.odesli_data(this.data[0]); // přidá posluchač click buttonům s id uvedeným v poli
 });
-
 }};
 
-const odkaz={
-id:["sdil-fb","sdil-tw","massenger","linked","zivotopis"], // id odkazů, které mají být změněny
-SIRKA:600, // šířka nového okna
-VYSKA:600, // výška nového okna
-min_VYSKA:800, // minimální výška obrazovky
-min_SIRKA:800, // minimální šířka obrazovky
-async prepis(){
+class Odkaz
+{
+id=["sdil-fb","sdil-tw","massenger","linked","zivotopis"]; // id odkazů, které mají být změněny
+SIRKA=600; // šířka nového okna
+VYSKA=600; // výška nového okna
+min_VYSKA=800; // minimální výška obrazovky
+min_SIRKA=800; // minimální šířka obrazovky
+prepis(){
 // funkce přepíše HREF, tak aby se odkazy otvíraly v novém pracovním okně
 
 const vyska=parseInt(window.screen.height); // výška obrazovky
@@ -75,11 +76,17 @@ const d=this.id.length; // délka pole id odkazů
 for(let i=0;i<d;i++)
 {
 // smyčka změní odkazi všech id prvků v poli this.id
-const old_href=document.getElementById(this.id[i]).href; // načte stávající href odkazu
-document.getElementById(this.id[i]).target=""; // target musí být prázdý jinak nové okno neotevře
-const new_href=`window.open('${old_href}','_blank','width=${this.SIRKA},height=${this.VYSKA},left=${z_leva},top=${z_hora},resizable=yes');`; // příprava nového href
-document.getElementById(this.id[i]).href=`javascript:${new_href}`; // dokončení nového href
-}
+const element=document.getElementById(this.id[i]); // načte HTML elemet podle id v poli
+if(element)
+{
+// pokud HTML element existuje
+const old_href=element.href; // načte stávající href odkazu
+element.removeAttribute("href"); // odstraní stávající href
+element.addEventListener("click",(event)=>{
+event.preventDefault(); // zabrání standardnímu chování odkazu
+window.open(old_href,'_blank',`width=${this.SIRKA},height=${this.VYSKA},left=${z_leva},top=${z_hora},resizable=yes`); // otevře nové okno
+});
+}}
 }}};
 
 class Zmen_odkaz_home
@@ -88,7 +95,7 @@ class Zmen_odkaz_home
 search="?z-webu"; // location.seatch, který bude očekáván, pokud návštěvník příjde z homepage
 new_href="../#programator"; // nový, href odkazů na homepage s kotvou na tlačítko Informace o programátorovi
 id_transcript=["a_home1","a_home2"]; // id A HTML ELEMENTŮ u kterých se bude měnit href na homepage
-async akce()
+akce()
 {
 if(location.search===this.search)
 {
@@ -102,9 +109,16 @@ if(a)
 // poud HTML objekt existuje
 a.href=this.new_href; // změna href u odkazů na homepage
 }
-}}}}
+}}}};
 
+
+const odkaz=new Odkaz(); // vytvoří objekt
 const zmen_odkaz_home=new Zmen_odkaz_home(); // vytvoří objekt
-zmen_odkaz_home.akce(); // změně odkazů na homepage, pokud bude návštěvník přicházet z homepage, bude mít odkaz locatin.search: ?z-webu a odkazy na článku Programátor se změní tak, aby při kliku na ně byl uživatel nasměrován na kotvu z které přišel - button Informace o programátorovi
+const statistika=new Statistika(); // vytvoří objekt
 statistika.aktivace(); // aktivuje script pro odesílání statistiky
+
+window.addEventListener("load",()=>{
+// posluchač se spustí, když je celá stránka načtena, včetně všech souborů CSS a obrázků.
 odkaz.prepis(); // zajistí přepis HREF tlačítek na JS funkci window.open
+zmen_odkaz_home.akce(); // změně odkazů na homepage, pokud bude návštěvník přicházet z homepage, bude mít odkaz locatin.search: ?z-webu a odkazy na článku Programátor se změní tak, aby při kliku na ně byl uživatel nasměrován na kotvu z které přišel - button Informace o programátorovi
+});

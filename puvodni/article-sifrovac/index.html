@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); // Generuje token a uloží do session
+$_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 ?>
 <!DOCTYPE html>
 <html lang="cs" dir="ltr">
@@ -83,7 +83,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16)); 
 <body>
 <div class="h-con">
 <header>
-<a class="iib" href="../#sifrovac" title="Home page">
+<a id="a_home1" class="iib" href="../" title="Home page">
 <div class="l-box">
 <div class="svg-box">
 <svg width="400" height="400" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="rgb(110,87,168)" fill="none">
@@ -296,7 +296,7 @@ Video návod aplikace Šifrovač
 
 <div class="boxC"><div class="boxM">
 <div class="a-box">
-<a href="../#sifrovac" title="Zpět na domovskou stránku">
+<a id="a_home2" href="../" title="Zpět na domovskou stránku">
 <div class="cl">
 <div class="lb">
 <svg class="ls" width="400" height="400" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="rgb(110,87,168)" fill="none">
@@ -346,6 +346,6 @@ Sdílet na&nbsp;Twitteru
 <a href="../kontakt/" title="Kontakt na provozovatele webu">Kontaktujte&nbsp;nás</a></address>
 </footer>
 </div>
-<script src="../script/a-sifrovac.js?v=3" async></script>
+<script src="../script/a-sifrovac.js?v=4" async></script>
 </body>
 </html>

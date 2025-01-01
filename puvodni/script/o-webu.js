@@ -1,5 +1,8 @@
-const odkazy={t1:500,
-async uprav(){
+"use strict";
+class Odkazy
+{
+t1=500;
+uprav(){
 let ob=document.querySelectorAll("a"); /* najde včechny tagy A na stránce a udělá z nich pole */
 let ob_s=ob.length;
 for(let i=0;i<ob_s;i++)
@@ -14,11 +17,18 @@ let odkaz=ob[i].href.slice(poz_rez); /* vytvoří konečný odkaz ořezáním p�
 if(odkaz!=="") /* pokud nebude odkaz prázdným řetězcem */
 {
 ob[i].href=`javascript:odkazy.roluj('${odkaz}');`; /* upravý href každého odkazu na javascriptovou funkci */
-}}}},
+}}}};
 
 roluj(id){
 document.getElementById(id).scrollIntoView({behavior:"smooth",block:"start"}); /* provede scrool na objekt */
 setTimeout(`document.getElementById('${id}').scrollIntoView({behavior:'smooth',block:'start'});`,this.t1); /* za 500ms provede opět scrool na objekt */
-}};
+}
+};
 
+
+const odkazy=new Odkazy(); // z class vytvoří objekt
+
+window.addEventListener("load",()=>{
+// posluchač se spustí, když je celá stránka načtena, včetně všech souborů CSS a obrázků.
 odkazy.uprav(); // opraví odkazi na stránce na SCROOL
+});

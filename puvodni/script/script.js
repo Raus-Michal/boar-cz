@@ -1,16 +1,18 @@
-﻿const v_port={
-id:["hd","c-svg","svg_obr"], // id HTML prvků na které bude aplikovaný rozměr Visual View portu
-casovac:null, // časovač pro kontrolu faktické změny rozměru objektů podle Visual view portu
-idA:[["k1a","ao"],["k1b","ao"],["k1c","ao"],["k1d","ao"],["k1e","ao"],["k1f","ao"],["k2a","ao"],["k2b","ao"],["k2c","ao"],["k2d","ao"],["k2e","ao"],["k2f","ao"],["k3a","ao"],["k3b","ao"],["k3c","ao"],["k3d","ao"],["k3e","ao"],["k3f","ao"],["u1a","op"],["u1b","op"],["u1c","op"],["por1","ap"],["por2","ap"],["por3","ap"]],
-idO:[["kar1",0],["kar2",0],["kar3",0],["u1",0],["por",0]],
-pocet_pouziti:0, // určuje kolikrát uživatel použil visualViewport, který se spouští mimojiné scroolem uživatele
-odeslano:[false,false], // určuje jestli byla odeslána statistika 0=návětěva 1=významná návštěva, false=neodesláno, true=odesláno
-resize_acive:false, // proměnná hlídá, zda jiš došlo jednou k aktivaci posluchče pro resize obrazovky false=nedošlo, true=došlo
-dvh_svh:false, // proměná určuje jestli prohlížeč zařízení podporuje CSS jednotky dvh anebo svh - pokud ano=TRUE, pokud ne=FALSE
+﻿"use strict";
+class V_port
+{
+id=["hd","c-svg","svg_obr"]; // id HTML prvků na které bude aplikovaný rozměr Visual View portu
+casovac=null; // časovač pro kontrolu faktické změny rozměru objektů podle Visual view portu
+idA=[["k1a","ao"],["k1b","ao"],["k1c","ao"],["k1d","ao"],["k1e","ao"],["k1f","ao"],["k2a","ao"],["k2b","ao"],["k2c","ao"],["k2d","ao"],["k2e","ao"],["k2f","ao"],["k3a","ao"],["k3b","ao"],["k3c","ao"],["k3d","ao"],["k3e","ao"],["k3f","ao"],["u1a","op"],["u1b","op"],["u1c","op"],["por1","ap"],["por2","ap"],["por3","ap"]];
+idO=[["kar1",0],["kar2",0],["kar3",0],["u1",0],["por",0]];
+pocet_pouziti=0; // určuje kolikrát uživatel použil visualViewport, který se spouští mimojiné scroolem uživatele
+odeslano=[false,false]; // určuje jestli byla odeslána statistika 0=návětěva 1=významná návštěva, false=neodesláno, true=odesláno
+resize_acive=false; // proměnná hlídá, zda jiš došlo jednou k aktivaci posluchče pro resize obrazovky false=nedošlo, true=došlo
+dvh_svh=false; // proměná určuje jestli prohlížeč zařízení podporuje CSS jednotky dvh anebo svh - pokud ano=TRUE, pokud ne=FALSE
 a_p(id,t){
 // funkce zapne animaci objektu ID po čase T
 setTimeout(`document.getElementById("${id}").style.animationPlayState="running";`,t); // spuštění animace za čas t
-},
+};
 
 async statistika(){
 // funkce odešle připočtení statistiky po interakci stránky s uživatelem
@@ -55,7 +57,7 @@ console.error('Chyba při odesílání dat:',error);
 });
 }
 
-},
+};
 test_dvh_svh()
 {
 // funkce otestuje jestli prohlížeč zařízení podporuje CSS jednotky SVH anebo DVH
@@ -64,7 +66,7 @@ if(CSS.supports("height","1dvh")||CSS.supports("height","1svh"))
 // podmínka otestuje, jestli prohlížeč zařízení podporuje jednotky SVH nebo DVH
 this.dvh_svh=true; // proměná bude změněna na TRUE - integrované jednotky, který pohlídají výšku jsou implementovány v prohlížeči
 }
-},
+};
 vyska_header(){
  // funkce upraví výšku header na výšku view portu
 const o1=document.getElementById(this.id[0]); // první objekt změny hlavička stránky
@@ -109,7 +111,7 @@ clearTimeout(this.casovac); // vynulování časovače objektu
 this.casovac=setTimeout(()=>{
 this.vyska_header(); // rekluze, funkce spustí za určitý čas, sama sebe, aby zkontrolovala, zda došlo k změně výšky sledovaných objektů na výšku viewportu
  },500); // tímto časovačem se za určitý čas provede opět kontrola rozměrů sledovaných objektů
-}},
+}};
 animace(){
 // funkce zajišťuje animace HTML objektů na stránce
 const vyska=parseInt(window.visualViewport.height); // zjistí výšku visualViewport
@@ -189,17 +191,17 @@ let zP=z+i;  /* zP určuje počáteční ID bloku animací */
 this.a_p(this.idA[zP][0],t[i]);
 }
 }}}
-},
+};
 handleEvent(){
 this.statistika(); // vede statistiku o návštěvnosti - odesláním dat
 this.animace(); // funkce zajišťuje animace HTML objektů na stránce
-},
+};
 DEaktivace(){
 // Posluchače - ODEBERE pro SCROLL (používá se při posunu na homepage pomocí scrollTo, během toho se to vypíná)
-window.visualViewport.removeEventListener("resize",this.vyska_header.bind(this)); // posluchač změny velikosti okna spustí funkci, která upraví výšku header na výšku zařízení uživatele
-window.visualViewport.removeEventListener("scroll",this); // posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace
-removeEventListener("scroll",this);// posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace
-},
+window.visualViewport.removeEventListener("resize",this.vyska_header.bind(this),{passive:true}); // posluchač změny velikosti okna spustí funkci, která upraví výšku header na výšku zařízení uživatele
+window.visualViewport.removeEventListener("scroll",this,{passive:true}); // posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace
+removeEventListener("scroll",this,{passive:true});// posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace
+};
 aktivace(){
 // Posluchače - PŘIDÁ
 this.test_dvh_svh(); // funkce otestuje jestli prohlížeč zařízení podporuje CSS jednotky SVH anebo DVH
@@ -213,16 +215,16 @@ this.resize_acive=true; // změna proměnné určí, že již byl posluchač akt
 }
 window.visualViewport.addEventListener("scroll",this,{passive:true}); // posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace; { passive: true } jako třetí parametr ve addEventListener, což prohlížeči řekne, že event handler nebude volat preventDefault(), což umožňuje lepší optimalizaci výkonu.
 addEventListener("scroll",this,{passive:true});// posluchač sleduje scrool uživatele a zapíná statistiku anebo pouští animace; { passive: true } jako třetí parametr ve addEventListener, což prohlížeči řekne, že event handler nebude volat preventDefault(), což umožňuje lepší optimalizaci výkonu.
-},
+};
 
-async animaceAktivace(){
+animaceAktivace(){
 // přidělení CLASS s animací ID objektům
 let id=this.idA.length; // délka pole animací3
 for(let i=0;i<id;i++)
 {
 let ob=document.getElementById(this.idA[i][0]); // objekt HTML
 ob.classList.add(this.idA[i][1]); // přidělení class objektu
-}},
+}};
 
 zahajit(){
 // funkce zahájí procesy, které upravý výšku header stránky na výšku obrazovky zařízení uživatele a zapne posluchače Visual View port API - scroll a resize
@@ -232,10 +234,13 @@ this.aktivace(); // zapne posluchač visualViewport
 this.animaceAktivace(); // přepíše CLASS objektů na které se vztahuje animace
 }}};
 
-v_port.zahajit(); // aktivuje Visual View port API + úprava hlavičky na 100vh
 
-const odkazy={t1:500,t2:1000,
-async uprav(){
+
+class Odkazy
+{
+t1=500;
+t2=1000;
+uprav(){
 let ob=document.querySelectorAll("a"); /* najde včechny tagy A na stránce a udělá z nich pole */
 let ob_s=ob.length;
 for(let i=0;i<ob_s;i++)
@@ -254,7 +259,7 @@ if(odkaz==="boar-cz")
 {
 ob[i].href=`javascript:odkazy.roluj('${odkaz}',1);`; /* výjimka pro tlačíto Boar-cz, které dělá krátký posun z menu do první části Article */
 }
-}}}},
+}}}};
 
 roluj(id,ne=0){
 if(ne===0) /* pokud není druhý parametr funkce roven nule - neprovede blokaci animací */
@@ -266,39 +271,46 @@ setTimeout(`document.getElementById('${id}').scrollIntoView({behavior:'smooth',b
 setTimeout(`v_port.aktivace();v_port.handleEvent();`,this.t2); /* za 1s opět zapne posluchač pro animace */
 }};
 
-const sdilet={_idFB:"sdil-fb",_idTW:"sdil-tw",SIRKA:600,VYSKA:600,min_VYSKA:800,min_SIRKA:800,
-async prepis(){
-let vyska=parseInt(window.screen.height); /* výška obrazovky */
-let sirka=parseInt(window.screen.width); /* šířka obrazovky */
-let z_leva=sirka/2-this.SIRKA/2;
-let z_hora=vyska/2-this.VYSKA/2;
-
-/* funkce přepíše HREF na tlačítkách sdílet Facebook a sdílet Twitter */
-if(document.getElementById(this._idFB)&&vyska>this.min_VYSKA&&sirka>this.min_SIRKA)
+class Sdilet{
+_idFB="sdil-fb";
+_idTW="sdil-tw";
+SIRKA=600;
+VYSKA=600;
+min_VYSKA=800;
+min_SIRKA=800;
+prepis(){
+const vyska=window.screen.height; // výška obrazovky
+const sirka=window.screen.width; // šířka obrazovky
+const z_leva=sirka/2-this.SIRKA/2;
+const z_hora=vyska/2-this.VYSKA/2;
+const updateLink=(id,windowName)=>
 {
-const hrefFB=document.getElementById(this._idFB).href; // načte stávající href odkazu
-document.getElementById(this._idFB).target=""; // target musí být prázdý jinak nové okno neotevře
-let textFB=`window.open('${hrefFB}','Sdílet na FB','width=${this.SIRKA},height=${this.VYSKA},left=${z_leva},top=${z_hora}');`; // příprava nového href
-document.getElementById(this._idFB).href=`javascript:${textFB}`; // dokončení nového href
+const el=document.getElementById(id);
+if(el&&vyska>this.min_VYSKA&&sirka>this.min_SIRKA)
+{
+const href=el.href; // načte stávající href odkazu
+el.removeAttribute("href"); // odstraní stávající href
+el.addEventListener("click",(e)=>{
+e.preventDefault(); // zabrání standardnímu chování odkazu
+window.open(href, windowName, `width=${this.SIRKA},height=${this.VYSKA},left=${z_leva},top=${z_hora},resizable=yes`); // otevře nové okno
+});
 }
-if(document.getElementById(this._idTW)&&vyska>this.min_VYSKA&&sirka>this.min_SIRKA)
-{
-const hrefTW=document.getElementById(this._idTW).href;
-document.getElementById(this._idTW).target=""; /* target musí být prázdý jinak nové okno neotevře */
-let textTW=`window.open('${hrefTW}','Sdílet na Twittru','width=${this.SIRKA},height=${this.VYSKA},left=${z_leva},top=${z_hora}');`;
-document.getElementById(this._idTW).href=`javascript:${textTW}`;
-}}};
+};
+// Přepíše HREF na tlačítkách sdílet Facebook a sdílet Twitter
+updateLink(this._idFB,'Sdílet na FB');
+updateLink(this._idTW,'Sdílet na Twitteru');
+}
+};
 
-odkazy.uprav(); /* opraví odkazi na stránce na SCROOL */
-sdilet.prepis(); /* zajistí přepis HREF tlačítek pro sdílení na Facebooku a Twittru */
+
+const v_port=new V_port(); // vytvoří objekt
+const odkazy=new Odkazy(); // vytvoří objekt
+const sdilet=new Sdilet(); // založí z class Sdilet objekt sdilet
+
 
 window.addEventListener("load",()=>{
-// posluchač po načtení stránky - opatření nastavení výšky headeru pro pomalejší zařízení
-v_port.test_dvh_svh(); // funkce otestuje jestli prohlížeč zařízení podporuje CSS jednotky SVH anebo DVH
-if(!v_port.dvh_svh)
-{
-setTimeout(()=>{
-v_port.vyska_header();  // srovnání výšky headeru na výšku obrazovky zařízení
-},1000); // menší zpoždění pro pomalejší zařízení
-}
+// posluchač se spustí, když je celá stránka načtena, včetně všech souborů CSS a obrázků.
+odkazy.uprav(); /* opraví odkazi na stránce na SCROOL */
+sdilet.prepis(); /* zajistí přepis HREF tlačítek pro sdílení na Facebooku a Twittru */
+v_port.zahajit(); // aktivuje Visual View port API + úprava hlavičky na 100vh
 });

@@ -1,0 +1,866 @@
+﻿
+/* KONEC OPTIMALIZACE */
+
+:root
+{
+--b1:rgb(168,110,87); /* hnědá */
+/* přechodové barvy */
+--b2:rgb(168,151,87); /* hnědá - do béžova */
+--b2_9:rgba(168,151,87,.95); /* hnědá - do béžova 95% krytí */
+--b2_6:rgba(168,151,87,.6); /* hnědá - do béžova 60% krytí */
+--b3:rgb(168,87,104); /* hnědá - do růžova */
+--b4:rgb(87,168,110); /* zelená */
+--b5:rgb(110,87,168); /* fialová */
+
+/* dobrý kontrast: b2 a černá , b4 a černá */
+/* dobrý kontrast: b5 a bílá */
+}
+
+
+@font-face{
+font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
+font-family:"nadpis"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
+src:url("../font/nadpis.woff2") format("woff2 supports variations"),url("../font/nadpis.woff2") format("woff2-variations"),url("../font/nadpis.woff2") format("woff2"),url("../font/nadpis.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+font-weight:100 900; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-style:normal;
+}
+
+@font-face{
+font-display:fallback; /* vlastnost fontu, která zobrazí font se zpožděním 0.3s, kdy už by měl být načten - sníží se performace webu */
+font-family:"text"; /* vlastní název fontu, který se posléze bude dále používat v CSS */
+src:url("../font/text.woff2") format("woff2 supports variations"),url("../font/text.woff2") format("woff2-variations"),url("../font/text.woff2") format("woff2"),url("../font/text.woff") format("woff"); /* cesta k fontu se určuje vzhledem k umístění CSS souboru */
+font-weight:100 700; /* určuje rozsah šířky písma použitého v CSSku (v projektu) */
+font-style:normal;
+}
+
+a,button
+{
+cursor:pointer;
+}
+
+button
+{
+font-weight:normal;
+}
+
+a,a:link,a:visited,a:active
+{
+color:black;
+text-decoration:none;
+}
+
+p
+{
+font-size:1rem;
+line-height:1.5;
+}
+
+
+
+svg.wait
+{
+width:100%;
+height:auto;
+}
+
+.app-h-kon
+{
+width:100%;
+display:-webkit-box;
+display:flex;
+-webkit-box-align:center;
+align-items:center;
+-webkit-box-pack:center;
+justify-content:center;
+overflow:auto;
+background-color:var(--b5);
+padding:1rem;
+position:relative; /* hodnota, kvůli no-script boxu ! */
+border-radius:24px;
+margin:3rem 0;
+}
+
+.f-kon
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-orient:horizontal;
+-webkit-box-direction:normal;
+flex-direction:row;
+flex-wrap:wrap;
+-webkit-box-pack:center;
+justify-content:center;
+-webkit-box-align:end;
+align-items:flex-end;
+gap:1.5rem;
+width:100%;
+max-width:58rem; /* 928px */
+-webkit-transition:250ms opacity;
+-o-transition:250ms opacity;
+transition:250ms opacity;
+}
+
+.no-script,.no-version-script
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-align:center;
+align-items:center;
+-webkit-box-pack:center;
+justify-content:center;
+position:absolute;
+left:0;
+top:0;
+z-index:100;
+width:100%;
+height:100%;
+color:rgb(253,116,116);
+background-color:black;
+padding:1rem;
+text-align:center;
+}
+
+.no-script p,.no-version-script p
+{
+font-size:1.25rem;
+cursor:default;
+}
+
+
+.p-n
+{
+font-family:"nadpis",sans-serif;
+color:white;
+font-size:2.5rem;
+font-size:calc(2.25rem + 1vw);
+text-align:center;
+font-weight:900;
+line-height:1.15;
+margin-top:1.5rem;
+margin-bottom:1.5rem;
+letter-spacing:.15rem;
+word-spacing:.2rem;
+width:100%;
+}
+
+.p-n-big
+{
+display:block;
+font-size:3rem;
+font-size:calc(2.75rem + 1vw);
+}
+
+
+.f-zruseni
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+flex-direction:column;
+-webkit-box-align:center;
+align-items:center;
+}
+
+.f-kon fieldset, .spojovac , .f-zruseni fieldset
+{
+border:none;
+padding:0;
+margin:0;
+width:100%;
+max-width:28rem; /* 448 px */
+}
+
+/* > 448px */
+@media only screen and (min-width:28em)
+{
+.f-kon fieldset, .spojovac
+{
+max-width:18rem;
+max-width:calc(18rem + 1vw);
+}
+}
+
+.b-mesic
+{
+display:grid;
+grid-template-columns:2rem 1fr 2rem;
+}
+
+.b-mesic button
+{
+width:2rem;
+height:2.5rem;
+max-width:2rem;
+max-height:2.5rem;
+min-width:2rem;
+min-height:2.5rem;
+line-height:1.9;
+font-weight:bold;
+color:black;
+background-color:white;
+border:1px solid black;
+margin-bottom:1rem;
+text-align:center;
+}
+
+.b-mesic button:first-child
+{
+border-radius:10px 0 0 10px;
+}
+
+.b-mesic button:last-child
+{
+border-radius:0 10px 10px 0;
+}
+
+.b-mesic input
+{
+height:2.5rem;
+max-height:2.5rem;
+padding:.5rem .5rem .25rem .15rem;
+text-align:center;
+font-size:1.25rem;
+font-weight:bold;
+border:none;
+border-top:1px solid black;
+border-bottom:1px solid black;
+border-radius:0px;
+-webkit-box-shadow:none;
+        box-shadow:none;
+background-color:var(--b4);
+cursor:default;
+width:100%;
+}
+
+.b-mesic input:focus
+{
+outline:none;
+-webkit-box-shadow:none;
+        box-shadow:none;
+border-color:initial;
+}
+
+.b-dny
+{
+display:grid;
+grid-template-columns:repeat(7,minmax(1.8rem,1fr));
+grid-auto-rows:auto;
+gap:.5rem;
+-webkit-box-pack:center;
+justify-content:center;
+justify-items:stretch;
+-webkit-box-align:start;
+align-items:start;
+align-content:start;
+min-height:18rem; /* zajistí, že roržení nebude poskakovat při posunech buttonu a jejich počtu */
+position:relative;
+-webkit-filter:blur(2px);
+filter:blur(2px);
+-webkit-transition:250ms opacity,250ms -webkit-filter;
+transition:250ms opacity,250ms -webkit-filter;
+-o-transition:250ms opacity,250ms filter;
+transition:250ms opacity,250ms filter;
+transition:250ms opacity,250ms filter,250ms -webkit-filter;
+will-change:opacity,filter;
+}
+
+.b-dny p
+{
+margin-bottom:0;
+}
+
+/* @media only screen and (min-width:22rem) and (max-width:28rem){
+.b-dny
+{
+gap:calc(.5rem + 1vw);
+}} */
+
+.bw
+{
+color:white;
+font-weight:bold;
+text-align:center;
+}
+
+.b-dny button,.p-v
+{
+display:grid;
+justify-items:center;
+align-content:stretch;
+-webkit-box-align:center;
+align-items:center;
+border-radius:50%;
+border:1px solid var(--b4);
+aspect-ratio:1/1; /* zajistí, že prvek bude mít strany jako čtverec 1:1 */
+padding:.5rem;
+font-size:1rem;
+font-weight:bold;
+line-height:1;
+color:black;
+background-color:white;
+}
+
+.b-dny button:disabled,.p-v
+{
+border:1px dotted grey;
+font-weight:normal;
+color:grey;
+opacity:.7;
+cursor:no-drop;
+}
+
+.kryt
+{
+position:absolute;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:transparent;
+z-index:5;
+}
+
+.fake-kon
+{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-5;
+opacity:0;
+}
+
+.fake-kon input
+{
+width:100%;
+height:100%;
+opacity:0;
+}
+
+.b-hod
+{
+display:grid;
+grid-template-columns:1fr;
+gap:1rem;
+margin:0;
+padding:0;
+list-style-type:none;
+opacity:0;
+position:relative;
+z-index:-1;
+-webkit-transition:250ms opacity,250ms -webkit-transform ease-out,250ms -webkit-filter ease-out;
+transition:250ms opacity,250ms -webkit-transform ease-out,250ms -webkit-filter ease-out;
+-o-transition:250ms opacity,250ms transform ease-out,250ms filter ease-out;
+transition:250ms opacity,250ms transform ease-out,250ms filter ease-out;
+transition:250ms opacity,250ms transform ease-out,250ms filter ease-out,250ms -webkit-transform ease-out,250ms -webkit-filter ease-out;
+will-change:filter,opacity,transform;
+}
+
+/* > 320 px */
+@media only screen and (min-width:20em)
+{
+.b-hod
+{
+grid-template-columns:1fr 1fr;
+}
+}
+
+.b-hod li
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-align:center;
+align-items:center;
+gap:.5rem;
+padding:.75rem .75rem .5rem .75rem;
+border:1px solid var(--b4);
+cursor:pointer;
+white-space:nowrap;
+border-radius:10px;
+background-color:white;
+}
+
+
+.b-hod li input[type="radio"] {
+appearance: none; /* Skryje standardní radiobutton */
+-webkit-appearance: none; /* Skryje standardní radiobutton */
+-moz-appearance: none; /* Skryje standardní radiobutton */
+width:1rem; /* Nastavení velikosti */
+height:1rem; /* Nastavení velikosti */
+margin-bottom:.25rem;
+border: 1px solid var(--b5); /* Nastavení barvy borderu */
+border-radius:50%;
+position:relative;
+cursor:pointer;
+background-color:transparent;
+}
+
+/* Styl pro vybraný stav */
+.b-hod li input[type="radio"]:checked {
+background-color:var(--b4); /* Nastavení barvy pozadí */
+border:1px solid var(--b4); /* Barva borderu při vybrání */
+}
+
+.b-hod li input[type="radio"]:checked::after {
+content: '';
+display: block;
+width:.5rem; /* Velikost pro vnitřní kolečko */
+height:.5rem; /* Velikost pro vnitřní kolečko */
+background-color:white; /* Barva vnitřního kolečka */
+border-radius:50%;
+position: absolute;
+top:50%;
+left:50%;
+-webkit-transform:translate(-50%,-50%);
+transform:translate(-50%,-50%);
+}
+
+.b-hod li input[type="radio"]:disabled
+{
+background-color:transparent; /* Barva pozadí pro disabled stav */
+border-color:transparent; /* Barva borderu pro disabled stav */
+cursor:not-allowed; /* Změna kurzoru */
+}
+
+.zobraz_objekt /* používá se v Java Scriptu */
+{
+-webkit-animation:zobraz .5s linear forwards;
+        animation:zobraz .5s linear forwards;
+z-index:0;
+}
+
+@-webkit-keyframes zobraz
+{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes zobraz
+{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+.schovej_objekt /* používá se v Java Scriptu */
+{
+-webkit-animation:schovej .5s linear forwards;
+        animation:schovej .5s linear forwards;
+z-index:0;
+}
+
+@-webkit-keyframes schovej
+{
+from{opacity:1;}
+to{opacity:0;}
+}
+
+@keyframes schovej
+{
+from{opacity:1;}
+to{opacity:0;}
+}
+
+.box-ap-logo
+{
+width:90%;
+height:auto;
+position:absolute;
+left:5%;
+top:1rem;
+z-index:2;
+-webkit-transition:opacity 500ms;
+-o-transition:opacity 500ms;
+transition:opacity 500ms;
+}
+
+.box-ap-logo svg
+{
+width:100%;
+height:auto;
+background:-o-radial-gradient(circle,white 10%,transparent 50%);
+background:radial-gradient(circle,white 10%,transparent 50%);
+}
+
+
+.potvrzeni
+{
+width:100%;
+display:-webkit-box;
+display:flex;
+-webkit-box-pack:center;
+justify-content:center;
+}
+
+.potvrzeni button
+{
+font-family:"nadpis",sans-serif;
+height:auto;
+min-height:3rem;
+width:100%;
+max-width:28rem; /* 448 px */
+font-size:1.25rem;
+font-weight:bold;
+text-align:center;
+padding:.5rem;
+border-radius:10px;
+border:2px solid var(--b4);
+background-color:white;
+color:black;
+margin-bottom:1rem;
+margin-top:1.5rem;
+}
+
+.potvrzeni button.normal-font
+{
+font-size:1rem;
+}
+
+.hlava
+{
+align-self:center;
+}
+
+
+.hlava p
+{
+color:white;
+text-align:center;
+font-size:1.25rem;
+font-weight:bold;
+}
+
+.hlava p:first-child
+{
+font-size:1rem;
+margin-bottom:.5rem;
+font-weight:normal;
+}
+
+.udaje
+{
+display:grid;
+gap:1rem;
+-webkit-box-pack:center;
+justify-content:center;
+grid-template-columns:1fr;
+}
+
+.udaje label
+{
+text-align:center;
+font-weight:bold;
+color:white;
+margin-bottom:-.5rem;
+}
+
+.udaje input,.udaje div input,.udaje div button
+{
+padding:.5rem .5rem .25rem .5rem;
+font-size:1rem;
+border-radius:10px;
+border:1px solid var(--b1);
+background-color:white;
+color:black;
+height:3rem;
+width:100%;
+}
+
+.udaje input:focus,.udaje div input:focus
+{
+outline:1px solid var(--b4); /* Odstranění standardního outline */
+border:1px solid var(--b4); /* Nastavení barvy borderu při focusu */
+caret-color:var(--b5);
+}
+
+.dabl
+{
+display:-webkit-box;
+display:flex;
+}
+
+.dabl input:first-child,.dabl button:first-child
+{
+width:6ch;
+border-radius:10px 0 0 10px;
+border-right:none;
+}
+
+.dabl input:last-child
+{
+width:calc(100% - 6ch);
+border-radius:0 10px  10px 0;
+}
+
+.souhlas
+{
+color:white;
+display:-webkit-box;
+display:flex;
+gap:1rem;
+line-height:1.5;
+margin-bottom:1rem;
+text-align:justify;
+-webkit-hyphens:auto;
+hyphens:auto;
+}
+
+.souhlas input
+{
+height:2rem;
+min-height:2rem;
+width:2rem;
+min-width:2rem;
+margin-top:.25rem;
+cursor:pointer;
+}
+
+dialog.dia
+{
+background-color:var(--b2);
+width:90%;
+max-width:40rem; /* 640px */
+border:none;
+border-radius:16px;
+padding:1rem;
+-webkit-transition:.2s opacity,.2s transform;
+-o-transition:.2s opacity,.2s transform;
+transition:.2s opacity,.2s transform;
+}
+
+dialog.vyska90
+{
+height:90%;
+height:90vh;
+height:90lvh;
+height:90dvh;
+max-height:31.25rem; /* 500px */
+}
+
+
+dialog.dia::-webkit-backdrop
+{
+background-color:rgba(0,0,0,.5); /* Nastaví poloprůhledné černé pozadí */ 
+}
+
+
+dialog.dia::backdrop
+{
+background-color:rgba(0,0,0,.5); /* Nastaví poloprůhledné černé pozadí */ 
+}
+
+dialog.dia[open]
+{
+-webkit-animation:fadeIn .3s ease-in-out;
+        animation:fadeIn .3s ease-in-out;
+}
+
+@-webkit-keyframes fadeIn
+{
+from{opacity:0;-webkit-transform:translateY(-30px);transform:translateY(-30px);}
+to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0);}
+}
+
+@keyframes fadeIn
+{
+from{opacity:0;-webkit-transform:translateY(-30px);transform:translateY(-30px);}
+to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0);}
+}
+
+dialog.dia::-webkit-scrollbar{display:none;}
+
+.dialog-kotva-top,.dialog-kotva-bottom
+{
+position:relative;
+top:-1rem;
+left:0;
+}
+
+.dialog-kotva-bottom
+{
+top:3rem;
+}
+
+/* obsahový div dialogu */
+.dialog-content
+{
+width:100%;
+height:100%;
+position:relative;
+}
+
+.n-dialog
+{
+font-family:"nadpis",sans-serif;
+font-size:1.5rem;
+font-weight:500;
+}
+
+.absol-box
+{
+position:sticky;
+bottom:-1rem;
+right:0;
+padding:1rem 0;
+height:auto;
+width:100%;
+z-index:3;
+background-color:var(--b2);
+display:-webkit-box;
+display:flex;
+-webkit-box-pack:end;
+justify-content:flex-end;
+-webkit-box-align:center;
+align-items:center;
+border-top:1px dotted black;
+}
+
+.absol-box button
+{
+font-family:"nadpis",sans-serif;
+font-size:1rem;
+font-weight:bold;
+text-align:center;
+padding:.5rem;
+border-radius:10px;
+border:2px solid var(--b4);
+background-color:white;
+color:black;
+}
+
+.butt-box
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-pack:end;
+justify-content:flex-end;
+width:100%;
+margin-top:1rem;
+}
+
+.butt-box button
+{
+font-family:"nadpis",sans-serif;
+font-size:1rem;
+font-weight:bold;
+text-align:center;
+padding:.5rem;
+border-radius:10px;
+border:2px solid var(--b4);
+background-color:white;
+color:black;
+}
+
+@-webkit-keyframes growShrink
+{
+0%,100%{-webkit-transform:rotateZ(90deg) scale(1);transform:rotateZ(90deg) scale(1);} /* počáteční a konečná velikost */ 
+50%{-webkit-transform:rotateZ(90deg) scale(0.95);transform:rotateZ(90deg) scale(0.95);} /* zvětšení o 2% ve středu animace */ 
+}
+
+@keyframes growShrink
+{
+0%,100%{-webkit-transform:rotateZ(90deg) scale(1);transform:rotateZ(90deg) scale(1);} /* počáteční a konečná velikost */ 
+50%{-webkit-transform:rotateZ(90deg) scale(0.95);transform:rotateZ(90deg) scale(0.95);} /* zvětšení o 2% ve středu animace */ 
+}
+
+.scroll-butt
+{
+position:sticky;
+bottom:5rem;
+width:2rem;
+height:2rem;
+-webkit-transform:rotateZ(90deg);
+transform:rotateZ(90deg);
+left:calc(100% - 2rem);
+border-radius:50%;
+border-color:white;
+border:1px solid var(--b4);
+color:black;
+font-weight:bold;
+padding:0;
+padding-left:.5rem;
+font-size:1.25rem;
+z-index:2;
+-webkit-animation:growShrink 1s infinite;
+        animation:growShrink 1s infinite; /* animace trvá 2 sekundy a opakuje se donekonečna */
+}
+
+.scroll-kryt
+{
+height:5rem;
+margin:0;
+padding:0;
+width:100%;
+position:relative;
+z-index:3;
+background-color:var(--b2);
+-webkit-box-shadow:-1px -13px 10px 4px var(--b2);
+        box-shadow:-1px -13px 10px 4px var(--b2);
+}
+
+.svg-box-wait
+{
+display:-webkit-box;
+display:flex;
+-webkit-box-pack:center;
+justify-content:center;
+width:100%;
+}
+
+.svg-width
+{
+width:100%;
+max-width:10rem;
+}
+
+
+.ods
+{
+text-align:justify;
+-webkit-hyphens:auto;
+hyphens:auto;
+}
+
+.d-n
+{
+display:none;
+}
+
+.mb1
+{
+margin-bottom:1rem;
+}
+
+.mb05
+{
+margin-bottom:.5rem;
+}
+
+.nw
+{
+white-space:nowrap;
+}
+
+.jc
+{
+-webkit-box-pack:center;
+justify-content:center;
+}
+
+.tc
+{
+text-align:center;
+}
+
+.f-log
+{
+font-size:1.15rem;
+font-weight:bold;
+margin-top:-1.5rem;
+}
+
+.pr
+{
+position:relative;
+}

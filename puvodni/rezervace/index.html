@@ -1,0 +1,529 @@
+<?php
+session_start();
+$_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
+?>
+
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width , initial-scale=1.0 , viewport-fit=cover">
+<link rel="stylesheet" href="../css/rezervace.css?v=2">
+<link rel="stylesheet" href="css/css.css?v=f1">
+<meta name="description" content="Informace o programátorovi webových projektů Boar-cz.">
+<meta name="keywords" content="programátor,Boar-cz">
+<meta name="author" content="Boar-cz">
+<meta name="application-name" content="Boar-cz">
+<meta property="og:url" content="https://www.boar-cz.info">
+<meta property="og:title" content="Boar-cz">
+<meta property="og:description" content="Informace o programátorovi webových projektů Boar-cz.">
+<meta property="og:image" content="https://www.boar-cz.info/nahled/boar-cz.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:update_time" content="2025-01-20T18:00:00+01:00">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Boar-cz">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-01-20T18:00:00+1:00">
+<meta property="article:modified_time" content="2025-01-20T18:00:00+1:00">
+<meta property="article:section" content="Mgr. Bc. Michal Raus,Vzdělání,Zaměstnání,Programování">
+<meta property="article:tag" content="Boar-cz">
+<meta name="robots" content="noindex , nofollow">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:site" content="@boar-cz">
+<meta property="twitter:url" content="https://www.boar-cz.info/">
+<meta property="twitter:title" content="Boar-cz webové projekty">
+<meta property="twitter:description" content="Informace o programátorovi webových projektů Boar-cz.">
+<meta property="twitter:image" content="https://www.boar-cz.info/nahled/boar-cz.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+<link rel="manifest" href="../favicon/site.webmanifest">
+<link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="theme-color" content="#ffffff">
+<title>Rezervovat telefonní hovor</title>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org/",
+"@type": "Article",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://www.boar-cz.info"
+},
+"headline": "Mgr. Bc. Michal Raus - programátor Boar-cz",
+"description": "Mgr. Bc. Michal Raus programuje za Boar-cz !!!",
+"image": {
+"@type": "ImageObject",
+"url": "https://www.boar-cz.info/svg/logo.svg",
+"width": "400",
+"height": "400"
+},
+"author": {
+"@type": "Person",
+"name": "Mgr. Bc. Michal Raus",
+"url": "https://www.boar-cz.info"
+},
+"publisher": {
+"@type": "Organization",
+"name": "Boar-cz",
+"logo": {
+"@type": "ImageObject",
+"url": "https://www.boar-cz.info/svg/logo.svg",
+"width": "400",
+"height": "400"
+}
+},
+"datePublished": "2025-01-20",
+"dateModified": "2025-01-20"
+}
+</script>
+</head>
+<body>
+<div class="h-con">
+<header>
+<a class="iib" href="../" title="Home page">
+<div class="l-box">
+<div class="svg-box">
+<svg width="400" height="400" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="rgb(110,87,168)" fill="none">
+<g id="logo">
+<g stroke="black" fill="black" stroke-width="1">
+<path d="M 94,91 C 55,84 46,65 37,27 27,76 23,101 57,143 Z" />
+<path d="m 303,91 c 39,-7 48,-26 57,-64 10,49 14,74 -20,116 z" />
+</g>
+<circle cx="200" cy="200" r="150" />
+<path d="m 200,50 c -109,89 -128,186 0,297" />
+<path d="m 200,50 c 109,89 128,186 0,297" />
+<path d="M 200,50 V 348" />
+<path d="m 89,100 c 60,13 106,36 222,0" />
+<path d="M 89,298 C 148,286 195,262 311,297" />
+<path d="M 346,192 54,193" />
+<g stroke="black" fill="black" stroke-width="1">
+<circle cx="125" cy="195" r="25" />
+<circle cx="275" cy="195" r="25" />
+</g></g>
+</svg>
+</div>
+<div class="t-box">
+<p>Boar-cz</p>
+<p>webové stavby</p>
+</div>
+</div>
+</a>
+</header>
+<main>
+<article>
+<div class="boxC"><div class="boxM">
+<h1>Rezervace telefonního hovoru</h1>
+<p class="ods-m40">Telefon z&nbsp;různých důvodů nemohu občas používat. Pokud&nbsp;si zarezervujete telefonní hovor, budete mít 100&#8239;% jistotu, že&nbsp;si&nbsp;zavoláme. Za&nbsp;rezervaci hovoru předem děkuji!</p>
+</div></div>
+
+<section>
+<div class="boxC"><div class="boxM">
+<h2>Rezervace telefonního hovoru <span class="ibb">s&nbsp;Michalem Rausem</span></h2>
+<p class="ods-m40">Abychom s&nbsp;polu mohli mluvit v&nbsp;předem domluvený čas, stačí&nbsp;telefoní hovor jednoduše zarezervovat. Na&nbsp;váš email dorazí potvrzení o&nbsp;rezervaci a&nbsp;možnost zrušení rezervace. Budu se&nbsp;těšit na&nbsp;zavolání!</p>
+
+<p class="ods-m40">Nemáte moje telefonní číslo? Nevadí, napište&nbsp;mi prostřednictvím <a href="../kontakt/" title="Kontaktní formulář">&gt;&#8239;kontaktního&nbsp;formuláře&#8239;&lt;</a>, rád&nbsp;vám telefonní číslo pošlu.</p>
+
+
+<div id="boss_con" class="app-h-kon">
+
+<noscript>
+<div class="no-script"> 
+<div>
+<p>Váš prohlížeč nemá aktivní Java&nbsp;Script. Pokud chcete pokračovat, musíte&nbsp;mít ve&nbsp;Vašem prohlížeči zapnutý Java&nbsp;Script.</p>
+</div>
+</div>
+</noscript>
+
+<div id="no_es2017" class="no-version-script d-n"> 
+<div>
+<p>Váš prohlížeč nemá podporu Java&nbsp;Script verze&nbsp;ES2017. Pokud chcete pokračovat, musíte&nbsp;mít ve&nbsp;Vašem prohlížeči verzi Java&nbsp;Scriptu&nbsp;ES2017 nebo&nbsp;vyšší .</p>
+</div>
+</div>
+
+<form id="rezervace_form" class="f-kon" action="#" method="post">
+<p class="p-n"><span class="p-n-big">Rezervace</span> telefonního hovoru</p>
+<div class="spojovac">
+<fieldset class="b-mesic">
+<button id="m_minus" type="button" title="měsíc zpět">&lt;</button>
+<input id="mesic_a_rok" type="text" title="měsíc a rok" readonly>
+<button id="m_plus" type="button" title="měsíc vpřed">&gt;</button>
+</fieldset>
+
+<fieldset id="plocha_kalendar" class="b-dny">
+<div id="krit_dny" class="kryt"> </div>
+<p class="bw">Po</p>
+<p class="bw">Út</p>
+<p class="bw">St</p>
+<p class="bw">Čt</p>
+<p class="bw">Pá</p>
+<p class="bw">So</p>
+<p class="bw">Ne</p>
+
+<button id="pb1" class="p-v d-n" type="button" title="X1">X</button>
+<button id="pb2" class="p-v d-n" type="button" title="X2">X</button>
+<button id="pb3" class="p-v d-n" type="button" title="X3">X</button>
+<button id="pb4" class="p-v d-n" type="button" title="X4">X</button>
+<button id="pb5" class="p-v d-n" type="button" title="X5">X</button>
+<button id="pb6" class="p-v d-n" type="button" title="X6">X</button>
+
+<button id="b1" type="button" title="1.">1</button>
+<button id="b2" type="button" title="2.">2</button>
+<button id="b3" type="button" title="3.">3</button>
+<button id="b4" type="button" title="4.">4</button>
+<button id="b5" type="button" title="5.">5</button>
+<button id="b6" type="button" title="6.">6</button>
+<button id="b7" type="button" title="7.">7</button>
+<button id="b8" type="button" title="8.">8</button>
+<button id="b9" type="button" title="9.">9</button>
+<button id="b10" type="button" title="10.">10</button>
+
+<button id="b11" type="button" title="11.">11</button>
+<button id="b12" type="button" title="12.">12</button>
+<button id="b13" type="button" title="13.">13</button>
+<button id="b14" type="button" title="14.">14</button>
+<button id="b15" type="button" title="15.">15</button>
+<button id="b16" type="button" title="16.">16</button>
+<button id="b17" type="button" title="17.">17</button>
+<button id="b18" type="button" title="18.">18</button>
+<button id="b19" type="button" title="19.">19</button>
+<button id="b20" type="button" title="20.">20</button>
+
+<button id="b21" type="button" title="21.">21</button>
+<button id="b22" type="button" title="22.">22</button>
+<button id="b23" type="button" title="23.">23</button>
+<button id="b24" type="button" title="24.">24</button>
+<button id="b25" type="button" title="25.">25</button>
+<button id="b26" type="button" title="26.">26</button>
+<button id="b27" type="button" title="27.">27</button>
+<button id="b28" type="button" title="28.">28</button>
+<button id="b29" type="button" title="29.">29</button>
+<button id="b30" type="button" title="30.">30</button>
+<button id="b31" type="button" title="31.">31</button>
+<div class="fake-kon"><input id="fake-checked" type="checkbox" title="Určete den rezervace" required></div>
+</fieldset>
+</div>
+
+<fieldset class="pr">
+
+<ol id="con_cas" class="b-hod">
+<li id="lic1"><input id="cas1" type="radio" name="cas" title="v čase 9:00-9:30 hod." required>9:00-9:30&#8239;h</li>
+<li id="lic2"><input id="cas2" type="radio" name="cas" title="v čase 9:30-10:00 hod.">9:30-10:00&#8239;h</li>
+<li id="lic3"><input id="cas3" type="radio" name="cas" title="v čase 10:00-10:30 hod.">10:00-10:30&#8239;h</li>
+<li id="lic4"><input id="cas4" type="radio" name="cas" title="v čase 10:30-11:00 hod.">10:30-11:00&#8239;h</li>
+<li id="lic5"><input id="cas5" type="radio" name="cas" title="v čase 11:00-11:30 hod.">11:00-11:30&#8239;h</li>
+<li id="lic6"><input id="cas6" type="radio" name="cas" title="v čase 11:30-12:00 hod.">11:30-12:00&#8239;h</li>
+<li id="lic7"><input id="cas7" type="radio" name="cas" title="v čase 12:00-12:30 hod.">12:00-12:30&#8239;h</li>
+<li id="lic8"><input id="cas8" type="radio" name="cas" title="v čase 12:30-13:00 hod.">12:30-13:00&#8239;h</li>
+<li id="lic9"><input id="cas9" type="radio" name="cas" title="v čase 13:00-13:30 hod.">13:00-13:30&#8239;h</li>
+<li id="lic10"><input id="cas10" type="radio" name="cas" title="v čase 13:30-14:00 hod.">13:30-14:00&#8239;h</li>
+<li id="lic11"><input id="cas11" type="radio" name="cas" title="v čase 14:00-14:30 hod.">14:00-14:30&#8239;h</li>
+<li id="lic12"><input id="cas12" type="radio" name="cas" title="v čase 14:30-15:00 hod.">14:30-15:00&#8239;h</li>
+<li id="lic13"><input id="cas13" type="radio" name="cas" title="v čase 15:00-15:30 hod.">15:00-15:30&#8239;h</li>
+<li id="lic14"><input id="cas14" type="radio" name="cas" title="v čase 15:30-16:00 hod.">15:30-16:00&#8239;h</li>
+</ol>
+
+<div id="logo-box" class="box-ap-logo">
+
+<svg width="400" height="400" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="rgb(110,87,168)" fill="none">
+<defs>
+<filter id="fil1" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="400">
+<feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+<feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+<feSpecularLighting in="blur" surfaceScale="5" specularConstant="0.75" specularExponent="200" lighting-color="#bbbbbb" result="specOut">
+<fePointLight x="-5000" y="-10000" z="20000"/>
+</feSpecularLighting>
+<feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+<feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+<feMerge>
+<feMergeNode in="offsetBlur"/>
+<feMergeNode in="litPaint"/>
+</feMerge>
+</filter>
+</defs>
+<g id="logo">
+<g filter="url(#fil1)" >
+<g stroke="black" fill="black" stroke-width="1">
+<path d="M 94,91 C 55,84 46,65 37,27 27,76 23,101 57,143 Z" />
+<path d="m 303,91 c 39,-7 48,-26 57,-64 10,49 14,74 -20,116 z" />
+</g>
+<circle cx="200" cy="200" r="150" />
+<path d="m 200,50 c -109,89 -128,186 0,297" />
+<path d="m 200,50 c 109,89 128,186 0,297" />
+<path d="M 200,50 V 348" />
+<path d="m 89,100 c 60,13 106,36 222,0" />
+<path d="M 89,298 C 148,286 195,262 311,297" />
+<path d="M 346,192 54,193" />
+<g stroke="black" fill="black" stroke-width="1">
+<circle cx="125" cy="195" r="25" />
+<circle cx="275" cy="195" r="25" />
+</g>
+</g>
+</g>
+</svg>
+<div class="tc">
+<p class="f-log">&copy;&#8239;2025 Boar-cz</p>
+</div>
+</div>
+
+</fieldset>
+<fieldset class="potvrzeni">
+<button id="rezervovat" type="submit">Rezervovat</button>
+</fieldset>
+</form>
+
+
+
+
+<form id="dokoncit_form" class="f-kon d-n" action="#" method="post">
+<p class="p-n">Dokončení rezervace</p>
+
+<fieldset class="hlava">
+<p>Vaše rezervace telefonního hovoru</p>
+<p><span id="slovne_den_rezervace">Úterý</span>, <span id="ciselne_den_v_mesici_rezervace">24</span>.&#8239;<span id="slone_mesic_rezervace">prosince</span>&#8239;<span id="ciselne_rok_rezervace">2024</span>, <span id="slovne_cas_rezervace" class="nw">15:00-15:30&#8239;hod.</span></p>
+<div class="potvrzeni">
+<button id="zmenit" type="button" title="Změnit tuto rezervaci">Změnit rezervaci</button>
+</div>
+</fieldset>
+
+<fieldset class="udaje">
+<label>Vaše údaje</label>
+<input id="jmeno" type="text" placeholder="Jméno a příjmení" title="napište Vaše jméno a příjmení" required>
+
+<div class="dabl">
+<button id="butt_zavinac" type="button" title="Napiš mi @">@</button>
+<input id="email" type="email" placeholder="Váš email" title="zadejte vasi emailovou adresu" required>
+</div>
+<div class="dabl">
+<input id="predvolba" type="text" value="+420" title="telefonní předvolba ČR" readonly>
+<input id="phone" type="tel"  pattern="[0-9]{9}" maxlength="9" placeholder="Telefon (např.: 999000222)" title="zadejte Vaše telefonní číslo bez předvolby" required>
+</div>
+<input id="predmet" type="text" placeholder="O čem bude hovor?" title="O čem budeme mluvit?">
+</fieldset>
+
+
+<fieldset>
+<div class="potvrzeni">
+<button id="ukaz_zasady" class="normal-font" type="button" title="Ukázat Zásady ochrany osobních údajů">Zásady ochrany osobních údajů</button>
+</div>
+<div class="souhlas">
+<input id="checken_souhlas" type="checkbox" required><label for="checken_souhlas">Souhlasím se zpracováním osobních údajů podle Zásad ochrany osobních údajů.</label> 
+</div>
+</fieldset>
+
+<fieldset class="potvrzeni">
+<button id="dokoncit" type="submit">Dokončit rezervaci</button>
+</fieldset>
+<input id="token" type="hidden" value="<?php echo $_SESSION['csrf_token']; ?>" title="token">
+</form>
+</div>
+
+</div></div>
+</section>
+
+
+
+<div class="boxC"><div class="boxM">
+<div class="a-box">
+<a href="../" title="Zpět na domovskou stránku">
+<div class="cl">
+<div class="lb">
+<svg class="ls" width="400" height="400" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="rgb(110,87,168)" fill="none">
+<use xlink:href="#logo" />
+</svg>
+</div>
+<p>Zpět na Home page</p>
+</div>
+</a>
+</div>
+</div></div>
+
+</article>
+</main>
+
+<aside class="bokem">
+
+<div class="fl b-s">
+<div class="b-s2">
+<a class="fl a-s ac" href="../o-webu/" title="Informace o webu">
+<div class="ico1"> </div>
+Informace o&nbsp;webové stránce</a>
+</div>
+<div class="b-s2">
+<a id="sdil-fb" class="fl a-s ac" href="https://www.facebook.com/sharer/sharer.php?u=https://www.boar-cz.info/" title="Sdílet Boar-cz na FB" target="_blank" rel="nofollow">
+<div class="ico2"> </div>
+Sdílet na&nbsp;Facebooku</a>
+</div>
+<div class="b-s2">
+<a id="sdil-tw" class="fl a-s ac" href="https://twitter.com/intent/tweet?url=https://www.boar-cz.info/&text=" title="Sdílet Boar-cz na X" target="_blank" rel="nofollow">
+<div class="ico3"> </div>
+Sdílet na&nbsp;Twitteru
+</a>
+</div></div>
+
+<div>
+<p>Partnerské stránky</p>
+<ul>
+<li><a href="https://www.pestovani-konopi.info" title="Trest za pěstování konopí" target="_blank" rel="follow">Pěstování konopí a trest</a></li>
+</ul>
+</div>
+</aside>
+<footer class="pata">
+<p>&copy;&#8239;2024 Boar-cz</p>
+<p class="fm">(všechna práva vyhrazena)</p>
+<address class="pt1"><p>Máte otázku k&nbsp;těmto webovým&nbsp;stránkám?</p>
+<a href="kontakt/" title="Kontakt na provozovatele webu">Kontaktujte&nbsp;nás</a></address>
+</footer>
+</div>
+
+
+
+
+
+<dialog id="zasady" class="dia vyska90">
+<div id="top_kotva_zasady" class="dialog-kotva-top"> </div>
+<div class="dialog-content">
+<div>
+<p class="n-dialog">Zásady ochrany osobních&nbsp;údajů</p>
+<p class="ods">Uděluji souhlas se&nbsp;zpracováním svých osobních údajů (jméno a&nbsp;příjmení, telefonní číslo, e-mail), které&nbsp;poskytuji prostřednictvím tohoto formuláře, Mgr.&nbsp;Bc. Michalu Rausovi, jakožto správci osobních údajů, za&nbsp;účelem sjednání telefonního hovoru a&nbsp;zaslání potvrzení nebo&nbsp;dalších souvisejících informací.</p>
+<p class="ods">Tento souhlas uděluji na&nbsp;dobu nezbytně nutnou (to&nbsp;je: do&nbsp;uskutečnění hovoru nebo&nbsp;vypršení termínu), pro&nbsp;výše uvedený účel, případně do&nbsp;jeho odvolání. Beru na&nbsp;vědomí, že&nbsp;správce zpracovává mé osobní údaje v&nbsp;souladu s&nbsp;Nařízením Evropského parlamentu a&nbsp;Rady&#8239;(EU) č.&#8239;2016/679&#8239;(GDPR).</p>
+<p class="ods">Jsem&nbsp;si vědom/a svých práv, zejména práva na&nbsp;přístup k&nbsp;mým osobním údajům, jejich opravu, výmaz nebo omezení zpracování, a&nbsp;práva vznést námitku proti zpracování či&nbsp;odvolat souhlas. Pro&nbsp;uplatnění těchto práv mohu správce osobních údajů kontaktovat prostřednictvím <a href="https://www.boar-cz.info/kontakt/" target="_blank" rel="noopener noreferrer" title="Formulář pro zasílání emailů">&gt;&#8239;kontaktního formuláře&#8239;&lt;</a>.</p>
+</div>
+
+
+<div class="scroll-kryt"> </div>
+
+<div class="absol-box">
+<button id="butt_zasady" type="button" title="Zavřít Zásady ochrany osobních údajů">Zavřít</button>
+</div>
+
+<button id="scroll_butt_zasady" class="scroll-butt" type="button" title="scroll bottom">&gt;</button>
+
+<div id="bottom_kotva_zasady" class="dialog-kotva-bottom"></div>
+
+</div>
+</dialog>
+
+
+
+<dialog id="waiting" class="dia">
+
+<p class="n-dialog"><span class="">Čekejte</span> prosím&nbsp;…</p>
+
+<p class="tc">Zpracovává&nbsp;se požadavek!</p>
+
+<div class="svg-box-wait"><div class="svg-width">
+<svg class="wait" xmlns="http://www.w3.org/2000/svg" width="190" height="40" viewBox="0 0 190 40" stroke="rgb(110,87,168)" fill="rgb(87,168,110)" stroke-width="5">
+<circle cx="20" cy="20" r="10" opacity="0">
+<animate id="cir_1" begin="indefined" attributeName="opacity" from="0" to="1" dur="500ms" fill="freeze" restart="whenNotActive" />
+<animate begin="cir_6.end + 500ms" attributeName="opacity" from="1" to="0" dur="500ms" fill="freeze" />
+</circle>
+<circle cx="50" cy="20" r="10"  opacity="0">
+<animate id="cir_2" begin="cir_1.end" attributeName="opacity" from="0" to="1" dur="500ms" fill="freeze" />
+<animate begin="cir_6.end + 500ms" attributeName="opacity" from="1" to="0" dur="500ms" fill="freeze" />
+</circle>
+<circle cx="80" cy="20" r="10"  opacity="0">
+<animate id="cir_3" begin="cir_2.end" attributeName="opacity" from="0" to="1" dur="500ms" fill="freeze" />
+<animate begin="cir_6.end + 500ms" attributeName="opacity" from="1" to="0" dur="500ms" fill="freeze" />
+</circle>
+<circle cx="110" cy="20" r="10"  opacity="0">
+<animate id="cir_4" begin="cir_3.end" attributeName="opacity" from="0" to="1" dur="500ms" fill="freeze" />
+<animate begin="cir_6.end + 500ms" attributeName="opacity" from="1" to="0" dur="500ms" fill="freeze" />
+</circle>
+<circle cx="140" cy="20" r="10"  opacity="0">
+<animate id="cir_5" begin="cir_4.end" attributeName="opacity" from="0" to="1" dur="500ms" fill="freeze" />
+<animate begin="cir_6.end + 500ms" attributeName="opacity" from="1" to="0" dur="500ms" fill="freeze" />
+</circle>
+<circle cx="170" cy="20" r="10"  opacity="0">
+<animate id="cir_6" begin="cir_5.end" attributeName="opacity" from="0" to="1" dur="500ms" fill="freeze" />
+<animate id="cir_n6" begin="cir_6.end + 500ms" attributeName="opacity" from="1" to="0" dur="500ms" fill="freeze" />
+</circle>
+</svg>
+</div></div>
+
+</dialog>
+
+
+<dialog id="uspech" class="dia">
+<p class="n-dialog">Rezervace byla úspěšně dokončena!</p>
+<p>Do&nbsp;30&#8239;minut bude na&nbsp;Váš email doručeno potvrzení rezervace.</p>
+<div class="butt-box">
+<button id="butt_uspech" type="button" title="Zavřít">Zavřít okno</button>
+</div>
+</dialog>
+
+<dialog id="neuspech" class="dia">
+<p class="n-dialog">Rezervace se&nbsp;nezdařila!</p>
+<p>Je&nbsp;nám líto rezervace se&nbsp;nezdařila. Zkuste&nbsp;to prosím později.</p>
+<p>Pokud&nbsp;se chyba opakuje, pro&nbsp;kontakt můžete použít <a  class="nw" href="https://www.boar-cz.info/kontakt/" target="_blank" rel="noopener noreferrer" title="Formulář pro zasílání emailů">&gt;&#8239;kontaktní formulář&#8239;&lt;</a>.</p>
+<div class="butt-box">
+<button id="butt_neuspech" type="button" title="Zavřít">Zavřít okno</button>
+</div>
+</dialog>
+
+<dialog id="prekrocen_limit" class="dia">
+<p class="n-dialog">Rezervace se&nbsp;nezdařila!</p>
+<p>Je&nbsp;nám líto překročili jste limit maximálních požadavků za&nbsp;24&#8239;hodin.</p>
+<p>Pokud&nbsp;se chyba opakuje i&nbsp;za&nbsp;24&#8239;hodin, pro&nbsp;kontakt můžete použít <a  class="nw" href="https://www.boar-cz.info/kontakt/" target="_blank" rel="noopener noreferrer" title="Formulář pro zasílání emailů">&gt;&#8239;kontaktní formulář&#8239;&lt;</a>.</p>
+<div class="butt-box">
+<button id="butt_prekrocen_limit" type="button" title="Zavřít">Zavřít okno</button>
+</div>
+</dialog>
+
+<dialog id="zrusit_rezervaci" class="dia">
+<p class="n-dialog">Zrušení rezervace</p>
+<p class="mb05">Potvrďte prosím zrušení rezervace.</p>
+<p class="n-dialog"><span id="slovne_den_rezervace2">Úterý</span>, <span id="ciselne_den_v_mesici_rezervace2">24</span>.&#8239;<span id="slone_mesic_rezervace2">prosince</span>&#8239;<span id="ciselne_rok_rezervace2">2024</span>, <span id="slovne_cas_rezervace2" class="nw">15:00-15:30&#8239;hod.</span></p>
+<form class="f-zruseni mb1" id="form_zruseni_rezervace" action="#" method="post">
+<fieldset class="butt-box jc">
+<button type="submit" class="mb1" title="Chci zrušit rezervaci">Zrušit rezervaci</button>
+</fieldset>
+<fieldset class="udaje">
+<div class="dabl mb1">
+<button id="butt_zavinac2" type="button" title="Napiš mi @">@</button>
+<input id="email2" type="email" maxlength="50" placeholder="Váš email" title="zadejte vasi emailovou adresu" required>
+</div></fieldset>
+<p>Na&nbsp;email obdržíte potvrzrní o&nbsp;zrušení rezervace.</p>
+<fieldset class="udaje">
+<input id="duvod" class="mb1" type="text" maxlength="50" placeholder="Důvod zrušení" title="Napište prosím důvod proč rezervaci rušíte">
+</fieldset>
+</form>
+</dialog>
+
+<dialog id="zruseno_driv" class="dia">
+<p class="n-dialog">Rezervace byla ji dříve zrušena!</p>
+<p>Tato rezervace existovala, ale&nbsp;už byla zrušena. Při&nbsp;jejím rušení&nbsp;bylo zasláno potvrzení o&nbsp;zrušení rezervace na&nbsp;email, který&nbsp;byl zadán při&nbsp;samotném rušení rezervace.</p>
+<div class="butt-box">
+<button id="butt_zruseno_driv" type="button" title="Zavřít">Zavřít okno</button>
+</div>
+</dialog>
+
+<dialog id="zruseno" class="dia">
+<p class="n-dialog">Rezervace byla zrušena!</p>
+<p>Do&nbsp;30&#8239;minut bude na&nbsp;uvedený email doručeno potvrzení o&nbsp;zrušení rezervace.</p>
+<div class="butt-box">
+<button id="butt_zruseno" type="button" title="Zavřít">Zavřít okno</button>
+</div>
+</dialog>
+
+<dialog id="nezruseno" class="dia">
+<p class="n-dialog">Rezervaci se&nbsp;nepodařilo zrušit!</p>
+<p>Je nám líto nepodařilo&nbsp;se zrušit rezervaci. Zkuste to prosím později.</p>
+<p>Pokud&nbsp;se chyba opakuje, pro&nbsp;kontakt můžete použít <a  class="nw" href="https://www.boar-cz.info/kontakt/" target="_blank" rel="noopener noreferrer" title="Formulář pro zasílání emailů">&gt;&#8239;kontaktní formulář&#8239;&lt;</a>.</p>
+<div class="butt-box">
+<button id="butt_nezruseno" type="button" title="Zavřít">Zavřít okno</button>
+</div>
+</dialog>
+
+
+
+
+
+
+
+<script src="../script/rezervace.js?v1"></script>
+<script src="script/booking.js?v=f1"></script>
+</body>
+</html>

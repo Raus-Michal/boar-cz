@@ -334,7 +334,8 @@ margin-bottom:0;
 
 .ods-m40
 {
-max-width:40ch;
+width:100%;
+max-width:28rem;
 text-align:justify;
 hyphens:auto;
 padding:1rem;
@@ -417,6 +418,17 @@ padding-top:1rem;
 {
 display:-webkit-box;
 display:flex;
+}
+
+/* větší než 600px */
+@media only screen and (min-width:37.5em)
+{
+.col
+{
+column-count:2;         /* Počet sloupců */
+column-gap:1rem;        /* Mezera mezi sloupci */
+margin: 0 auto;          /* Aby byl kontejner centrovaný */
+}
 }
 
 .b-s

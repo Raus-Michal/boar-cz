@@ -241,8 +241,7 @@ class Kalendar {
             const p_b = document.getElementById(`${this.z_posun_id}${i + 1}`); // HTML P element zastupující posun dny v týdnu Po-Ne
             if (p_b) {
                 // pokud HTML Element existuje
-                p_b.style.display = "grid"; // zobrazí vyplňovací HTML P element
-                p_b.style.alignContent = "center"; // vycentruje X v kontejneru grid
+                p_b.style.display = "flex"; // zobrazí vyplňovací HTML P element
             }
         }
     }

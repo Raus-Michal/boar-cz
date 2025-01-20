@@ -285,21 +285,26 @@ text-align:center;
 
 .b-dny button,.p-v
 {
-display:grid;
-justify-items:center;
-align-content:center;
+display:-webkit-box;
+display:-ms-flexbox;
+display:flex;
 -webkit-box-align:center;
--ms-flex-align:center;
+-webkit-box-align:baseline;
+align-items:baseline;
+-webkit-box-pack:center;
+justify-content:center;
 align-items:center;
+width:100%;
 border-radius:50%;
 border:1px solid var(--b4);
 aspect-ratio:1/1; /* zajistí, že prvek bude mít strany jako čtverec 1:1 */
 padding:.5rem;
 font-size:1rem;
 font-weight:bold;
-line-height:1;
+line-height:1.25;
 color:black;
 background-color:white;
+overflow: hidden;
 }
 
 .b-dny button:disabled,.p-v

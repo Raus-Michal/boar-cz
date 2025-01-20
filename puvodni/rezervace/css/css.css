@@ -283,7 +283,7 @@ font-weight:bold;
 text-align:center;
 }
 
-.b-dny button,.p-v
+.b-dny button,.b-dny .p-v
 {
 display:-webkit-box;
 display:-ms-flexbox;
@@ -307,7 +307,7 @@ background-color:white;
 overflow: hidden;
 }
 
-.b-dny button:disabled,.p-v
+.b-dny button:disabled,.b-dny .p-v
 {
 border:1px dotted grey;
 font-weight:normal;

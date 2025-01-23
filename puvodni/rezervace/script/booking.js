@@ -1023,6 +1023,47 @@ class Boss {
         this.dny = ["Neděle", "Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota"]; // dny v týdnu
         this.mesice = ["ledna", "února", "března", "dubna", "květena", "června", "července", "srpna", "září", "října", "listopadu", "prosince"]; // měsíce v roce
     }
+    rovna_vyska_form() {
+        // metoda zajistí že oba formuláře rezrvace budou mít stejnou výšku, budou oba vysoké jako ten nejvyšší
+        const form1 = document.getElementById(this.id_form[0]);
+        const form2 = document.getElementById(this.id_form[1]);
+        if (form1 && form2) {
+            let v1 = 0;
+            let v2 = 0;
+            if (window.getComputedStyle(form1).display !== "none") {
+                // nataví jeho výšku na uto, aby ho změřil
+                form1.style.height = "auto"; // natavení na auto nám zaručí přirozenou výšku kontejneru
+                v1 = form1.clientHeight; // změří jeho výšku
+            }
+            else {
+                // formulář dočasně zapne, aby zjistil jeho výšku
+                form2.style.display = "none";
+                form1.style.display = "flex";
+                form1.style.height = "auto"; // natavení na auto nám zaručí přirozenou výšku kontejneru
+                v1 = form1.clientHeight; // změří jeho výšku
+                form1.style.display = "none";
+                form2.style.display = "flex";
+            }
+            if (window.getComputedStyle(form2).display !== "none") {
+                // pokud nemá form2 display na none
+                form2.style.height = "auto"; // natavení na auto nám zaručí přirozenou výšku kontejneru
+                v2 = form2.clientHeight; // změří jeho výšku
+            }
+            else {
+                // formulář dočasně zapne aby zjistil jeho výšku
+                form1.style.display = "none";
+                form2.style.display = "flex";
+                form2.style.height = "auto"; // natavení na auto nám zaručí přirozenou výšku kontejneru
+                v2 = form2.clientHeight; // změří jeho výšku
+                form2.style.display = "none";
+                form1.style.display = "flex";
+            }
+            const maxHeight = Math.max(v1, v2); // vybere nejvišší výšku z formulářů
+            form1.style.height = `${maxHeight}px`; // naství výšku
+            form2.style.height = `${maxHeight}px`; // naství výšku
+        }
+    }
+    ;
     reset_aplikace(jak = "") {
         // metoda vyresetuje aplikaci, jako by ji nikdo předtím nepoužil
         if (jak != "castecne") {
@@ -1360,6 +1401,7 @@ class Boss {
     spustit_aplikaci() {
         // metoda zajišťuje spuštění základních procesů pro chod aplikace rezervace
         this.kontola_verze_javaScript(); // metoda zkontroluje jestli uživatel má alespoň Java Script ES2017, pokud ne, aktivuje DIV s errorem
+        this.rovna_vyska_form(); // srovná výšku obou formulářů na stejnou výšku
         this.posluchace(); // spustí posluchače formulářů a hlavních buttonů formulářů
         kalendar.nazev_mesice(); // funkce přepíše název měsíce a roku v input měsíc a rok
         kalendar.restart_dnu_v_kalendari(); // funkce aktivuje všechny buttony pro dny 1-31 (všem nastaví disabled==false a přidá posluchače click)
@@ -1661,3 +1703,8 @@ const hlidac_viditelnosti_aplikace = new Hlidac_viditelnosti_aplikace(); // pomo
 boss.spustit_aplikaci(); // metoda zajistí spuštění hlavních funkcí aplikace
 zrusit_rezervaci.inicializace(); // zajistí základní procesy pro zrušení rezervace
 hlidac_viditelnosti_aplikace.aktivace(); // aktivuje hlídač visibilitychange API, pokud uživatel z aplikace odejde a znovu se vrátí, aplikace se vyresetuje, mimo vyplněných input vstupů (jméno, příjmení, telefón, souhlas)
+// Použití ResizeObserver pro sledování změn velikosti okna
+const resizeObserver = new ResizeObserver(() => {
+    boss.rovna_vyska_form();
+});
+resizeObserver.observe(document.body);

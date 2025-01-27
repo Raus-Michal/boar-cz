@@ -1,5 +1,4 @@
 ﻿
-/* KONEC OPTIMALIZACE */
 
 :root
 {
@@ -190,15 +189,21 @@ grid-template-columns:2rem 1fr 2rem;
 
 .b-mesic button
 {
+display:-webkit-box;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-pack:center;
+justify-content:center;
+-webkit-box-align:center;
+align-items:center;
 aspect-ratio:1/1;
-line-height:1.9;
-font-weight:bold;
-color:black;
+color:white; /* odstranění viditelného textu - jsou tam v HTML textově umístěné šipky */
 background-color:white;
 border:none;
 text-align:center;
 border-radius:50%;
 transition: transform 250ms ease;
+vertical-align:middle;
 }
 
 
@@ -214,15 +219,15 @@ transform:perspective(5px) rotateY(3deg) scale(1.15); /* Zvětší o 15% při ak
 
 .b-mesic button:first-child
 {
--webkit-transform:perspective(5px) rotateY(357deg);
-transform:perspective(5px) rotateY(357deg);
+-webkit-transform:perspective(3px) rotateY(356deg);
+transform:perspective(3px) rotateY(356deg);
 box-shadow: 0px 0px 6px 1px white;
 }
 
 .b-mesic button:last-child
 {
--webkit-transform:perspective(5px) rotateY(3deg);
-transform:perspective(5px) rotateY(3deg);
+-webkit-transform:perspective(3px) rotateY(4deg);
+transform:perspective(3px) rotateY(4deg);
 box-shadow: 0px 0px 6px 1px white;
 }
 
@@ -231,6 +236,7 @@ box-shadow: 0px 0px 6px 1px white;
 color:white;
 padding:.5rem .5rem .25rem .15rem;
 text-align:center;
+vertical-align:middle;
 font-size:1.25rem;
 font-weight:bold;
 border:none;
@@ -295,13 +301,10 @@ text-align:center;
 .b-dny button,.b-dny .p-v
 {
 display:-webkit-box;
-display:-ms-flexbox;
 display:flex;
--webkit-box-align:center;
--webkit-box-align:baseline;
-align-items:baseline;
 -webkit-box-pack:center;
 justify-content:center;
+-webkit-box-align:center;
 align-items:center;
 width:100%;
 border-radius:50%;
@@ -310,10 +313,22 @@ aspect-ratio:1/1; /* zajistí, že prvek bude mít strany jako čtverec 1:1 */
 padding:.5rem;
 font-size:1rem;
 font-weight:bold;
+text-align:center;
+vertical-align:middle;
 line-height:1.25;
 color:black;
 background-color:white;
-overflow: hidden;
+overflow:hidden;
+-webkit-transition:-webkit-transform 0.3s ease, background-color 0.3s ease;  /* Plynulý přechod na transformace za 0.3 sekundy */
+transition:transform 0.3s ease, background-color 0.3s ease;  /* Plynulý přechod na transformace za 0.3 sekundy */
+will-change:transform; /* aktivace hardverove akcelerace  */
+}
+
+.b-dny button span,.b-dny .p-v span
+{
+-webkit-transform:translateY(0.1rem);
+-ms-transform:translateY(0.1rem);
+transform:translateY(0.1rem);
 }
 
 .b-dny button:disabled,.b-dny .p-v
@@ -323,6 +338,12 @@ font-weight:normal;
 color:grey;
 opacity:.7;
 cursor:no-drop;
+}
+
+.b-dny button:active
+{
+-webkit-transform:scale(1.15);
+transform:scale(1.15); /* Zvětší o 15% při aktivaci */
 }
 
 .kryt
@@ -395,8 +416,18 @@ cursor:pointer;
 white-space:nowrap;
 border-radius:10px;
 background-color:white;
+font-size:.9rem;
 }
 
+
+/* > 368 px */
+@media only screen and (min-width:23em)
+{
+.b-hod li
+{
+font-size:1rem;
+}
+}
 
 .b-hod li input[type="radio"] {
 appearance: none; /* Skryje standardní radiobutton */
@@ -510,6 +541,10 @@ justify-content:center;
 
 .potvrzeni button
 {
+display:flex;
+align-items:center;
+justify-content:center;
+gap:1rem;
 font-family:"nadpis",sans-serif;
 height:auto;
 min-height:3rem;
@@ -705,11 +740,22 @@ height:100%;
 position:relative;
 }
 
-.n-dialog
+.n-dialog,.n-dialog-flex
 {
 font-family:"nadpis",sans-serif;
 font-size:1.5rem;
 font-weight:500;
+}
+
+.n-dialog-flex
+{
+display:-webkit-inline-box;
+display:inline-flex;
+gap:1rem;
+-webkit-box-align:center;
+align-items:center;
+-webkit-box-pack:center;
+justify-content:center;
 }
 
 .absol-box
@@ -769,14 +815,14 @@ color:black;
 
 @-webkit-keyframes growShrink
 {
-0%,100%{-webkit-transform:rotateZ(90deg) scale(1);transform:rotateZ(90deg) scale(1);} /* počáteční a konečná velikost */ 
-50%{-webkit-transform:rotateZ(90deg) scale(0.95);transform:rotateZ(90deg) scale(0.95);} /* zvětšení o 2% ve středu animace */ 
+0%,100%{-webkit-transform:scale(1);-webkit-transform:scale(1);} /* počáteční a konečná velikost */ 
+50%{-webkit-transform: scale(0.95);-webkit-transform: scale(0.95);} /* zvětšení o 2% ve středu animace */ 
 }
 
 @keyframes growShrink
 {
-0%,100%{-webkit-transform:rotateZ(90deg) scale(1);transform:rotateZ(90deg) scale(1);} /* počáteční a konečná velikost */ 
-50%{-webkit-transform:rotateZ(90deg) scale(0.95);transform:rotateZ(90deg) scale(0.95);} /* zvětšení o 2% ve středu animace */ 
+0%,100%{transform: scale(1);transform: scale(1);} /* počáteční a konečná velikost */ 
+50%{transform: scale(0.95);transform: scale(0.95);} /* zvětšení o 2% ve středu animace */ 
 }
 
 .scroll-butt
@@ -785,20 +831,18 @@ position:sticky;
 bottom:5rem;
 width:2rem;
 height:2rem;
--webkit-transform:rotateZ(90deg);
-transform:rotateZ(90deg);
 left:calc(100% - 2rem);
 border-radius:50%;
 border-color:white;
 border:1px solid var(--b4);
-color:black;
+color:white; /* nebude viditelný textový prvek */
 font-weight:bold;
 padding:0;
-padding-left:.5rem;
+padding-left:.45rem;
 font-size:1.25rem;
 z-index:2;
 -webkit-animation:growShrink 1s infinite;
-        animation:growShrink 1s infinite; /* animace trvá 2 sekundy a opakuje se donekonečna */
+animation:growShrink 1s infinite; /* animace trvá 2 sekundy a opakuje se donekonečna */
 }
 
 .scroll-kryt
@@ -811,7 +855,7 @@ position:relative;
 z-index:3;
 background-color:var(--b2);
 -webkit-box-shadow:-1px -13px 10px 4px var(--b2);
-        box-shadow:-1px -13px 10px 4px var(--b2);
+box-shadow:-1px -13px 10px 4px var(--b2);
 }
 
 .svg-box-wait
@@ -827,6 +871,94 @@ width:100%;
 {
 width:100%;
 max-width:10rem;
+}
+
+
+.i-app1,.i-app2,.i-app3,.i-app4,.i-app5,.i-app6 /* SVG IKONY - 6 IKON */
+{
+background-image:url('../svg/ico-app.svg');
+background-color:transparent;
+background-repeat:no-repeat;
+background-size:600% 100%;
+display:block;
+width:100%;
+height:auto;
+aspect-ratio:1/1;
+color:transparent; /* támto odstraní viditelný text */
+font-size:1rem;
+will-change:background-position;
+}
+
+.i-app4,.i-app5,.i-app6 /* pevně daný rozměr SVG ikon */
+{
+width:2rem;
+min-width:2rem;
+height:2rem;
+min-height:2rem;
+aspect-ratio:1/1;
+}
+
+.i-app1,.i-app2,.i-app3 /* pevně daný rozměr SVG ikon */
+{
+width:1rem;
+min-width:1rem;
+height:1rem;
+min-height:1rem;
+aspect-ratio:1/1;
+}
+
+.i-app1 /* šipka vlevo */
+{
+-webkit-background-position: 0 0;
+-moz-background-position: 0 0;
+background-position: 0 0;
+}
+
+.i-app2 /* šipka vpravo */
+{
+-webkit-background-position: 20% 0;
+-moz-background-position: 20% 0;
+background-position: 20% 0;
+}
+
+.i-app3 /* šipka dolů */
+{
+-webkit-background-position: 40% 0;
+-moz-background-position: 40% 0;
+background-position: 40% 0;
+}
+
+.i-app4 /* potvrzení */
+{
+-webkit-background-position: 60% 0;
+-moz-background-position: 60% 0;
+background-position: 60% 0;
+}
+
+.i-app5 /* otocení */
+{
+-webkit-background-position: 80% 0;
+-moz-background-position: 80% 0;
+background-position: 80% 0;
+}
+
+.i-app6 /* zásady */
+{
+width:1.5rem;
+min-width:1.5rem;
+height:1.5rem;
+min-height:1.5rem;
+-webkit-background-position: 100% 0;
+-moz-background-position: 100% 0;
+background-position: 100% 0;
+}
+
+.i-app6-b /* zásady */
+{
+width:2.5rem;
+min-width:2.5rem;
+height:2.5rem;
+min-height:2.5rem;
 }
 
 

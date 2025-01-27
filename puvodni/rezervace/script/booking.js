@@ -383,7 +383,7 @@ class Kalendar {
     ;
     handleEvent(e) {
         // klik na den v měsíci 1-31
-        const k = e.target.id;
+        const k = e.target.closest("button").id;
         const cislo_dne = parseInt(`${k[1]}${k[2]}`);
         let a_m = datum.mesic_v_roce + this.poloha; // datum.mesic_v_roce je gettter, kde návratová hodnota je aktuální měsíc v roce, kde leden je 0 a prosinec 11 + this.poloha určuje aktuální polohu uživatele v kalendáři
         let a_r = datum.aktualni_rok; // datum.aktualni_rok je getter, kde návratová hodnota je aktuální rok: 2024,2025 ...

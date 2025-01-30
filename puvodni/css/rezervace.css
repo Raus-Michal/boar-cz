@@ -428,6 +428,7 @@ display:flex;
 column-count:2;         /* Počet sloupců */
 column-gap:1rem;        /* Mezera mezi sloupci */
 margin: 0 auto;          /* Aby byl kontejner centrovaný */
+column-fill:balance;
 }
 }
 

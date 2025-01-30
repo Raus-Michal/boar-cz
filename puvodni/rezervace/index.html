@@ -7,34 +7,34 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <html lang="cs" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width , initial-scale=1.0 , viewport-fit=cover">
-<link rel="stylesheet" href="../css/rezervace.css?v=x2">
-<link rel="stylesheet" href="css/css.css?x=3">
-<meta name="description" content="Informace o programátorovi webových projektů Boar-cz.">
-<meta name="keywords" content="programátor,Boar-cz">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<link rel="stylesheet" href="../css/rezervace.css?n=2">
+<link rel="stylesheet" href="css/css.css?n=2">
+<meta name="description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.">
+<meta name="keywords" content="rezervační systém, rezervace online, rezervace">
 <meta name="author" content="Boar-cz">
-<meta name="application-name" content="Boar-cz">
+<meta name="application-name" content="Rezervační systém | Boar-cz">
 <meta property="og:url" content="https://www.boar-cz.info">
-<meta property="og:title" content="Boar-cz">
-<meta property="og:description" content="Informace o programátorovi webových projektů Boar-cz.">
+<meta property="og:title" content="Rezervační systém | Boar-cz">
+<meta property="og:description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.">
 <meta property="og:image" content="https://www.boar-cz.info/nahled/boar-cz.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:update_time" content="2025-01-20T18:00:00+01:00">
+<meta property="og:update_time" content="2025-01-30T18:00:00+01:00">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:site_name" content="Boar-cz">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2025-01-20T18:00:00+1:00">
-<meta property="article:modified_time" content="2025-01-20T18:00:00+1:00">
+<meta property="article:modified_time" content="2025-01-30T18:00:00+1:00">
 <meta property="article:section" content="Mgr. Bc. Michal Raus,Vzdělání,Zaměstnání,Programování">
 <meta property="article:tag" content="Boar-cz">
-<meta name="robots" content="noindex , nofollow">
+<meta name="robots" content="index,follow">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:site" content="@boar-cz">
 <meta property="twitter:url" content="https://www.boar-cz.info/">
 <meta property="twitter:title" content="Boar-cz webové projekty">
-<meta property="twitter:description" content="Informace o programátorovi webových projektů Boar-cz.">
+<meta property="twitter:description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.">
 <meta property="twitter:image" content="https://www.boar-cz.info/nahled/boar-cz.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
@@ -43,41 +43,32 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#ffc40d">
 <meta name="theme-color" content="#ffffff">
-<title>Rezervovat telefonní hovor</title>
+<title>Rezervační systém | Boar-cz</title>
 <script type="application/ld+json">
 {
-"@context": "https://schema.org/",
-"@type": "Article",
-"mainEntityOfPage": {
-"@type": "WebPage",
-"@id": "https://www.boar-cz.info"
+"@context": "https://schema.org",
+"@type": "WebApplication",
+"@id": "WebApplication",
+"dateCreated": "2025-01-20",
+"dateModified": "2025-01-30",
+"datePublished": "2025-01-30",
+"version": "[1,0]",
+"mainEntityOfPage": "https://www.boar-cz.info",
+"description": "Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.",
+"abstract": "Naše rezervační systém vám umožní snadno a rychle rezervovat telefonní hovory, schůzky, návštěvy lékaře a další události. Systém nabízí flexibilitu pro provozovatele, kteří mohou upravit časy rezervací a vyblokovat určité dny. Rezervaci může zrušit jak uživatel, tak provozovatel, a potvrzení obdržíte na e-mail. Tento systém, postavený na frameworku Rype Script, lze upravit a použít na jakýkoli web.",
+"name": "Rezervační systém | Boar-cz",
+"operatingSystem": "Windows 7, OSX 10.6, Android 1.6",
+"applicationCategory": "Safety",
+"aggregateRating": {
+"@type": "AggregateRating",
+"ratingValue": "5.0",
+"ratingCount": "9999"
 },
-"headline": "Mgr. Bc. Michal Raus - programátor Boar-cz",
-"description": "Mgr. Bc. Michal Raus programuje za Boar-cz !!!",
-"image": {
-"@type": "ImageObject",
-"url": "https://www.boar-cz.info/svg/logo.svg",
-"width": "400",
-"height": "400"
-},
-"author": {
-"@type": "Person",
-"name": "Mgr. Bc. Michal Raus",
-"url": "https://www.boar-cz.info"
-},
-"publisher": {
-"@type": "Organization",
-"name": "Boar-cz",
-"logo": {
-"@type": "ImageObject",
-"url": "https://www.boar-cz.info/svg/logo.svg",
-"width": "400",
-"height": "400"
-}
-},
-"datePublished": "2025-01-20",
-"dateModified": "2025-01-20"
-}
+"offers": {
+"@type": "Offer",
+"price": "10000",
+"priceCurrency": "CZK"
+}}
 </script>
 </head>
 <body>
@@ -116,14 +107,14 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <article>
 <div class="boxC"><div class="boxM">
 <h1>Rezervace <span class="ibb">telefonního hovoru</span></h1>
-<p class="ods-m40">Telefón z&nbsp;různých důvodů nemohu občas používat. Pokud&nbsp;si zarezervujete telefonní hovor, budete mít 100&#8239;% jistotu, že&nbsp;se&nbsp;mi dovoláte. Za&nbsp;rezervaci hovoru předem děkuji!</p>
+<p class="ods-m40">Telefon z&nbsp;různých důvodů nemohu občas používat. Pokud si zarezervujete telefonní hovor, budete mít 100% jistotu, že&nbsp;se&nbsp;mi dovoláte. <strong>Za&nbsp;rezervaci hovoru předem děkuji!</strong></p>
 </div></div>
 
 <section>
 <div class="boxC"><div class="boxM">
 <h2>Rezervace <span class="ibb">telefonního hovoru</span> <span class="ibb">s&nbsp;Michalem Rausem</span></h2>
 <div class="col">
-<p class="ods-m40">Abychom spolu mohli mluvit v&nbsp;předem domluvený čas, stačí&nbsp;telefoní hovor jednoduše zarezervovat. Jakmile zarezervujete telefonní hovor, na&nbsp;váš email bude doručeno potvrzení o&nbsp;rezervaci a&nbsp;odkaz pro případné zrušení rezervace. Budu se&nbsp;těšit na&nbsp;zavolání!</p>
+<p class="ods-m40">Abychom spolu mohli mluvit v&nbsp;předem domluvený čas, stačí telefonní hovor jednoduše zarezervovat. Jakmile zarezervujete telefonní hovor, na váš e-mail bude doručeno potvrzení o&nbsp;rezervaci a&nbsp;odkaz pro&nbsp;případné zrušení rezervace. Budu se&nbsp;těšit na&nbsp;zavolání!</p>
 
 <p class="ods-m40">Nemáte moje telefonní číslo? Nevadí, napište&nbsp;mi prostřednictvím <a href="../kontakt/" title="Kontaktní formulář">&gt;&#8239;kontaktního&nbsp;formuláře&#8239;&lt;</a>, rád&nbsp;vám telefonní číslo pošlu.</p>
 </div>
@@ -205,6 +196,15 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <button id="b31" type="button" title="31."><span>31</span></button>
 
 <div class="fake-kon"><input id="fake-checked" type="checkbox" title="Určete den rezervace" required></div>
+
+<div id="errror_load" class="error-kon">
+<div>
+<p>Potřebná data, nebyla ze&nbsp;serveru načtena.</p>
+<p id="errror_load_offline"><strong>Zařízení&nbsp;je anebo&nbsp;bylo offline!</strong></p>
+<button id="retry_load" type="button"><span class="i-app5"> </span><span>Opakovat načtení</span></button>
+</div>
+</div>
+
 </fieldset>
 </div>
 
@@ -227,9 +227,9 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <li id="lic14"><input id="cas14" type="radio" name="cas" title="v čase 15:30-16:00 hod.">15:30-16:00&#8239;h</li>
 </ol>
 
-<div id="logo-box" class="box-ap-logo">
+<div id="app_logo_box" class="box-ap-logo">
 
-<svg width="400" height="400" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="rgb(110,87,168)" fill="none">
+<svg id="app_logo_svg" width="400" height="400" viewBox="0 0 400 400" stroke-width="10" stroke-linejoin="round" stroke="rgb(110,87,168)" fill="none">
 <defs>
 <filter id="fil1" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="400">
 <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
@@ -246,7 +246,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 </filter>
 </defs>
 <g>
-<g filter="url(#fil1)" >
+<g filter="url(#fil1)">
 <g stroke="black" fill="black" stroke-width="1">
 <path d="M 94,91 C 55,84 46,65 37,27 27,76 23,101 57,143 Z" />
 <path d="m 303,91 c 39,-7 48,-26 57,-64 10,49 14,74 -20,116 z" />
@@ -266,7 +266,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 </g>
 </svg>
 <div class="tc">
-<p class="f-log">&copy;&#8239;2025 Boar-cz</p>
+<p id="app_logo_text" class="f-log">&copy;&#8239;2025 Boar-cz</p>
 </div>
 </div>
 
@@ -322,6 +322,17 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 </form>
 </div>
 
+
+<h3>Rezervační systém</h3>
+<div class="col">
+<p class="ods-m40">Náš rezervační systém vám <strong>umožní jednoduše rezervovat schůzky, telefonáty, návštěvy lékaře a&nbsp;další události</strong>. Stačí si vybrat čas a&nbsp;datum, a&nbsp;systém se&nbsp;postará o&nbsp;zbytek. Po&nbsp;rezervaci obdržíte potvrzení na&nbsp;váš <span class="iib">e-mail</span> a&nbsp;rezervaci si&nbsp;můžete zapsat do&nbsp;kalendáře. V&nbsp;<span class="iib">e-mailu</span> je&nbsp;také odkaz, pro&nbsp;případné zrušení rezervace. Pokud se rozhodnete rezervaci zrušit, obdržíte potvrzení na&nbsp;váš <span class="iib">e-mail</span> i&nbsp;o&nbsp;této akci.</p>
+
+<p class="ods-m40">Systém nabízí flexibilitu pro&nbsp;provozovatele, kteří&nbsp;mohou vyblokovat určité dny a&nbsp;je&nbsp;možné upravit časy rezervací podle potřeby. Rezervaci může zrušit nejen ten, kdo&nbsp;ji vytvořil, ale&nbsp;také provozovatel systému. Tento rezervační systém je&nbsp;100% responzivní, postaven jako framework v&nbsp;Type&nbsp;Scriptu a&nbsp;<strong>je možné ho upravit a&nbsp;použít na&nbsp;jakýkoli web.</strong></p>
+
+<p class="ods-m40">Nenechte své klienty zbytečně vám volat několikrát denně a&nbsp;stejně se&nbsp;nedovolat. S&nbsp;naším rezervačním systémem od&nbsp;<span class="iib">Boar-cz</span> už&nbsp;nebudou muset vaši klienti čekat dlouhé hodiny v&nbsp;čekárně nebo se&nbsp;snažit domlouvat schůzku po&nbsp;telefonu. Tento systém umožňuje snadno a&nbsp;rychle zarezervovat termín a&nbsp;šetří tak čas vám i&nbsp;vašim klientům. <strong>Přidejte&nbsp;si rezervační systém na&nbsp;svůj web ještě dnes a&nbsp;mějte vše pod&nbsp;kontrolou!</strong></p>
+</div>
+
+
 </div></div>
 </section>
 
@@ -354,12 +365,12 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 Informace o&nbsp;webové stránce</a>
 </div>
 <div class="b-s2">
-<a id="sdil-fb" class="fl a-s ac" href="https://www.facebook.com/sharer/sharer.php?u=https://www.boar-cz.info/" title="Sdílet Boar-cz na FB" target="_blank" rel="nofollow">
+<a id="sdil-fb" class="fl a-s ac" href="https://www.facebook.com/sharer/sharer.php?u=https://www.boar-cz.info/rezervace/" title="Sdílet Boar-cz na FB" target="_blank" rel="nofollow">
 <div class="ico2"> </div>
 Sdílet na&nbsp;Facebooku</a>
 </div>
 <div class="b-s2">
-<a id="sdil-tw" class="fl a-s ac" href="https://twitter.com/intent/tweet?url=https://www.boar-cz.info/&text=" title="Sdílet Boar-cz na X" target="_blank" rel="nofollow">
+<a id="sdil-tw" class="fl a-s ac" href="https://twitter.com/intent/tweet?url=https://www.boar-cz.info/rezervace/&text=" title="Sdílet Boar-cz na X" target="_blank" rel="nofollow">
 <div class="ico3"> </div>
 Sdílet na&nbsp;Twitteru
 </a>
@@ -449,7 +460,15 @@ Sdílet na&nbsp;Twitteru
 
 
 <dialog id="uspech" class="dia">
-<p class="n-dialog">Rezervace byla úspěšně dokončena!</p>
+<p class="n-dialog tc">Rezervace byla úspěšně dokončena!</p>
+<div class="anim_o">
+<svg class="app-svg-no-yes" width="200" height="200" viewBox="0 0 200 200" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="green">
+<circle cx="100" cy="100" r="90" stroke-width="10" />
+<path d="M 50,130 50,130 50,130" />
+<path d="M 50,130 85,160 85,160" />
+<path d="M 50,130 85,160 145,60" />
+</svg>
+</div>
 <p>Do&nbsp;30&#8239;minut bude na&nbsp;Váš email doručeno potvrzení rezervace.</p>
 <div class="butt-box">
 <button id="butt_uspech" type="button" title="Zavřít">Zavřít okno</button>
@@ -457,18 +476,31 @@ Sdílet na&nbsp;Twitteru
 </dialog>
 
 <dialog id="neuspech" class="dia">
-<p class="n-dialog">Rezervace se&nbsp;nezdařila!</p>
-<p>Je&nbsp;nám líto rezervace se&nbsp;nezdařila. Zkuste&nbsp;to prosím později.</p>
-<p>Pokud&nbsp;se chyba opakuje, pro&nbsp;kontakt můžete použít <a  class="nw" href="https://www.boar-cz.info/kontakt/" target="_blank" rel="noopener noreferrer" title="Formulář pro zasílání emailů">&gt;&#8239;kontaktní formulář&#8239;&lt;</a>.</p>
+<p class="n-dialog tc">Rezervace se&nbsp;nezdařila!</p>
+<div class="anim_o">
+<svg class="app-svg-no-yes" width="50" height="50" viewBox="0 0 50 50" stroke="red" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<line x1="5" y1="5" x2="45" y2="45" />
+<line x1="45" y1="5" x2="5" y2="45" />
+</svg>
+</div>
+<p class="tc">Je&nbsp;nám líto rezervace se&nbsp;nezdařila.</p>
+<p class="tc">Zkuste&nbsp;to prosím později.</p>
+<p class="tc">Pokud&nbsp;se chyba opakuje, pro&nbsp;kontakt můžete použít <a  class="nw" href="https://www.boar-cz.info/kontakt/" target="_blank" rel="noopener noreferrer" title="Formulář pro zasílání emailů">&gt;&#8239;kontaktní formulář&#8239;&lt;</a>.</p>
 <div class="butt-box">
 <button id="butt_neuspech" type="button" title="Zavřít">Zavřít okno</button>
 </div>
 </dialog>
 
 <dialog id="prekrocen_limit" class="dia">
-<p class="n-dialog">Rezervace se&nbsp;nezdařila!</p>
-<p>Je&nbsp;nám líto překročili jste limit maximálních požadavků za&nbsp;24&#8239;hodin.</p>
-<p>Pokud&nbsp;se chyba opakuje i&nbsp;za&nbsp;24&#8239;hodin, pro&nbsp;kontakt můžete použít <a  class="nw" href="https://www.boar-cz.info/kontakt/" target="_blank" rel="noopener noreferrer" title="Formulář pro zasílání emailů">&gt;&#8239;kontaktní formulář&#8239;&lt;</a>.</p>
+<p class="n-dialog tc">Rezervace se&nbsp;nezdařila!</p>
+<div class="anim_o">
+<svg class="app-svg-no-yes" width="50" height="50" viewBox="0 0 50 50" stroke="red" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<line x1="5" y1="5" x2="45" y2="45" />
+<line x1="45" y1="5" x2="5" y2="45" />
+</svg>
+</div>
+<p class="tc">Je&nbsp;nám líto překročili jste limit maximálních požadavků za&nbsp;24&#8239;hodin.</p>
+<p class="tc">Pokud&nbsp;se chyba opakuje i&nbsp;za&nbsp;24&#8239;hodin, pro&nbsp;kontakt můžete použít <a  class="nw" href="https://www.boar-cz.info/kontakt/" target="_blank" rel="noopener noreferrer" title="Formulář pro zasílání emailů">&gt;&#8239;kontaktní formulář&#8239;&lt;</a>.</p>
 <div class="butt-box">
 <button id="butt_prekrocen_limit" type="button" title="Zavřít">Zavřít okno</button>
 </div>
@@ -495,15 +527,30 @@ Sdílet na&nbsp;Twitteru
 </dialog>
 
 <dialog id="zruseno_driv" class="dia">
-<p class="n-dialog">Rezervace byla ji dříve zrušena!</p>
-<p>Tato rezervace existovala, ale&nbsp;už byla zrušena. Při&nbsp;jejím rušení&nbsp;bylo zasláno potvrzení o&nbsp;zrušení rezervace na&nbsp;email, který&nbsp;byl zadán při&nbsp;samotném rušení rezervace.</p>
+<p class="n-dialog tc">Rezervace byla ji dříve zrušena!</p>
+<div class="anim_o">
+<svg class="app-svg-no-yes" width="50" height="50" viewBox="0 0 50 50" stroke="red" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<line x1="5" y1="5" x2="45" y2="45" />
+<line x1="45" y1="5" x2="5" y2="45" />
+</svg>
+</div>
+<p class="tc">Tato rezervace existovala, ale&nbsp;už byla zrušena.</p>
+<p>Při&nbsp;jejím rušení&nbsp;bylo zasláno potvrzení o&nbsp;zrušení rezervace na&nbsp;email, který&nbsp;byl zadán při&nbsp;samotném rušení rezervace.</p>
 <div class="butt-box">
 <button id="butt_zruseno_driv" type="button" title="Zavřít">Zavřít okno</button>
 </div>
 </dialog>
 
 <dialog id="zruseno" class="dia">
-<p class="n-dialog">Rezervace byla zrušena!</p>
+<p class="n-dialog tc">Rezervace byla zrušena!</p>
+<div class="anim_o">
+<svg class="app-svg-no-yes" width="200" height="200" viewBox="0 0 200 200" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="green">
+<circle cx="100" cy="100" r="90" stroke-width="10" />
+<path d="M 50,130 50,130 50,130" />
+<path d="M 50,130 85,160 85,160" />
+<path d="M 50,130 85,160 145,60" />
+</svg>
+</div>
 <p>Do&nbsp;30&#8239;minut bude na&nbsp;uvedený email doručeno potvrzení o&nbsp;zrušení rezervace.</p>
 <div class="butt-box">
 <button id="butt_zruseno" type="button" title="Zavřít">Zavřít okno</button>
@@ -511,21 +558,22 @@ Sdílet na&nbsp;Twitteru
 </dialog>
 
 <dialog id="nezruseno" class="dia">
-<p class="n-dialog">Rezervaci se&nbsp;nepodařilo zrušit!</p>
-<p>Je nám líto nepodařilo&nbsp;se zrušit rezervaci. Zkuste to prosím později.</p>
+<p class="n-dialog tc">Rezervaci se&nbsp;nepodařilo zrušit!</p>
+<div class="anim_o">
+<svg class="app-svg-no-yes" width="50" height="50" viewBox="0 0 50 50" stroke="red" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<line x1="5" y1="5" x2="45" y2="45" />
+<line x1="45" y1="5" x2="5" y2="45" />
+</svg>
+</div>
+<p class="tc">Je nám líto nepodařilo&nbsp;se zrušit rezervaci.</p>
+<p class="tc">Zkuste to prosím později.</p>
 <p>Pokud&nbsp;se chyba opakuje, pro&nbsp;kontakt můžete použít <a  class="nw" href="https://www.boar-cz.info/kontakt/" target="_blank" rel="noopener noreferrer" title="Formulář pro zasílání emailů">&gt;&#8239;kontaktní formulář&#8239;&lt;</a>.</p>
 <div class="butt-box">
 <button id="butt_nezruseno" type="button" title="Zavřít">Zavřít okno</button>
 </div>
 </dialog>
 
-
-
-
-
-
-
-<script src="../script/rezervace.js?x1"></script>
-<script src="script/booking.js?v=x1"></script>
+<script src="../script/rezervace.js?v=n2" async></script>
+<script src="script/booking.js?v=n2" async></script>
 </body>
 </html>

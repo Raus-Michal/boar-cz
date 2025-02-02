@@ -22,6 +22,8 @@ $data["data"] = array_filter($data["data"], function($record) use ($today) {
     return $recordDate >= $today;
 });
 
+$data["data"] = array_values($data["data"]); // Resetování indexů, aby byly sekvenční (stejná struktura JSON ve kterých jsou data zapisována a očekávána Java scriptem)
+
 // Uložení aktualizovaných dat zpět do JSON souboru
 file_put_contents($jsonFilePath, json_encode($data));
 

@@ -8,8 +8,8 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<link rel="stylesheet" href="../css/rezervace.css?n=2">
-<link rel="stylesheet" href="css/css.css?n=3">
+<link rel="stylesheet" href="../css/rezervace.css?w=1">
+<link rel="stylesheet" href="css/css.css?w=1">
 <meta name="description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.">
 <meta name="keywords" content="rezervační systém, rezervace online, rezervace">
 <meta name="author" content="Boar-cz">
@@ -506,6 +506,23 @@ Sdílet na&nbsp;Twitteru
 </div>
 </dialog>
 
+
+<dialog id="duplicitni_termin" class="dia">
+<p class="n-dialog tc">Rezervace se&nbsp;nezdařila!</p>
+<div class="anim_o">
+<svg class="app-svg-no-yes" width="50" height="50" viewBox="0 0 50 50" stroke="red" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<line x1="5" y1="5" x2="45" y2="45" />
+<line x1="45" y1="5" x2="5" y2="45" />
+</svg>
+</div>
+<p class="tc">Je&nbsp;nám líto, termín, který požadujete rezervovat, již&nbsp;si stihl dříve, něž&nbsp;jste požádal o&nbsp;rezervaci, někdo zarezervovat.</p>
+<p class="tc"><strong>Vyberte&nbsp;si prosím jiný termín rezervace.</strong></p>
+<p class="tc">Pokud&nbsp;se chyba opakuje, pro&nbsp;kontakt můžete použít <a  class="nw" href="https://www.boar-cz.info/kontakt/" target="_blank" rel="noopener noreferrer" title="Formulář pro zasílání emailů">&gt;&#8239;kontaktní formulář&#8239;&lt;</a>.</p>
+<div class="butt-box">
+<button id="butt_duplicitni_termin" type="button" title="Zavřít">Zavřít okno</button>
+</div>
+</dialog>
+
 <dialog id="zrusit_rezervaci" class="dia">
 <p class="n-dialog">Zrušení rezervace</p>
 <p class="mb05">Potvrďte prosím zrušení rezervace.</p>
@@ -573,7 +590,7 @@ Sdílet na&nbsp;Twitteru
 </div>
 </dialog>
 
-<script src="../script/rezervace.js?v=n3" async></script>
-<script src="script/booking.js?v=n3" async></script>
+<script src="../script/rezervace.js?w=1" async></script>
+<script src="script/booking.js?w=1" async></script>
 </body>
 </html>

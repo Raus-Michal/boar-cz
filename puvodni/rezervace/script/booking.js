@@ -917,6 +917,11 @@ class Dia {
             id_okna: "prekrocen_limit",
             id_buton_pro_zavreni: "butt_prekrocen_limit"
         };
+        this.dia_duplicita = {
+            // objekt s id pro dialogové okno: Duplicitní termín - tento termín, již byl zabrán v jiné rezervaci
+            id_okna: "duplicitni_termin",
+            id_buton_pro_zavreni: "butt_duplicitni_termin"
+        };
         this.dia_dotaz_zruseni = {
             // objekt s id pro dialogové okno: Zrušit rezervaci?
             id_okna: "zrusit_rezervaci",
@@ -1157,10 +1162,9 @@ class Boss {
                     input.value = ""; // anuluje jeho value
                 }
             }
-            const predvolba=document.getElementById(this.id_predvolba_phone); // načte HTML input s předvolbou telefoního čísla
-            if(predvolba)
-            {
-            predvolba.value="+420"; // nastaví default předvolbu +420
+            const predvolba = document.getElementById(this.id_predvolba_phone); // načte HTML input s předvolbou telefoního čísla
+            if (predvolba) {
+                predvolba.value = "+420"; // nastaví default předvolbu +420
             }
             const s_checked = document.getElementById(this.id_checked); // checked Souhlasím se zpracováním osobních údajů
             if (s_checked) {
@@ -1209,36 +1213,31 @@ class Boss {
             }
         }
         const input_predvolba = document.getElementById(this.id_predvolba_phone); // HTML input s předvolbou telefoního čísla +420
-      
-if(input_predvolba)
-{
-// Přidání události 'input' pro vstupní pole
-input_predvolba.addEventListener("input", () => {
-  // Pokud je vstup prázdný nebo první znak není '+', přidáme '+' na začátek
-  if (input_predvolba.value === "" || input_predvolba.value.charAt(0) !== "+") {
-    input_predvolba.value=`+${input_predvolba.value.replace(/[^\d]/g, '')}`;  // Odstraní všechny nečíselné znaky
-  }
-
-  // Regulární výraz pro kontrolu platných znaků (pouze '+ a číslice')
-  const validChars = /^\+\d*$/;
-  if (!validChars.test(input_predvolba.value)) {
-    input_predvolba.value = input_predvolba.value.slice(0, -1);  // Odstraní poslední neplatný znak
-  }
-
-  // Omezení délky vstupu na 4 znaky
-  if (input_predvolba.value.length > 4) {
-    input_predvolba.value = input_predvolba.value.slice(0, 4);
-  }
-});
-
-// Přidání události 'focus' pro vstupní pole
-input_predvolba.addEventListener("focus", (event) => {
-  // Při zaměření označí všechny znaky kromě prvního '+'
-  setTimeout(() => {
-    event.target.setSelectionRange(1, event.target.value.length);  // Nastaví výběr od druhého znaku do konce textu
-  }, 0);
-});}
-
+        if (input_predvolba) {
+            // Přidání události 'input' pro vstupní pole
+            input_predvolba.addEventListener("input", () => {
+                // Pokud je vstup prázdný nebo první znak není '+', přidáme '+' na začátek
+                if (input_predvolba.value === "" || input_predvolba.value.charAt(0) !== "+") {
+                    input_predvolba.value = `+${input_predvolba.value.replace(/[^\d]/g, '')}`; // Odstraní všechny nečíselné znaky
+                }
+                // Regulární výraz pro kontrolu platných znaků (pouze '+ a číslice')
+                const validChars = /^\+\d*$/;
+                if (!validChars.test(input_predvolba.value)) {
+                    input_predvolba.value = input_predvolba.value.slice(0, -1); // Odstraní poslední neplatný znak
+                }
+                // Omezení délky vstupu na 4 znaky
+                if (input_predvolba.value.length > 4) {
+                    input_predvolba.value = input_predvolba.value.slice(0, 4);
+                }
+            });
+            // Přidání události 'focus' pro vstupní pole
+            input_predvolba.addEventListener("focus", (e) => {
+                // Při zaměření označí všechny znaky kromě prvního '+'
+                setTimeout(() => {
+                    e.target.setSelectionRange(1, e.target.value.length); // Nastaví výběr od druhého znaku do konce textu
+                }, 0);
+            });
+        }
     }
     ;
     zobrazeni_datumu() {
@@ -1301,11 +1300,11 @@ input_predvolba.addEventListener("focus", (event) => {
     handleEvent(e) {
         const k = e.target.id; // id HTMLelementu na který bylo kliknuto
         if (k === this.id_form[0] || k === this.id_form[1]) {
-            // pokud jde požadavek od některého z formulářů
+            // pokud jde požadavek od některého z formulářů zablokuje výchozí provedení submit
             e.preventDefault(); // Zabrání výchozímu chování (odeslání formuláře)
         }
         if (k === this.id_form[0]) {
-            // pokud byl požadavek uživatele klik na button Rezervovat
+            // pokud byl požadavek uživatele klik na button Rezervovat - spustí se submit formuláře 1
             if (cas_rezervace.byl_vybran_cas && kalendar.byl_vybran_datum) {
                 // pokud byl vybrán datum a čas rezervace
                 this.form_posun(this.id_form[0], this.id_form[1]); // metoda zajistí posun formuláře z Rezervovat na Dokončit Rezervaci
@@ -1314,7 +1313,7 @@ input_predvolba.addEventListener("focus", (event) => {
             }
         }
         else if (k === this.id_form[1]) {
-            // pokud byl požadavek uživatele klik na button Dokončit rezervaci
+            // pokud byl požadavek uživatele klik na button Dokončit rezervaci - spustí se submit formuláře 2
             this.rezervovat(); // metoda zajistí plné dokončení rezervace
         }
         if (e.target.closest("button") && e.target.closest("button").id) {
@@ -1396,13 +1395,13 @@ input_predvolba.addEventListener("focus", (event) => {
         const data_pro_JSON = [...den_rezervace_uzivatel, cas_rezervace_uzivatel, token]; // spojí všechny potřebné proměnné a vytvoří pole, které se následně bude zapisovat do souboru JSON
         const in_jmeno_uzivatel = document.getElementById(this.id_inputHost[0]); // input s jménem a příjmením uživatel
         const in_email_uzivatel = document.getElementById(this.id_inputHost[1]); // input s emailem uživatele
-        const in_predvolba=document.getElementById(this.id_predvolba_phone); // načte HTML input s předvolbou telefoního čísla
+        const in_predvolba = document.getElementById(this.id_predvolba_phone); // načte HTML input s předvolbou telefoního čísla
         const in_phone_uzivatel = document.getElementById(this.id_inputHost[2]); // input s telefonem uživatele
         const in_predmet_uzivatel = document.getElementById(this.id_inputHost[3]); // input s předmětem uživatele (O čem bude hovor?)
-        const data_pro_Email = ["", "", "", "", "", "", "", "", ""]; // do pole budou zapsána všechna data, která jsou pro odesílání emailu
+        const data_pro_Email = ["", "", 0, "", "", "", "", "", ""]; // do pole budou zapsána všechna data, která jsou pro odesílání emailu
         let jmeno = "", // jméno uživatele
         email = "", // email uživatele
-        predvolba="", // předvolba telefonní
+        predvolba = 420, // předvolba telefonní
         phone = "", // telefon uživatele
         predmet = ""; // předmět uživatele (O čem bude hovor)
         if (in_jmeno_uzivatel) {
@@ -1415,11 +1414,11 @@ input_predvolba.addEventListener("focus", (event) => {
             email = in_email_uzivatel.value.trim(); // z input načte email
             data_pro_Email[1] = email;
         }
-        if(in_predvolba)
-        {
-        // pokud HTML element existuje
-        predvolba=in_predvolba.value.trim(); // z input načte předvolbu
-        data_pro_Email[2]=predvolba;
+        if (in_predvolba) {
+            // pokud HTML element existuje
+            const value = in_predvolba.value.trim(); // z input načte předvolbu
+            predvolba = parseInt(value); // odebere z ní znak + tento se dopíše v PHP, protože jeho převodem se po cestě ztrácí a stejně tam bude
+            data_pro_Email[2] = predvolba; // přidáno do pole, které se odešle do PHP
         }
         if (in_phone_uzivatel) {
             // pokud HTML element existuje
@@ -1429,10 +1428,9 @@ input_predvolba.addEventListener("focus", (event) => {
         if (in_predmet_uzivatel) {
             // pokud HTML element existuje
             predmet = in_predmet_uzivatel.value.trim(); // z input načte O čem bude hovor
-            if(predmet==="")
-            {
-            // pokud nebyl uživatelem vyplněn input Důvod hovoru - O čem bude hovbor
-            predmet="Nebylo uvedeno"
+            if (predmet === "") {
+                // pokud nebyl uživatelem vyplněn input Důvod hovoru - O čem bude hovbor
+                predmet = "Nebylo uvedeno";
             }
             data_pro_Email[4] = predmet;
         }
@@ -1489,6 +1487,11 @@ input_predvolba.addEventListener("focus", (event) => {
                                 if (result.message === "Překročili jste limit požadavků. Zkuste to znovu za 24 hodin.") {
                                     // pokud je taková odpověď z PHP, byl překročen Rate limit
                                     dia.on(dia.dia_prekrocen_limit.id_okna, dia.dia_prekrocen_limit.id_buton_pro_zavreni); // otevře dialogové okno - Překročen limit rezervací za 24 hodin
+                                }
+                                else if (result.message === "Data již existují.") {
+                                    // pokud je taková odpověď z PHP, byl pokus o zápis rezervace, na stejný den, měsíc, rok a hodinu, který už je v JSON zapsán = duplicitní zápis
+                                    this.reset_aplikace("castecne"); // provede reset aplikace, jako by ji uživatel nikdy nepoužil, ale pouze částečně, zachová případný vyplněný input uživatelem (jméno, email, telefon, důvod hovoru) a udělený souhlas
+                                    dia.on(dia.dia_duplicita.id_okna, dia.dia_duplicita.id_buton_pro_zavreni); // otevře dialogové okno - Duplicitní požadavek, tento termín je již zarezervován
                                 }
                                 else {
                                     dia.on(dia.dia_neuspech.id_okna, dia.dia_neuspech.id_buton_pro_zavreni); // otevře dialogové okno - Rezervace proběhla NEúspěšně

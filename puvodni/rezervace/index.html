@@ -9,12 +9,12 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <link rel="stylesheet" href="../css/rezervace.css?n=2">
-<link rel="stylesheet" href="css/css.css?n=2">
+<link rel="stylesheet" href="css/css.css?n=3">
 <meta name="description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.">
 <meta name="keywords" content="rezervační systém, rezervace online, rezervace">
 <meta name="author" content="Boar-cz">
 <meta name="application-name" content="Rezervační systém | Boar-cz">
-<meta property="og:url" content="https://www.boar-cz.info">
+<meta property="og:url" content="https://www.boar-cz.info/rezervace/">
 <meta property="og:title" content="Rezervační systém | Boar-cz">
 <meta property="og:description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.">
 <meta property="og:image" content="https://www.boar-cz.info/nahled/boar-cz.png">
@@ -32,7 +32,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <meta name="robots" content="index,follow">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:site" content="@boar-cz">
-<meta property="twitter:url" content="https://www.boar-cz.info/">
+<meta property="twitter:url" content="https://www.boar-cz.info/rezervace/">
 <meta property="twitter:title" content="Boar-cz webové projekty">
 <meta property="twitter:description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.">
 <meta property="twitter:image" content="https://www.boar-cz.info/nahled/boar-cz.png">
@@ -299,7 +299,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <input id="email" type="email" placeholder="Váš email" title="zadejte vasi emailovou adresu" required>
 </div>
 <div class="dabl">
-<input id="predvolba" type="text" value="+420" title="telefonní předvolba ČR" readonly>
+<input id="predvolba" type="text" value="+420" title="telefonní předvolba" minlength="4" inputmode="numeric" required>
 <input id="phone" type="tel"  pattern="[0-9]{9}" maxlength="9" placeholder="Telefon (např.: 999000222)" title="zadejte Vaše telefonní číslo bez předvolby" required>
 </div>
 <input id="predmet" type="text" placeholder="O čem bude hovor?" title="O čem budeme mluvit?">
@@ -574,6 +574,6 @@ Sdílet na&nbsp;Twitteru
 </dialog>
 
 <script src="../script/rezervace.js?v=n3" async></script>
-<script src="script/booking.js?v=n2" async></script>
+<script src="script/booking.js?v=n3" async></script>
 </body>
 </html>

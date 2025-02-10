@@ -10,13 +10,13 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <link rel="stylesheet" href="../css/rezervace.css?w=1">
 <link rel="stylesheet" href="css/css.css?w=1">
-<meta name="description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.">
+<meta name="description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek a dalších událostí. S naším systémem ušetříte čas sobě i svým klientům.">
 <meta name="keywords" content="rezervační systém, rezervace online, rezervace">
 <meta name="author" content="Boar-cz">
 <meta name="application-name" content="Rezervační systém | Boar-cz">
 <meta property="og:url" content="https://www.boar-cz.info/rezervace/">
 <meta property="og:title" content="Rezervační systém | Boar-cz">
-<meta property="og:description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.">
+<meta property="og:description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek a dalších událostí. S naším systémem ušetříte čas sobě i svým klientům.">
 <meta property="og:image" content="https://www.boar-cz.info/nahled/boar-cz.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -27,14 +27,14 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2025-01-20T18:00:00+1:00">
 <meta property="article:modified_time" content="2025-01-30T18:00:00+1:00">
-<meta property="article:section" content="Mgr. Bc. Michal Raus,Vzdělání,Zaměstnání,Programování">
+<meta property="article:section" content="Rezervace telefonního hovoru s Michalem Rausem,Rezervační systém">
 <meta property="article:tag" content="Boar-cz">
 <meta name="robots" content="index,follow">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:site" content="@boar-cz">
 <meta property="twitter:url" content="https://www.boar-cz.info/rezervace/">
 <meta property="twitter:title" content="Boar-cz webové projekty">
-<meta property="twitter:description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.">
+<meta property="twitter:description" content="Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek a dalších událostí. S naším systémem ušetříte čas sobě i svým klientům.">
 <meta property="twitter:image" content="https://www.boar-cz.info/nahled/boar-cz.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
@@ -54,8 +54,8 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 "datePublished": "2025-01-30",
 "version": "[1,0]",
 "mainEntityOfPage": "https://www.boar-cz.info",
-"description": "Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek, návštěv lékaře a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.",
-"abstract": "Naše rezervační systém vám umožní snadno a rychle rezervovat telefonní hovory, schůzky, návštěvy lékaře a další události. Systém nabízí flexibilitu pro provozovatele, kteří mohou upravit časy rezervací a vyblokovat určité dny. Rezervaci může zrušit jak uživatel, tak provozovatel, a potvrzení obdržíte na e-mail. Tento systém, postavený na frameworku Rype Script, lze upravit a použít na jakýkoli web.",
+"description": "Rezervační systém od Boar-cz umožňuje jednoduchou rezervaci telefonních hovorů, schůzek a dalších událostí. S naším systémem máte vše pod kontrolou a ušetříte čas sobě i svým klientům.",
+"abstract": "Naše rezervační systém vám umožní snadno a rychle rezervovat telefonní hovory, schůzky a další události. Systém nabízí flexibilitu pro provozovatele, kteří mohou upravit časy rezervací a vyblokovat určité dny. Rezervaci může zrušit jak uživatel, tak provozovatel, a potvrzení obdržíte na e-mail. Tento systém, postavený na frameworku Type Script, lze upravit a použít na jakýkoli web.",
 "name": "Rezervační systém | Boar-cz",
 "operatingSystem": "Windows 7, OSX 10.6, Android 1.6",
 "applicationCategory": "Safety",
@@ -107,14 +107,16 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <article>
 <div class="boxC"><div class="boxM">
 <h1>Rezervace <span class="ibb">telefonního hovoru</span></h1>
-<p class="ods-m40">Telefon z&nbsp;různých důvodů nemohu občas používat. Pokud si zarezervujete telefonní hovor, budete mít 100% jistotu, že&nbsp;se&nbsp;mi dovoláte. <strong>Za&nbsp;rezervaci hovoru předem děkuji!</strong></p>
+<p class="ods-m40">Telefon z&nbsp;pracovních důvodů nemohu občas používat. Pokud si zarezervujete telefonní hovor, budete mít 100&#8239;% jistotu, že&nbsp;se&nbsp;mi dovoláte. <strong>Za&nbsp;rezervaci hovoru předem děkuji&#8239;!</strong></p>
 </div></div>
 
 <section>
 <div class="boxC"><div class="boxM">
 <h2>Rezervace <span class="ibb">telefonního hovoru</span> <span class="ibb">s&nbsp;Michalem Rausem</span></h2>
 <div class="col">
-<p class="ods-m40">Abychom spolu mohli mluvit v&nbsp;předem domluvený čas, stačí telefonní hovor jednoduše zarezervovat. Jakmile zarezervujete telefonní hovor, na váš e-mail bude doručeno potvrzení o&nbsp;rezervaci a&nbsp;odkaz pro&nbsp;případné zrušení rezervace. Budu se&nbsp;těšit na&nbsp;zavolání!</p>
+<p class="ods-m40">Abychom spolu mohli mluvit v&nbsp;předem domluvený čas, stačí telefonní hovor jednoduše zarezervovat.</p>
+
+<p class="ods-m40">Jakmile zarezervujete telefonní hovor, na váš <span class="iib">e-mail</span> bude doručeno potvrzení o&nbsp;rezervaci a&nbsp;odkaz pro&nbsp;případné zrušení rezervace. Budu se&nbsp;těšit na&nbsp;zavolání&#8239;!</p>
 
 <p class="ods-m40">Nemáte moje telefonní číslo? Nevadí, napište&nbsp;mi prostřednictvím <a href="../kontakt/" title="Kontaktní formulář">&gt;&#8239;kontaktního&nbsp;formuláře&#8239;&lt;</a>, rád&nbsp;vám telefonní číslo pošlu.</p>
 </div>
@@ -325,12 +327,23 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 
 <h3>Rezervační systém</h3>
 <div class="col">
-<p class="ods-m40">Náš rezervační systém vám <strong>umožní jednoduše rezervovat schůzky, telefonáty, návštěvy lékaře a&nbsp;další události</strong>. Stačí si vybrat čas a&nbsp;datum, a&nbsp;systém se&nbsp;postará o&nbsp;zbytek. Po&nbsp;rezervaci obdržíte potvrzení na&nbsp;váš <span class="iib">e-mail</span> a&nbsp;rezervaci si&nbsp;můžete zapsat do&nbsp;kalendáře. V&nbsp;<span class="iib">e-mailu</span> je&nbsp;také odkaz, pro&nbsp;případné zrušení rezervace. Pokud se rozhodnete rezervaci zrušit, obdržíte potvrzení na&nbsp;váš <span class="iib">e-mail</span> i&nbsp;o&nbsp;této akci.</p>
+<p class="ods-m40">Rezervační systém od&nbsp;<span class="iib">Boar-cz</span> vám <strong>umožní jednoduše rezervovat schůzky, telefonáty a&nbsp;další události</strong>. Stačí&nbsp;si vybrat datum a&nbsp;čas, rezervační systém&nbsp;se pak postará o&nbsp;zbytek.</p>
 
-<p class="ods-m40">Systém nabízí flexibilitu pro&nbsp;provozovatele, kteří&nbsp;mohou vyblokovat určité dny a&nbsp;je&nbsp;možné upravit časy rezervací podle potřeby. Rezervaci může zrušit nejen ten, kdo&nbsp;ji vytvořil, ale&nbsp;také provozovatel systému. Tento rezervační systém je&nbsp;100% responzivní, postaven jako framework v&nbsp;Type&nbsp;Scriptu a&nbsp;<strong>je možné ho upravit a&nbsp;použít na&nbsp;jakýkoli web.</strong></p>
+<p class="ods-m40">Po&nbsp;rezervaci obdržíte potvrzení na&nbsp;váš <span class="iib">e-mail</span> a&nbsp;rezervaci si&nbsp;můžete zapsat do&nbsp;kalendáře. <span class="iib">V&nbsp;e-mailu</span> je&nbsp;také odkaz pro&nbsp;případné zrušení rezervace. Pokud se rozhodnete rezervaci zrušit, obdržíte potvrzení na&nbsp;váš <span class="iib">e-mail</span> i&nbsp;o&nbsp;této akci.</p>
 
-<p class="ods-m40">Nenechte své klienty zbytečně vám volat několikrát denně a&nbsp;stejně se&nbsp;nedovolat. S&nbsp;naším rezervačním systémem od&nbsp;<span class="iib">Boar-cz</span> už&nbsp;nebudou muset vaši klienti čekat dlouhé hodiny v&nbsp;čekárně nebo se&nbsp;snažit domlouvat schůzku po&nbsp;telefonu. Tento systém umožňuje snadno a&nbsp;rychle zarezervovat termín a&nbsp;šetří tak čas vám i&nbsp;vašim klientům. <strong>Přidejte&nbsp;si rezervační systém na&nbsp;svůj web ještě dnes a&nbsp;mějte vše pod&nbsp;kontrolou!</strong></p>
+<p class="ods-m40">Rezervaci může zrušit nejen ten, kdo&nbsp;ji vytvořil, ale&nbsp;také provozovatel systému. Stejně jako uživatel, i&nbsp;provozovatel obdrží <span class="iib">e-mail</span> o&nbsp;nové rezervaci s&nbsp;odkazem na&nbsp;zrušení rezervace.</p>
+
+<p class="ods-m40">Systém nabízí flexibilitu pro&nbsp;provozovatele, kteří&nbsp;mohou vyblokovat určité dny a&nbsp;je&nbsp;možné upravit časy rezervací podle potřeby.</p>
+
+<p class="ods-m40">Tento rezervační systém je&nbsp;100&#8239;% responzivní, postavený jako framework v&nbsp;TypeScriptu a&nbsp;<strong>je možné ho upravit a&nbsp;použít na&nbsp;jakýkoli web. Ať&nbsp;už máte postavený web na&nbsp;frameworku Angular, Vue nebo&nbsp;React.</strong></p>
+
+<p class="ods-m40">Rezervační systém je&nbsp;také možné rozšířit o&nbsp;další funkce, například o&nbsp;přístup k&nbsp;rezervačnímu systému po&nbsp;zadání vstupního hesla, propojení s&nbsp;jinými systémy nebo&nbsp;databází.</p>
+
+<p class="ods-m40">Nenechte své klienty zbytečně vám volat několikrát denně a&nbsp;stejně se&nbsp;nedovolat. S&nbsp;naším rezervačním systémem od&nbsp;<span class="iib">Boar-cz</span> už&nbsp;nebudou muset vaši klienti čekat dlouhé hodiny v&nbsp;čekárně nebo se&nbsp;snažit domlouvat schůzku po&nbsp;telefonu.</p>
+
+<p class="ods-m40">Tento rezervační systém umožňuje snadno a&nbsp;rychle zarezervovat termín a&nbsp;šetří tak čas vám i&nbsp;vašim klientům. <strong>Přidejte&nbsp;si rezervační systém na&nbsp;svůj web ještě dnes a&nbsp;mějte vše pod&nbsp;kontrolou&#8239;!</strong></p>
 </div>
+
 
 
 </div></div>

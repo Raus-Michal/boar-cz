@@ -350,6 +350,9 @@ opacity:.9;
 .t-b
 {
 max-width:400px;
+padding:1rem;
+background:var(--b2);
+border-radius:16px 0;
 }
 
 .t-b p
@@ -357,11 +360,9 @@ max-width:400px;
 font-size:1rem;
 text-align:center;
 margin:0;
-padding:1rem;
-background:var(--b2);
-border-radius:16px 0;
 line-height:1.7;
 font-weight:600;
+transform:translateY(0.2rem);
 }
 
 .k-b
@@ -375,10 +376,15 @@ gap:1rem;
 {
 display:flex;
 gap:.5rem;
-align-items:flex-end;
+align-items:center;
 background-color:var(--b4);
 padding:.5rem;
 border-radius:10px;
+}
+
+.o-b p
+{
+transform:translateY(0.2rem);
 }
 
 .c-box
@@ -513,8 +519,7 @@ display:-webkit-box;
 display:flex;
 -webkit-box-pack:center;
 justify-content:center;
-margin:1rem;
-margin-bottom:2rem;
+margin:3rem 1rem;
 }
 
 .a-box a
@@ -524,6 +529,7 @@ border:1px dotted var(--b4);
 padding:.5rem;
 width:100%;
 background:white;
+border-radius:3rem;
 }
 
 /* větší jak 496px */
@@ -574,6 +580,7 @@ align-items:center;
 -webkit-box-pack:center;
 justify-content:center;
 gap:1rem;
+transform:translateY(0.1rem);
 }
 
 .cl p
@@ -676,7 +683,7 @@ display:flex;
 -webkit-box-direction:normal;
 flex-direction:column;
 gap:2rem;
-padding:1rem;
+padding:3rem 1rem;
 background:var(--b5);
 color:white;
 }

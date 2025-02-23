@@ -84,8 +84,20 @@ class Kalendar {
     upravit() {
         // funkce zablokuje pro booking dny které v měsíci už uběhly a den následující
         let a_d = datum.den_v_mesici; // aktuální den v měsíci 1-31,1-30,1-28 ...
+
+        const button_a = document.getElementById(`${this.p_id}${a_d}`); // button aktuálního dne v měsíci
+
+
         if (this.poloha === 0) {
             // pokud bude poloha uživatel v kalendáři nezměněna
+
+if(button_a)
+{
+ button_a.style.outline="2px solid red";
+}
+
+
+
             if (a_d !== 1) {
                 // pokud se právě aktuální den v měsíci !== 1 (tedy to není první den v měsící), budou se odebírat buttony pro objenání do tohoto dne v měsíci
                 const hours = new Date().getHours(); // Získání aktuální hodiny
@@ -100,6 +112,7 @@ class Kalendar {
                         button_i.disabled = true; // udělá disabled na buttonu na dny, které už v měsíci uplynuly včetně dnešního
                         button_i.removeEventListener("click", this); // odebere posluchač buttonům, které ho nepotřebují
                         button_i.removeAttribute('data-has-listener'); // Odebere atribut 'data-has-listener' pokud ho má
+                        
                     }
                 }
             }
@@ -110,6 +123,7 @@ class Kalendar {
                     button_i.disabled = true; // udělá disabled na buttonu 1. v měsíci
                     button_i.removeEventListener("click", this); // odebere posluchač buttonům, které ho nepotřebují
                     button_i.removeAttribute('data-has-listener'); // Odebere atribut 'data-has-listener' pokud ho má
+                    
                 }
                 const hours = new Date().getHours(); // Získání aktuální hodiny
                 if (hours > 17) {
@@ -126,6 +140,14 @@ class Kalendar {
         }
         else {
             // pokud nebude kalendář v poloze===0
+
+
+            if(button_a)
+                {
+                 button_a.style.outline="none";
+                }
+
+
             if (this.poloha === 1) {
                 // opatření pokud je další den dnem 1. v měsíci anebo obden je dnem 1. v měsíci a je po 18 hod., provede se opatření při pohybu v kalendáři na další měsíc
                 const hours = new Date().getHours(); // Získání aktuální hodiny

@@ -90,12 +90,12 @@ height:100vh;
 height:100svh;
 width:100%;
 color:black;
-background:white;
+background:var(--b5);
 font-family:"text","Arial","Sans-Serif";
 font-size:100%;
 line-height:1;
-overflow:hidden;
 margin:0;
+overflow:hidden auto;
 }
 
 a,button
@@ -163,6 +163,18 @@ border:1px solid black;
 width:100%;
 height:100vh;
 height:100svh;
+box-shadow: 10px 10px 25px black;
+}
+
+.con-pc
+{
+width:40rem;
+max-width:100%;
+max-width:100vw;
+max-width:100dvw;
+height:40rem;
+height:40rem;
+border-radius:20px;
 }
 
 
@@ -420,7 +432,8 @@ fill:white;
 .aa,.but
 {
 border:1px dotted var(--b4);
-padding:.5rem;
+border-radius:2rem;
+padding:.5rem 1rem;
 color:black;
 background:white;
 }

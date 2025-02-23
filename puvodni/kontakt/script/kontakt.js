@@ -1,5 +1,7 @@
-﻿const v_port={
-id:"hc", // id hlavního kontejneru
+﻿class V_port{
+id="hc"; // id hlavního kontejneru
+className="con-pc"; // název CSS třídy, která se přiřazuje pokud má užívatel počítač anebo notebook
+mobil=true; // proměnná, určuje, zda je zařízení uživatele mobil,tablet==true anebo počítač,notebook==false
 handleEvent(){
 
 let d_v; // proměnná, která bude určovat výšku zařízení
@@ -22,17 +24,24 @@ d_v=parseInt(window.innerHeight);
 
 const vyska=`${d_v}px`; // výška visual portu pro CSS úpravu výšky hlavního kontejneru
 
-const o=document.getElementById(this.id); // hlavní kontejner
 const o1=document.body; // body
+o1.style.minHeight=vyska; // uprvaví minimální výšku body
+o1.style.height=vyska; // uprvaví výšku body
 
+
+if(this.mobil)
+{
+// pokud je zařízení mobilní telefón anebo tablet
+
+o1.style.maxHeight=vyska; // uprvaví maximální výšku body
+
+const o=document.getElementById(this.id); // hlavní kontejner
 o.style.minHeight=vyska; // uprvaví minimální výšku hlavního kontejneru
 o.style.height=vyska; // uprvaví výšku hlavního kontejneru
 o.style.maxHeight=vyska;  // uprvaví maximální výšku hlavního kontejneru
+}
 
-o1.style.minHeight=vyska; // uprvaví minimální výšku body
-o1.style.height=vyska; // uprvaví výšku body
-o1.style.maxHeight=vyska; // uprvaví maximální výšku body
-},
+};
 
 aktivace(){
 // Posluchače
@@ -44,10 +53,24 @@ window.visualViewport.addEventListener("scroll",this); // pro scroll
 }
 
 addEventListener("scroll",this); // pro scroll
-},
+};
 
 zahajit(){
 // funkce zahájí základní procesy pro hlídání výšky okna hlavního kontejneru
+
+if(!(/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||("ontouchstart" in window)||navigator.maxTouchPoints>0))
+{
+// podmínka zjistí, zda je zařízení uživatele počítač anebo notebooky
+const con=document.getElementById(this.id); // načte HTML element hlavního kontejneru
+
+if(con)
+{
+// pokud HTML element existuje
+con.classList.add(this.className); // přiřadí hlavnímu kontajneru CSS třídu pro počítače a notebooky
+}
+
+this.mobil=false; // pokud se jedná o počítač anebo notebook, bude tato proměnná nastavena nově na false
+}
 
 if(CSS.supports("height","1svh")) // test jestli prohlížeč zařízení podporuje CSS jednotky SVH
 {
@@ -55,20 +78,30 @@ if(CSS.supports("height","1svh")) // test jestli prohlížeč zařízení podpor
 return; // pokud jsou jednotky SVH podporovány, funkce bude ukončena
 }
 
-this.aktivace(); // zapne poluchače událostí
+this.aktivace(); // zapne poluchače událostí prho hlídání výšky kontejneru a body
 this.handleEvent(); // zapne první úpravu výšky hlavního kontajneru a body
 }
 };
 
+const v_port= new V_port; // přiřazení CLASS do proměnné
 v_port.zahajit(); // aktivuje VisualViewport API pro hlídání výšky body a hlavního kontejneru
 
+
 // VYKRESLENÍ ČÍSEL NA PLÁTNĚ
-const p={_id:["c1","c2","c3"],_width:250,_height:300,_cara_styl:"rgb(0,0,0)",_vypln_styl:"rgb(110,87,168)",_pismo:"bold 350px sans-serif",_x:[],vyk:false,
+class P{
+_id=["c1","c2","c3"];
+_width=250;
+_height=300;
+_cara_styl="rgb(0,0,0)";
+_vypln_styl="rgb(110,87,168)";
+_pismo="bold 350px sans-serif";
+_x=[];
+vyk=false;
 vymaz(i){
 let obj=window.document.getElementById(this._id[i]);
 obj.width=obj.width; /* vyresetuje plátno */
-},
-cislo(){return Math.floor(Math.random()*10); /* nahodné číslo 0 až 9 */ },
+};
+cislo(){return Math.floor(Math.random()*10); /* nahodné číslo 0 až 9 */ };
 kresly(i){
 this.vymaz(i);
 let obj=document.getElementById(this._id[i]);
@@ -83,14 +116,14 @@ pl.fillText(c,this._width/2,this._height-25);
 pl.strokeText(c,this._width/2,this._height-25);
 this._x.push(c); /* zapíše náhodné číslo do pole */
 this.vyk=true; /* proměnná informuje, že náhodná čísla již byla vykreslena */
-},
+};
 zahaj(){
 this._x=[]; /* vymaže pole náhodných čísel */
 let d=this._id.length;
 for(let i=0;i<d;i++)
 {
 this.kresly(i); /* vykreslí čísla na plátno canvas */
-}},
+}};
 sum(){
 /* sečte dohromady náhodně vygenerovaná čísla */
 let kom=0;
@@ -102,9 +135,8 @@ kom=kom+parseInt(this._x[i]);
 return kom; /* vrátí součet čísel */
 }};
 
-
-const dia={
-id:[["d-v","d-vb","d-h-v"],["d-u","d-ub","d-h-u"],["d-c","d-cb","d-h-c"],["d-o","cir_1","d-h-o"]],
+class Dia{
+id=[["d-v","d-vb","d-h-v"],["d-u","d-ub","d-h-u"],["d-c","d-cb","d-h-c"],["d-o","cir_1","d-h-o"]];
 
 ak(id,nad,but){ // id=id dialogového okna; nad=id nadpisu dialogového okna; but=id button dialogového okna
 // funkce provede samotnou akci otevření dialogového okna : otevření dialogového okna + aktivuje posluchač
@@ -115,13 +147,13 @@ document.getElementById(but).addEventListener("click",this); // přiřadí posuc
 setTimeout(()=>{
 document.getElementById(but).focus(); // zaměří button dialogového okna
 },t); // drobné zpoždění
-},
+};
 
 zav(id,but){ /* id=id dialogového okna; but=id button dialogového okna */
 /* funkce zavírá dialogové okno */
 document.getElementById(id).close(); /* zavře dialog okno */
 document.getElementById(but).removeEventListener("click",this); /*  odebere posuchače k buttonu dialogového okna  */
-},
+};
 
 ot(id){
 /* zadost o otevrení dialogového okna */
@@ -151,7 +183,7 @@ setInterval(()=>{
 document.getElementById(this.id[3][1]).beginElement(); // spustí animaci odesílání
 },4500); // bude pouštět animaci opět znova po jejím dokončení
 }
-},
+};
 
 handleEvent(e){
 /* ZAVÍRÁNÍ DIALOGOVÝCH OKEN */
@@ -179,14 +211,13 @@ else if(o===this.id[2][1])
 this.zav(this.id[2][0],this.id[2][1]);
 }}};
 
-
-const od={
-id:"f4",
+class Od{
+id="f4";
 finis(){
 p.zahaj(); /* vykreslí čísla na plátno canvas */
 this.rez(); /* uřeže přebytečný text- pokud by někdo byl tak "dobrý", že ho manuálně překoná */
 document.getElementById(this.id).submit(); /* odešle formulář */
-},
+};
 rez(){
 /* ořeže text ve formuláři, pokud přesahuje limit */
 let l1=30,l2=500, /* limity - počet znaků */ pf=3; /* počet id formulářů v poly s odpovědí do 30 znaků */
@@ -209,19 +240,19 @@ let n_t=o_text.substr(0,l2);
 document.getElementById(sub.r_id[3]).value=n_t;
 }}};
 
-const sub={
-id:["f1","f2","f3","f4"], // id formulářů 1-4
-id_m:"me",
-h:[0.2,0.5,0.7,1],
-krok:0, // hlídá počet kroků
-id_a:"aaa",
-id_p:"d",
-id_sb:["o1","o2","o3","o4"],
-id_z:"z",
-id_v:"v",
-b_dia:["pr1","s1","pr2","s2"], // id dialogových oken
-z_id:["j","e","p","obs"],
-r_id:["j-r","e-r","p-r","o-r"],
+class Sub{
+id=["f1","f2","f3","f4"]; // id formulářů 1-4
+id_m="me";
+h=[0.2,0.5,0.7,1];
+krok=0; // hlídá počet kroků
+id_a="aaa";
+id_p="d";
+id_sb=["o1","o2","o3","o4"];
+id_z="z";
+id_v="v";
+b_dia=["pr1","s1","pr2","s2"]; // id dialogových oken
+z_id=["j","e","p","obs"];
+r_id=["j-r","e-r","p-r","o-r"];
 
 aktive(){
 document.getElementById(this.id_v).addEventListener("click",this); /* přiřadí posuchač k INPUT Výsledek - aby došlo v případě malých displejů k správnému scroolu */
@@ -250,7 +281,7 @@ document.getElementById(this.id_z).addEventListener("click",this);  /* přiřad�
 
 document.getElementById(this.id_v).value=""; /* vymaže PŘÍPADNÉ zadané číslo s výsledkem z input  */
 
-},
+};
 
 predat(){
 /* funkce slouží k předání dat z formulářů zadaných do formulářů rekapitulace, které jsou nachystané k odeslání */
@@ -273,7 +304,7 @@ for(let i=0;i<d2;i++) /* je použito délky pole ID formulářů rekapitulace - 
 {
 sada2[i].value=sada1[i];  /* dojde k přiřazení VALUE REKAPITULACE z Value zadaných uživatelem */
 }
-},
+};
 
 sc(time){
 setTimeout(()=>
@@ -281,7 +312,7 @@ setTimeout(()=>
 window.scrollTo(0,0); // posun okna TOP
 }
 ,time);
-},
+};
 
 zmena(kam){
 
@@ -311,7 +342,7 @@ document.getElementById(this.id[k-1]).style.opacity=1; // zviditelní aktuální
 f1.style.display="none";
 f1.style.opacity=0;
 f2.style.display="flex";
-},
+};
 
 handleEvent(e){
 
@@ -463,14 +494,20 @@ document.getElementById(this.id_p).innerText="Pokračovat"; /* vrátí hodnotu t
 }}};
 
 /* objekt druhé strany kontaktního formuláře */
-const s2={but:["nj","zav","ne"],inp:["j","e"],pJ:"",pE:"",nJ:0,nE:0,
+class S2{
+but=["nj","zav","ne"];
+inp=["j","e"];
+pJ="";
+pE="";
+nJ=0;
+nE=0;
 
 aktive(){
 let d=this.but.length;
 for(let i=0;i<d;i++)
 {
 document.getElementById(this.but[i]).addEventListener("click",this); /* přiřadí posuchač clik k buttonům */
-}},
+}};
 
 handleEvent(e){
 
@@ -527,19 +564,24 @@ b_e.title="Neuvádět email";
 this.nE=0; /* změna na 0 znamená že je DEaktivováno Nechci uvést */
 }}};
 
-
 // CITAČ ZNAKŮ
-const citac={
-id_area:"obs", // id textarea Předmět
-id_h:"znaku", // id P s počtem znaků
+class Citac{
+id_area="obs"; // id textarea Předmět
+id_h="znaku"; // id P s počtem znaků
 handleEvent(){
 document.getElementById(this.id_h).innerText=document.getElementById(this.id_area).value.length; // uvede počet znaků v obsahu
-},
+};
 aktive(){
 this.handleEvent(); // udělá první přepočet znaků v Předmětu emailu, kdyby se tam nějáké nacházely
 document.getElementById(this.id_area).addEventListener("input",this); // aktivuje posluchač k textarea na počítání znaků
 }};
 
+const od=new Od; // přiřazení CLASS do proměnné
+const p=new P; // přiřazení CLASS do proměnné
+const dia=new Dia; // přiřazení CLASS do proměnné
+const sub=new Sub; // přiřazení CLASS do proměnné
+const s2=new S2; // přiřazení CLASS do proměnné
+const citac=new Citac; // přiřazení CLASS do proměnné
 
 sub.aktive(); // aktivuje posluchače posun mezi jednotlivími kroky formulářů
 citac.aktive(); // Zapne počítání znaků na textarea Předmět

@@ -8,7 +8,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 <meta charset="utf-8">
 <meta name="csrf-token" content="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8'); ?>">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<link rel="stylesheet" href="css/css.css?v=10">
+<link rel="stylesheet" href="css/css.css?v=11">
 <meta name="description" content="Boar-cz ve svém portfoliu představuje webové projekty: prezentační weby, webové články a webové aplikace. Precizní webové stránky to je Boar-cz.">
 <meta name="keywords" content="webové projekty,webové stránky,web">
 <meta name="author" content="Boar-cz">
@@ -137,11 +137,12 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 
 </header>
 
+
+<div class="bc1"> </div>
 <main>
 <article id="boar-cz" class="pt1">
-<div class="bc1"> </div>
-<div class="fl jc"><div class="bM">
 
+<div class="fl jc"><div class="bM">
 <h1 class="tc">Boar-cz <span class="ibb">tvorba webových&nbsp;aplikací</span></h1>
 
 
@@ -199,12 +200,10 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 </div>
 </div></div>
 
-<section id="technologie-webove-stranky">
+<section class="bc-2" id="technologie-webove-stranky">
 <div class="bc2"> </div>
 <div class="fl jc"><div class="bM">
 <h2 class="n2 tc">Technologie webové stránky</h2>
-
-
 <div class="fl jc"><div class="col2">
 <p><strong>Boar-cz kóduje webové stránky základními jazyky pro&nbsp;programování webových projektů.</strong> <strong>Na&nbsp;přání</strong> můžeme kódovat webový projekt ve&nbsp;frameworku <strong>Vue&#8239;3, React a&#8239;Tailwind.</strong></p>
 <p>Při&nbsp;návrhu a&nbsp;realizaci validních, responzivních a&nbsp;rychlých webových stránek <strong>dbáme na&nbsp;jednoduchost a&nbsp;přehlednost</strong>.</p>
@@ -296,7 +295,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 </div></div>
 </section>
 
-<section id="kontrola-kvality-webove-stranky">
+<section class="bc-2" id="kontrola-kvality-webove-stranky">
 <div class="bc4"> </div>
 <div class="fl jc"><div class="bM">
 <h2 class="n2 tc">Kontrola kvality webové stránky</h2>
@@ -308,7 +307,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 
 <ul class="fl ul-a">
 <li>
-<a href="https://seo-servis.cz/source-zdrojovy-kod/" title="Test kvality zdrojového kodu" target="_blank" rel="nofollow">
+<a href="https://seo-servis.cz/source-zdrojovy-kod/" title="Test kvality zdrojového kodu" target="_blank" rel="nofollow noopener noreferrer">
 <div class="ba"> </div>
 <div class="bp">
 <p><strong>Otestovat kvalitu kódu</strong></p>
@@ -316,7 +315,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 </a>
 </li>
 <li>
-<a href="https://www.seotestonline.cz" title="SEO test webu od Creation" target="_blank" rel="nofollow">
+<a href="https://www.seotestonline.cz" title="SEO test webu od Creation" target="_blank" rel="nofollow noopener noreferrer">
 <div class="ba"> </div>
 <div class="bp">
 <p><strong>Otestovat SEO (Creation.cz)</strong></p>
@@ -324,7 +323,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 </a>
 </li>
 <li>
-<a href="https://www.seotest.seolight.cz" title="SEO test webu od Seolight" target="_blank" rel="nofollow">
+<a href="https://www.seotest.seolight.cz" title="SEO test webu od Seolight" target="_blank" rel="nofollow noopener noreferrer">
 <div class="ba"> </div>
 <div class="bp">
 <p><strong>Otestovat SEO (Seolight.cz)</strong></p>
@@ -332,7 +331,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 </a>
 </li>
 <li>
-<a href="https://pagespeed.web.dev" title="Test výkonu na PageSpeed" target="_blank" rel="nofollow">
+<a href="https://pagespeed.web.dev" title="Test výkonu na PageSpeed" target="_blank" rel="nofollow noopener noreferrer">
 <div class="ba"> </div>
 <div class="bp">
 <p><strong>Otestovat výkon</strong></p>
@@ -340,7 +339,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 </a>
 </li>
 <li>
-<a href="https://firefox-source-docs.mozilla.org/devtools-user/validators/" title="Test validyty HTML, CSS, SVG" target="_blank" rel="nofollow">
+<a href="https://firefox-source-docs.mozilla.org/devtools-user/validators/" title="Test validyty HTML, CSS, SVG" target="_blank" rel="nofollow noopener noreferrer">
 <div class="ba"> </div>
 <div class="bp">
 <p><strong>Otestovat validitu</strong></p>
@@ -348,7 +347,7 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 </a>
 </li>
 <li>
-<a href="https://validator.schema.org" title="Validátor schema.org" target="_blank" rel="nofollow">
+<a href="https://validator.schema.org" title="Validátor schema.org" target="_blank" rel="nofollow noopener noreferrer">
 <div class="ba"> </div>
 <div class="bp">
 <p><strong>Otestovat JSON-LD</strong></p>
@@ -364,9 +363,8 @@ $_SESSION['csrf_token'] = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
 </div></div></div></div>
 </section>
 
-<section id="webove-projekty" class="s2">
+<section id="webove-projekty" class="pb3 s2">
 <div class="bc5"> </div>
-
 <div class="but-m p05">
 <a id="pb" href="#hd" title="Posun na Menu">
 <svg class="" width="50" height="32.5" viewBox="0 0 200 150" stroke="black" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none">
@@ -541,6 +539,6 @@ Sdílet na&nbsp;Twitteru
 <a href="kontakt/" title="Kontakt na provozovatele webu" rel="noopener noreferrer">Kontaktujte&nbsp;nás</a></address>
 </footer>
 </div>
-<script src="script/script.js?v=12" async> </script>
+<script src="script/script.js?v=15" async> </script>
 </body>
 </html>

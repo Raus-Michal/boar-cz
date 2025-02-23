@@ -1,121 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="2075" height="85" viewBox="0 0 2075 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" stroke-width="2" stroke="black" fill="rgb(168,110,87)">
+<svg width="2075" height="85" viewBox="0 0 2075 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" stroke="transparent">
 
-<defs>
-<filter id="fil" style="color-interpolation-filters:sRGB;" x="-0.024" y="-0.24" width="1.04" height="1.4">
-<feGaussianBlur result="result1" in="SourceAlpha" stdDeviation="2.8" />
-<feSpecularLighting result="result0" specularExponent="200" specularConstant="0.5" surfaceScale="1.5">
-<feDistantLight azimuth="225" elevation="24" />
-</feSpecularLighting>
-<feComposite result="result6" operator="in" in2="SourceAlpha" />
-<feMorphology radius="5" operator="dilate" />
-<feGaussianBlur result="result11" stdDeviation="6" />
-<feDiffuseLighting surfaceScale="2" result="result3" diffuseConstant="2" in="result1">
-<feDistantLight elevation="25" azimuth="225" />
-</feDiffuseLighting>
-<feBlend result="result7" mode="multiply" in="result3" in2="SourceGraphic" />
-<feComposite in="result7" operator="in" in2="SourceAlpha" result="result91" />
-<feBlend result="result9" mode="lighten" in="result6" in2="result91" />
-<feComposite in="result11" in2="result9" />
-</filter>
-</defs>
+<path fill="white" fill-opacity="1" d="M0,0L48,10.7C96,21,192,43,288,53.3C384,64,415,85,415,85H0Z"/>
 
-<g  transform="translate(5,0)" style="filter:url(#fil)">
-<rect width="50" height="20" x="2.5" y="2.5" />
-<rect width="50" height="20" x="352.5" y="2.5" />
-
-<rect width="100" height="20" x="2.5" y="22.5" />
-<rect width="100" height="20" x="302.5" y="22.5" />
-
-<rect width="50" height="20" x="2.5" y="42.5" />
-<rect width="100" height="20" x="52.5" y="42.5" />
-<rect width="100" height="20" x="252.5" y="42.5" />
-<rect width="50" height="20" x="352.5" y="42.5" />
-
-<rect width="100" height="20" x="2.5" y="62.5" />
-<rect width="50" height="20" x="102.5" y="62.5" />
-<rect width="50" height="20" x="252.5" y="62.5" />
-<rect width="100" height="20" x="302.5" y="62.5" />
+<g transform="translate(415,0)">
+<path fill="white" d="M0,85L48,63.7C96,43,192,21,288,10.3C384,0,415,0,415,0H0Z"/>
 </g>
 
-<g  transform="translate(420,0)" style="filter:url(#fil)">
-<rect width="100" height="20" x="152.5" y="2.5" />
-
-<rect width="100" height="20" x="102.5" y="22.5" />
-<rect width="100" height="20" x="202.5" y="22.5" />
-
-<rect width="100" height="20" x="52.5" y="42.5" />
-<rect width="100" height="20" x="152.5" y="42.5" />
-<rect width="100" height="20" x="252.5" y="42.5" />
-
-<rect width="100" height="20" x="2.5" y="62.5" />
-<rect width="100" height="20" x="102.5" y="62.5" />
-<rect width="100" height="20" x="202.5" y="62.5" />
-<rect width="100" height="20" x="302.5" y="62.5" />
+<g transform="translate(830,0)">
+<path fill="rgb(168,151,87)" d="M0,85L48,74.3C96,64,192,42,288,31.7C384,21,415,10,415,0H0Z"/>
 </g>
 
-<g  transform="translate(835,0)" style="filter:url(#fil)">
-<rect width="50" height="20" x="52.5" y="2.5" />
-<rect width="50" height="20" x="102.5" y="2.5" />
-<rect width="50" height="20" x="252.5" y="2.5" />
-<rect width="50" height="20" x="302.5" y="2.5" />
-
-<rect width="100" height="20" x="52.5" y="22.5" />
-<rect width="100" height="20" x="252.5" y="22.5" />
-
-<rect width="100" height="20" x="2.5" y="42.5" />
-<rect width="100" height="20" x="102.5" y="42.5" />
-<rect width="100" height="20" x="202.5" y="42.5" />
-<rect width="100" height="20" x="302.5" y="42.5" />
-
-<rect width="50" height="20" x="2.5" y="62.5" />
-<rect width="100" height="20" x="52.5" y="62.5" />
-<rect width="100" height="20" x="152.5" y="62.5" />
-<rect width="100" height="20" x="252.5" y="62.5" />
-<rect width="50" height="20" x="352.5" y="62.5" />
+<g transform="translate(1245,0)">
+<path fill="white" d="M0,85L48,75C96,65,192,55,288,50C384,45,415,35,415,0H0Z"/>
 </g>
-
-<g  transform="translate(1250,0)" style="filter:url(#fil)">
-<rect width="50" height="20" x="77.5" y="2.5" />
-<rect width="50" height="20" x="278.5" y="2.5" />
-
-<rect width="100" height="20" x="52.5" y="22.5" />
-<rect width="100" height="20" x="252.5" y="22.5" />
-
-<rect width="100" height="20" x="2.5" y="42.5" />
-<rect width="100" height="20" x="102.5" y="42.5" />
-<rect width="100" height="20" x="202.5" y="42.5" />
-<rect width="100" height="20" x="302.5" y="42.5" />
-
-<rect width="50" height="20" x="2.5" y="62.5" />
-<rect width="100" height="20" x="52.5" y="62.5" />
-<rect width="100" height="20" x="152.5" y="62.5" />
-<rect width="100" height="20" x="252.5" y="62.5" />
-<rect width="50" height="20" x="352.5" y="62.5" />
+<g  transform="translate(1655,0)">
+<path fill="rgb(168,151,87)" d="M0,0L50,20C100,40,200,60,300,45C350,35,400,25,420,10V0H0Z"/>
 </g>
-
-<g  transform="translate(1665,0)" style="filter:url(#fil)">
-<rect width="50" height="20" x="2.5" y="2.5" />
-<rect width="100" height="20" x="52.5" y="2.5" />
-<rect width="100" height="20" x="152.5" y="2.5" />
-<rect width="100" height="20" x="252.5" y="2.5" />
-<rect width="50" height="20" x="352.5" y="2.5" />
-
-<rect width="100" height="20" x="2.5" y="22.5" />
-<rect width="100" height="20" x="102.5" y="22.5" />
-<rect width="100" height="20" x="202.5" y="22.5" />
-<rect width="100" height="20" x="302.5" y="22.5" />
-
-<rect width="50" height="20" x="2.5" y="42.5" />
-<rect width="100" height="20" x="52.5" y="42.5" />
-<rect width="100" height="20" x="152.5" y="42.5" />
-<rect width="100" height="20" x="252.5" y="42.5" />
-<rect width="50" height="20" x="352.5" y="42.5" />
-
-<rect width="100" height="20" x="2.5" y="62.5" />
-<rect width="100" height="20" x="102.5" y="62.5" />
-<rect width="100" height="20" x="202.5" y="62.5" />
-<rect width="100" height="20" x="302.5" y="62.5" />
-</g>
-
 </svg>

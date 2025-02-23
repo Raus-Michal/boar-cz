@@ -261,7 +261,9 @@ padding-right:1rem;
 .svg-box
 {
 width:5rem;
+min-width:5rem;
 height:5rem;
+min-height:5rem;
 background:var(--b2);
 border-radius:50%;
 padding:.5rem;
@@ -353,7 +355,7 @@ padding:.5rem;
 padding-top:.75rem;
 margin-top:1rem;
 background:white;
-border-radius:16px;
+border-radius:3rem;
 text-align:center;
 width:100%;
 border:1px dotted var(--b4);
@@ -472,6 +474,7 @@ border:1px dotted var(--b4);
 padding:.5rem;
 width:100%;
 background:white;
+border-radius:3rem;
 }
 
 /* větší jak 496px */
@@ -531,7 +534,7 @@ display:flex;
 -webkit-box-direction:normal;
 flex-direction:column;
 gap:2rem;
-padding:1rem;
+padding:3rem 1rem;
 background:var(--b5);
 color:white;
 }

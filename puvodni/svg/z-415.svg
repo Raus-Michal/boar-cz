@@ -1,19 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="2075" height="85" viewBox="0 0 2075 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" stroke="transparent">
 
+<!-- 1. PŘECHOD -->
 <path fill="white" fill-opacity="1" d="M0,0L48,10.7C96,21,192,43,288,53.3C384,64,415,85,415,85H0Z"/>
 
+<!-- 2. PŘECHOD -->
 <g transform="translate(415,0)">
 <path fill="white" d="M0,85L48,63.7C96,43,192,21,288,10.3C384,0,415,0,415,0H0Z"/>
 </g>
 
+<!-- 3. PŘECHOD -->
 <g transform="translate(830,0)">
 <path fill="rgb(168,151,87)" d="M0,85L48,74.3C96,64,192,42,288,31.7C384,21,415,10,415,0H0Z"/>
 </g>
 
+<!-- 4. PŘECHOD -->
 <g transform="translate(1245,0)">
 <path fill="white" d="M0,85L48,75C96,65,192,55,288,50C384,45,415,35,415,0H0Z"/>
 </g>
+
+<!-- 5. PŘECHOD -->
 <g  transform="translate(1655,0)">
 <path fill="rgb(168,151,87)" d="M0,0L50,20C100,40,200,60,300,45C350,35,400,25,420,10V0H0Z"/>
 </g>

@@ -1,22 +1,26 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="10075" height="85" viewBox="0 0 10075 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" stroke="transparent">
 
+<!-- 1. PŘECHOD -->
 <path fill="white" d="M0,85L240,10.7C480,21,960,43,1440,53.3C1920,64,2015,85,2015,85H0Z"/>
 
+<!-- 2. PŘECHOD -->
 <g transform="translate(2015,0)">
 <path fill="white" d="M0,85L240,63.7C480,43,960,21,1440,10.3C1920,0,2015,0,2015,0H0Z"/>
 </g>
 
+<!-- 3. PŘECHOD -->
 <g transform="translate(4030,0)">
 <path fill="rgb(168,151,87)" d="M0,85L240,74.3C480,64,960,42,1440,31.7C1920,21,2015,10,2015,0H0Z"/>
 </g>
 
+<!-- 5. PŘECHOD -->
 <g transform="translate(6045,0)">
 <path fill="white" d="M0,85L240,75C480,65,960,55,1440,50C1920,45,2015,35,2015,0H0Z"/>
 </g>
 
-<g  transform="translate(8065,0)">
+<!-- 6. PŘECHOD -->
+<g transform="translate(8065,0)">
 <path fill="rgb(168,151,87)" d="M0,0L250,20C500,40,1000,60,1500,45C1750,35,2000,25,2015,10V0H0Z"/>
 </g>
-
 </svg>

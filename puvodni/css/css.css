@@ -807,7 +807,7 @@ display:-moz-inline-grid;
 display:inline-grid;
 place-items:center center;
 box-shadow: 0 0 20px var(--b4_3); /* vnitřní stín */
-background:transparent;
+background:white;
 font-size:1.5rem;
 font-weight:700;
 border:1px dotted var(--b2_6);
@@ -1077,4 +1077,16 @@ background-color:var(--b2);
 .bc-4
 {
 background-color:var(--b4);
+}
+
+.bc-w
+{
+background-color:white;
+}
+
+.vypln
+{
+height:2rem;
+position:relative;
+z-index:2;
 }

@@ -4,3 +4,4 @@ Sitemap: https://boar-cz.info/sitemap.xml
 Sitemap: https://www.boar-cz.info/sitemap.xml
 User-agent: *
 Disallow: /kontakt/ok/
+Disallow: /git-hub-projekty/
